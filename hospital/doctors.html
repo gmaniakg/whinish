@@ -3,28 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>의료진 소개 | Whinish</title>
+    <title>의료진 소개 | WHITESTYLE DENTAL</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
-        .doctor-card { display: flex; gap: 60px; margin-bottom: 100px; align-items: center; }
-        .doctor-card:nth-child(even) { flex-direction: row-reverse; }
-        .doctor-img { flex: 1; background: #f0f0f0; height: 500px; border-radius: 30px; overflow: hidden; }
+        .doctor-section { padding: 100px 0; border-bottom: 1px solid var(--border-color); }
+        .doctor-container { display: flex; gap: 80px; max-width: 1200px; margin: 0 auto; align-items: flex-start; padding: 0 20px; }
+        .doctor-img { flex: 1; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); position: sticky; top: 120px; }
         .doctor-info { flex: 1.2; }
-        .doctor-info h2 { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+        .doctor-info h2 { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 10px; }
+        .doctor-info h3 { font-size: 1.5rem; color: var(--accent-color); margin-bottom: 30px; font-weight: 600; }
+        .doctor-philosophy { background: var(--bg-light); padding: 40px; border-radius: 20px; margin-bottom: 40px; border-left: 5px solid var(--accent-color); }
+        .doctor-philosophy p { font-style: italic; font-size: 1.1rem; color: var(--primary-color); line-height: 1.8; }
+        .doctor-history h4 { font-size: 1.2rem; color: var(--primary-color); margin-bottom: 20px; border-bottom: 2px solid var(--border-color); display: inline-block; }
+        .doctor-history ul { margin-bottom: 40px; }
+        .doctor-history li { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-muted); list-style: disc; margin-left: 20px; }
+        
+        .doctor-section:nth-child(even) .doctor-container { flex-direction: row-reverse; }
     </style>
 </head>
 <body>
     <header id="main-header"></header>
     <main>
-        <section class="section">
+        <!-- Intro -->
+        <section class="section" style="background: var(--primary-color); color: #fff; text-align: center; padding: 120px 0;">
             <div class="container">
-                <h1 style="text-align: center; margin-bottom: 80px;">Whinish 의료진</h1>
-                <div class="doctor-card">
-                    <div class="doctor-img"><img src="../assets/img/dr-lee.png" style="width:100%; height:100%; object-fit:cover;"></div>
-                    <div class="doctor-info">
-                        <h2>이봉진 대표원장</h2>
-                        <p>연세대학교 치과대학 졸업 | 임플란트·심미보철 전문가</p>
+                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 3px; margin-bottom: 20px;">MEDICAL STAFF</p>
+                <h1 style="font-size: 4rem; margin-bottom: 20px;">사람을 향한 진심,<br>그 깊이가 다른 진료</h1>
+                <p style="font-size: 1.2rem; opacity: 0.8;">30년 전통의 신뢰와 초정밀 기술력이 만나 당신의 미소를 완성합니다.</p>
+            </div>
+        </section>
+
+        <!-- Doctor 1: Kim Jun-heon -->
+        <section class="doctor-section">
+            <div class="doctor-container">
+                <div class="doctor-img animate-up">
+                    <img src="../assets/img/dr-kim.png" alt="김준헌 병원장">
+                </div>
+                <div class="doctor-info animate-up">
+                    <h2>김준헌 <span style="font-size: 1.5rem; font-weight: 400; color: #999;">병원장</span></h2>
+                    <h3>치의학 박사 | 서울대학교 치과대학</h3>
+                    <div class="doctor-philosophy">
+                        <p>"30년 전 처음 환자를 만났던 그 진심 그대로, <br>가장 정직하고 올바른 진료만이 환자의 삶을 바꿀 수 있다고 믿습니다."</p>
+                    </div>
+                    <div class="doctor-history">
+                        <h4>약력 및 활동</h4>
+                        <ul>
+                            <li>서울대학교 치과대학 졸업</li>
+                            <li>서울대학교 총동창회 26대 종신이사</li>
+                            <li>Goteborg University 브로네막 임플란트 교실 수료</li>
+                            <li>치의학 박사 학위 취득</li>
+                            <li>대한치과교정학회 표창 및 감사장 수령</li>
+                            <li>기획재정부장관상 및 서울특별시장상 (모범납세자)</li>
+                            <li>국제 임플란트 학회 (ICOI) 이사</li>
+                        </ul>
+                        <h4>전문분야</h4>
+                        <p style="color: var(--text-muted);">임플란트 수복, 고난이도 재수술, 심미 보철 솔루션</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctor 2: Lee Bong-jin -->
+        <section class="doctor-section">
+            <div class="doctor-container">
+                <div class="doctor-img animate-up">
+                    <img src="../assets/img/dr-lee.png" alt="이봉진 대표원장">
+                </div>
+                <div class="doctor-info animate-up">
+                    <h2>이봉진 <span style="font-size: 1.5rem; font-weight: 400; color: #999;">대표원장</span></h2>
+                    <h3>초정밀 심미보철 전문가 | 휘니쉬 프리미엄 디렉터</h3>
+                    <div class="doctor-philosophy">
+                        <p>"0.1mm의 오차도 허용하지 않는 정밀함이 <br>예술적인 아름다움과 완벽한 기능을 완성합니다."</p>
+                    </div>
+                    <div class="doctor-history">
+                        <h4>약력 및 활동</h4>
+                        <ul>
+                            <li>연세대학교 치과대학 졸업</li>
+                            <li>미국 인비절라인 인증의</li>
+                            <li>대한구강악안면 임플란트학회 (KAOMI) 이사</li>
+                            <li>세계구강임플란트학회 (ICOI KOREA) 이사</li>
+                            <li>워랜텍 원플란트 임상지도 교수</li>
+                            <li>NICE 기술평가 우수기업인증 (임플란트 진료)</li>
+                            <li>삼성꿈장학재단 청소년 치아교정 자원봉사</li>
+                        </ul>
+                        <h4>전문분야</h4>
+                        <p style="color: var(--text-muted);">휘니쉬 초정밀 솔루션, 투명 교정, 디지털 가이드 임플란트</p>
                     </div>
                 </div>
             </div>
