@@ -3,18 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whinish | Preparation</title>
+    <title>연혁 및 수상내역 | WHITESTYLE DENTAL</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .history-timeline { max-width: 1000px; margin: 0 auto; position: relative; padding: 50px 0; }
+        .history-timeline::before {
+            content: ''; position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: var(--border-color);
+        }
+        .history-item {
+            display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; width: 100%;
+        }
+        .history-item:nth-child(even) { flex-direction: row-reverse; }
+        .history-year {
+            width: 45%; text-align: right; font-size: 2.5rem; font-weight: 800; color: var(--accent-color);
+        }
+        .history-item:nth-child(even) .history-year { text-align: left; }
+        .history-content {
+            width: 45%; padding: 30px; background: #fff; border-radius: 20px; border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .history-dot {
+            position: absolute; left: 50%; transform: translateX(-50%); width: 15px; height: 15px; background: var(--accent-color);
+            border-radius: 50%; border: 4px solid #fff; z-index: 2;
+        }
+        .history-content ul { padding-left: 0; }
+        .history-content li { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
+        .history-content li b { color: var(--primary-color); }
+    </style>
 </head>
 <body>
     <header id="main-header"></header>
     <main>
         <section class="section">
-            <div class="container" style="text-align: center; padding: 100px 0;">
-                <h1 style="font-size: 3rem; color: var(--primary-color);">준비 중인 페이지입니다.</h1>
-                <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">Whinish의 정교한 콘텐츠를 준비하고 있습니다. 잠시만 기다려 주세요.</p>
-                <a href="../index.html" style="display: inline-block; margin-top: 40px; padding: 12px 30px; background: var(--primary-color); color: #fff; border-radius: 5px;">홈으로 돌아가기</a>
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 100px;">
+                    <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px;">SINCE 1990</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color); margin-top: 10px;">연혁 및 수상내역</h1>
+                    <p style="color: var(--text-muted); margin-top: 20px;">30년 넘게 이어온 화이트스타일의 정직과 기술의 발자취입니다.</p>
+                </div>
+
+                <div class="history-timeline">
+                    <!-- 2020s -->
+                    <div class="history-item animate-up">
+                        <div class="history-year">2021 - 2020</div>
+                        <div class="history-dot"></div>
+                        <div class="history-content">
+                            <ul>
+                                <li><b>2021.</b> 나이스디앤비 기술신용평가 치과 의료 서비스 기술 우수기업</li>
+                                <li><b>2020.</b> 한국농아인협회 서울시협회 감사패</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 2019-2017 -->
+                    <div class="history-item animate-up">
+                        <div class="history-year">2019 - 2017</div>
+                        <div class="history-dot"></div>
+                        <div class="history-content">
+                            <ul>
+                                <li><b>2019.</b> 한국농아인협회 서울시협회 서초구지회 감사패</li>
+                                <li><b>2019.</b> 바른이봉사회 청소년 치아교정 자원사업 봉사 감사패</li>
+                                <li><b>2018.</b> 야후재팬 치과검색순위 1위</li>
+                                <li><b>2018.</b> 바른이봉사회 청소년 치아교정 감사패</li>
+                                <li><b>2017.</b> KAOMI 대한구강악안면 임플란트학회 정회원</li>
+                                <li><b>2017.</b> 삼성꿈장학재단 청소년 치아교정 감사패</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 2016-2014 -->
+                    <div class="history-item animate-up">
+                        <div class="history-year">2016 - 2014</div>
+                        <div class="history-dot"></div>
+                        <div class="history-content">
+                            <ul>
+                                <li><b>2016.</b> 서울대학교 총동창회 26대 종신이사</li>
+                                <li><b>2016.</b> 서울특별시 강남구 의료관광 협력기관</li>
+                                <li><b>2016.</b> NICE 기술평가 우수기업인증서 취득 (임플란트 진료)</li>
+                                <li><b>2015.</b> MBC 뉴스데스크 치과치료 보도</li>
+                                <li><b>2015.</b> 기획재정부장관상 (모범납세자)</li>
+                                <li><b>2014.</b> 국제 임플란트 학회 (ICOI) 이사</li>
+                                <li><b>2014.</b> 대한구강악안면 임플란트학회 (KAOMI) 이사</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 2013-2011 -->
+                    <div class="history-item animate-up">
+                        <div class="history-year">2013 - 2011</div>
+                        <div class="history-dot"></div>
+                        <div class="history-content">
+                            <ul>
+                                <li><b>2013.</b> 국민건강보험공단 평가 최고등급 의료기관 (검진 S등급)</li>
+                                <li><b>2013.</b> 품질환경경영 시스템 인증 치과 ISO 14001</li>
+                                <li><b>2013.</b> 세계구강임플란트학회 (ICOI KOREA) 이사</li>
+                                <li><b>2012.</b> BMA 메디컬 대상</li>
+                                <li><b>2012.</b> 미국 인비절라인 인증</li>
+                                <li><b>2011.</b> 단국대학교 치과대학 외래조교수</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 2010-2005 -->
+                    <div class="history-item animate-up">
+                        <div class="history-year">2010 - 2005</div>
+                        <div class="history-dot"></div>
+                        <div class="history-content">
+                            <ul>
+                                <li><b>2010.</b> 서울특별시장상 (모범납세자)</li>
+                                <li><b>2006.</b> 치의학 박사 취득</li>
+                                <li><b>2006.</b> 대한치과교정학회 표창</li>
+                                <li><b>2005.</b> 스포츠서울 소비자선정 의료기관 대상</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Early Years -->
+                    <div class="history-item animate-up">
+                        <div class="history-year">2003 - 1990</div>
+                        <div class="history-dot"></div>
+                        <div class="history-content">
+                            <ul>
+                                <li><b>2003.</b> 주간동아 베스트클리닉 선정</li>
+                                <li><b>2003.</b> 스포츠서울 의료기관 부문 우수기관</li>
+                                <li><b>1997.</b> Goteborg University 브로네막 임플란트 교실</li>
+                                <li><b>1990.</b> 서울대학교 졸업</li>
+                                <li><b>1990.</b> 대한치과교정학회 / 대한치과보철학회</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

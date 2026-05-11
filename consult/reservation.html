@@ -3,18 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whinish | Preparation</title>
+    <title>예약하기 | WHITESTYLE DENTAL</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .reserve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .reserve-card {
+            background: #fff; padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center;
+            transition: all 0.3s ease;
+        }
+        .reserve-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--accent-color); }
+        .reserve-card h3 { margin: 20px 0; font-size: 1.5rem; color: var(--primary-color); }
+        .reserve-card p { color: var(--text-muted); margin-bottom: 30px; min-height: 50px; }
+        .btn-reserve { display: block; width: 100%; padding: 15px; border-radius: 10px; font-weight: 700; text-transform: uppercase; }
+        .btn-naver { background: #03c75a; color: #fff; }
+        .btn-kakao { background: #fee500; color: #3c1e1e; }
+        .btn-phone { background: var(--primary-color); color: #fff; }
+    </style>
 </head>
 <body>
     <header id="main-header"></header>
     <main>
         <section class="section">
-            <div class="container" style="text-align: center; padding: 100px 0;">
-                <h1 style="font-size: 3rem; color: var(--primary-color);">준비 중인 페이지입니다.</h1>
-                <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">Whinish의 정교한 콘텐츠를 준비하고 있습니다. 잠시만 기다려 주세요.</p>
-                <a href="../index.html" style="display: inline-block; margin-top: 40px; padding: 12px 30px; background: var(--primary-color); color: #fff; border-radius: 5px;">홈으로 돌아가기</a>
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600;">Reservation</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">가장 쉬운 예약 방법</h1>
+                    <p style="color: var(--text-muted); margin-top: 20px;">원하시는 채널을 통해 빠르고 간편하게 예약하세요.</p>
+                </div>
+
+                <div class="reserve-grid">
+                    <!-- Naver Booking -->
+                    <div class="reserve-card animate-up">
+                        <div style="font-size: 3rem;">💚</div>
+                        <h3>NAVER 예약</h3>
+                        <p>네이버 아이디로 간편하게!<br>실시간 예약 현황을 확인하고 예약하세요.</p>
+                        <a href="https://booking.naver.com/booking/13/bizes/265482" target="_blank" class="btn-reserve btn-naver">네이버로 예약하기</a>
+                    </div>
+
+                    <!-- KakaoTalk -->
+                    <div class="reserve-card animate-up">
+                        <div style="font-size: 3rem;">💛</div>
+                        <h3>KAKAO 상담</h3>
+                        <p>카카오톡 1:1 채팅으로<br>궁금한 점을 바로 문의하고 예약하세요.</p>
+                        <a href="https://pf.kakao.com/_Vtxdwl" target="_blank" class="btn-reserve btn-kakao">카톡으로 상담하기</a>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="reserve-card animate-up">
+                        <div style="font-size: 3rem;">📞</div>
+                        <h3>전화 예약</h3>
+                        <p>상담원과 직접 통화하여<br>가장 빠른 일정을 조율하세요.</p>
+                        <a href="tel:1577-7287" class="btn-reserve btn-phone">1577-7287</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
