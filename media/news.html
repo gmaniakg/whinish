@@ -33,6 +33,7 @@
             font-weight: 700;
             font-size: 0.85rem;
             margin-bottom: 10px;
+            display: block;
         }
         .news-title {
             font-size: 1.2rem;
@@ -57,11 +58,27 @@
             align-items: center;
             font-size: 0.85rem;
             color: #999;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 15px;
         }
         .news-link {
             color: var(--primary-color);
             font-weight: 600;
             text-decoration: underline;
+        }
+        
+        .year-divider {
+            grid-column: 1 / -1;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
     </style>
 </head>
@@ -77,87 +94,85 @@
                 </div>
 
                 <div class="news-grid">
-                    <!-- News 1 -->
+                    <!-- 2026 -->
+                    <div class="year-divider">2026</div>
                     <div class="news-card animate-up">
-                        <div>
-                            <span class="news-press">소셜밸류</span>
-                            <h3 class="news-title">화이트스타일치과, 통증 완화로 편안한 치료 환경 강화</h3>
-                            <p class="news-snippet">환자들의 치과 치료에 대한 막연한 공포심을 줄이고, 보다 편안한 진료 환경을 제공하기 위해 통증 완화 시스템을 한층 강화했습니다.</p>
-                        </div>
-                        <div class="news-footer">
-                            <span>2026.04.28</span>
-                            <a href="https://www.socialvalue.kr/news/view/1065600167859573" target="_blank" class="news-link">기사보기</a>
-                        </div>
+                        <div><span class="news-press">소셜밸류</span><h3 class="news-title">화이트스타일치과, 통증 완화로 편안한 치료 환경 강화</h3><p class="news-snippet">화이트스타일치과 김준헌 병원장은 환자의 심리적 안정과 신체적 부담을 동시에 줄이는 진료 시스템을 강화하고 있다고 밝혔다.</p></div>
+                        <div class="news-footer"><span>2026.04.28</span><a href="https://www.socialvalue.kr/news/view/1065600167859573" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">대학저널</span><h3 class="news-title">임플란트 수명 좌우하는 ‘정밀 진단’과 사후 관리의 중요성</h3><p class="news-snippet">화이트스타일치과 김준헌 병원장은 정밀 진단 시스템을 통해 개인별 맞춤형 시술 계획을 세우는 것이 중요하다고 강조했다.</p></div>
+                        <div class="news-footer"><span>2026.04.01</span><a href="https://dhnews.co.kr/news/view/1065593169602596" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">메가경제</span><h3 class="news-title">치아 상실 부담 줄이는 ‘전체임플란트’, 치료 방식 선택이 만족도 좌우</h3><p class="news-snippet">화이트스타일치과 김준헌 병원장은 전체 임플란트 시술 시 환자의 구강 구조와 건강 상태를 면밀히 분석하여 최적의 치료 경로를 선택하는 것이 중요하다고 조언했다.</p></div>
+                        <div class="news-footer"><span>2026.02.05</span><a href="https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065593995501144" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">소셜밸류</span><h3 class="news-title">바로 완성 임플란트, 하루 만에 완성되는 빠른 치료로 주목</h3><p class="news-snippet">화이트스타일치과 김준헌 병원장은 정교한 디지털 장비를 활용해 당일 보철물 장착까지 가능하다고 설명했다.</p></div>
+                        <div class="news-footer"><span>2026.01.23</span><a href="https://www.socialvalue.kr/news/view/1065592796178154" target="_blank" class="news-link">기사보기</a></div>
                     </div>
 
-                    <!-- News 2 -->
+                    <!-- 2025 -->
+                    <div class="year-divider">2025 - 2023</div>
                     <div class="news-card animate-up">
-                        <div>
-                            <span class="news-press">메가경제</span>
-                            <h3 class="news-title">전체임플란트, 치료 방식 선택이 만족도 좌우</h3>
-                            <p class="news-snippet">김준헌 병원장은 기존 틀니에 비해 고정력이 뛰어나고 자연치아에 가까운 사용감을 제공한다는 점에서 정밀한 진단의 중요성을 강조했습니다.</p>
-                        </div>
-                        <div class="news-footer">
-                            <span>2026.02.05</span>
-                            <a href="https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065593995501144" target="_blank" class="news-link">기사보기</a>
-                        </div>
+                        <div><span class="news-press">라이브뉴스</span><h3 class="news-title">정확한 진단으로 임플란트 치료 성공률 높여</h3><p class="news-snippet">강남역 화이트스타일치과 김준헌 병원장은 임플란트 시술의 성공은 정확한 진단에서 시작된다며, 3D CT 등 첨단 장비의 활용도를 높이고 있다고 전했다.</p></div>
+                        <div class="news-footer"><span>2025.02.10</span><a href="http://www.livesnews.com/news/article.html?no=47867" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">메디컬투데이</span><h3 class="news-title">치주질환으로 임플란트 시술 주의사항은?</h3><p class="news-snippet">김준헌 화이트스타일치과 병원장은 잇몸 질환이 있는 경우 임플란트 식립 전 충분한 잇몸 치료가 선행되어야 부작용을 최소화할 수 있다고 강조했다.</p></div>
+                        <div class="news-footer"><span>2023.03.29</span><a href="https://mdtoday.co.kr/news/view/1065610051059501" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">세계비즈</span><h3 class="news-title">임플란트 치료, 병원 선택 시 고려해야 할 사항은?</h3><p class="news-snippet">김준헌 강남 화이트스타일치과 병원장은 의료진의 풍부한 임상 경험과 사후 관리 프로그램이 잘 갖춰진 곳을 선택하는 것이 장기적인 만족도를 위해 필수적이라고 말했다.</p></div>
+                        <div class="news-footer"><span>2023.02.25</span><a href="http://www.segyebiz.com/newsView/20230225506364?OutUrl=naver" target="_blank" class="news-link">기사보기</a></div>
                     </div>
 
-                    <!-- News 3 -->
+                    <!-- 2022 -->
+                    <div class="year-divider">2022</div>
                     <div class="news-card animate-up">
-                        <div>
-                            <span class="news-press">디지털타임스</span>
-                            <h3 class="news-title">화이트스타일치과, 검진기관평가 최고등급(S등급) 획득</h3>
-                            <p class="news-snippet">1994년 개원 이래 구강건강 증진에 매진해 온 결과, 국가건강검진 구강검진 분야에서 최고 등급인 S등급을 획득했습니다.</p>
-                        </div>
-                        <div class="news-footer">
-                            <span>2015.05.11</span>
-                            <a href="http://www.dt.co.kr/contents.html?article_no=2015051102109923809012" target="_blank" class="news-link">기사보기</a>
-                        </div>
+                        <div><span class="news-press">세계비즈</span><h3 class="news-title">무삭제 라미네이트, 치아 삭제로 인한 부작용 예방 가능</h3><p class="news-snippet">강남 화이트스타일치과 김준헌 원장은 자연 치아를 최대한 보존하면서 심미적인 효과를 얻을 수 있는 무삭제 라미네이트 시술이 최근 선호되고 있다고 밝혔다.</p></div>
+                        <div class="news-footer"><span>2022.09.28</span><a href="http://www.segyebiz.com/newsView/20220928508113?OutUrl=naver" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">전국매일신문</span><h3 class="news-title">[전문의 칼럼] 치아 상실로 인한 임플란트, 치과 치료 시 주의점은</h3><p class="news-snippet">김준헌 강남 화이트스타일치과 병원장은 칼럼을 통해 임플란트 시술 시 과잉 진료를 피하고 정직한 진단을 제공하는 치과를 찾는 노하우를 공유했다.</p></div>
+                        <div class="news-footer"><span>2022.09.27</span><a href="http://www.jeonmae.co.kr/news/articleView.html?idxno=913401" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">세계비즈</span><h3 class="news-title">치주질환으로 상실된 치아, 임플란트 치료 시 주의점은</h3><p class="news-snippet">강남 화이트스타일치과 김준헌 병원장은 잇몸 뼈가 부족한 경우 뼈이식 임플란트를 통해 안정적인 식립이 가능하다고 조언했다.</p></div>
+                        <div class="news-footer"><span>2022.08.20</span><a href="http://www.segyebiz.com/newsView/20220820510033?OutUrl=naver" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">세계비즈</span><h3 class="news-title">무삭제라미네이트, 일반 치료와 ‘이렇게 달라요’</h3><p class="news-snippet">김준헌 강남 화이트스타일치과 병원장은 일반 라미네이트와 무삭제 방식의 차이점을 설명하며 환자 개별 치아 상태에 맞는 선택을 강조했다.</p></div>
+                        <div class="news-footer"><span>2022.07.15</span><a href="http://www.segyebiz.com/newsView/20220715521638?OutUrl=naver" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">팜뉴스</span><h3 class="news-title">임플란트 시술 전에 체크해야 할 점은?</h3><p class="news-snippet">강남 화이트스타일치과 김준헌 병원장은 전신 질환 여부와 복용 중인 약물을 미리 의료진에게 알리는 것이 안전한 수술을 위한 첫걸음이라고 전했다.</p></div>
+                        <div class="news-footer"><span>2022.07.05</span><a href="http://www.pharmnews.com/news/articleView.html?idxno=206555" target="_blank" class="news-link">기사보기</a></div>
                     </div>
 
-                    <!-- News 4 -->
+                    <!-- History -->
+                    <div class="year-divider">Archives (2020 - 2005)</div>
                     <div class="news-card animate-up">
-                        <div>
-                            <span class="news-press">뉴스1</span>
-                            <h3 class="news-title">김준헌 원장 ‘납세자의 날’ 모범납세자 기재부 장관상 수상</h3>
-                            <p class="news-snippet">성실 납세를 통해 국가 재정에 기여한 공로로 기획재정부 장관 표창을 수상하며 의료계의 귀감이 되었습니다.</p>
-                        </div>
-                        <div class="news-footer">
-                            <span>2015.03.20</span>
-                            <a href="http://news1.kr/articles/?2146103" target="_blank" class="news-link">기사보기</a>
-                        </div>
+                        <div><span class="news-press">디지털타임스</span><h3 class="news-title">화이트스타일치과, 검진기관평가 최고등급획득</h3><p class="news-snippet">국민건강보험공단 실시 국가건강검진 구강검진평가에서 S등급(최고등급)을 획득하며 우수성을 인정받았다.</p></div>
+                        <div class="news-footer"><span>2015.05.11</span><a href="http://www.dt.co.kr/contents.html?article_no=2015051102109923809012" target="_blank" class="news-link">기사보기</a></div>
                     </div>
-
-                    <!-- News 5 -->
                     <div class="news-card animate-up">
-                        <div>
-                            <span class="news-press">국민일보</span>
-                            <h3 class="news-title">화이트 스타일 치과 김준헌 원장 “인술로 보은”</h3>
-                            <p class="news-snippet">환자를 가족처럼 대하는 '인술'을 실천하며 지역 사회에 봉사하고 있는 김준헌 원장의 진료 철학을 소개합니다.</p>
-                        </div>
-                        <div class="news-footer">
-                            <span>2005.04.15</span>
-                            <a href="https://n.news.naver.com/mnews/article/005/0000201540?sid=103" target="_blank" class="news-link">기사보기</a>
-                        </div>
+                        <div><span class="news-press">뉴스1</span><h3 class="news-title">김준헌 원장 ‘납세자의 날’ 모범납세자 선정</h3><p class="news-snippet">성실한 납세 공로를 인정받아 제49회 납세자의 날에 기획재정부장관 표창을 수상했다.</p></div>
+                        <div class="news-footer"><span>2015.03.20</span><a href="http://news1.kr/articles/?2146103" target="_blank" class="news-link">기사보기</a></div>
                     </div>
-
-                    <!-- News 6 -->
                     <div class="news-card animate-up">
-                        <div>
-                            <span class="news-press">팜뉴스</span>
-                            <h3 class="news-title">치아 상실로 인한 임플란트 치료, 주의점은?</h3>
-                            <p class="news-snippet">김준헌 병원장이 전하는 치주질환의 위험성과 임플란트 치료 시 반드시 고려해야 할 핵심 사항들입니다.</p>
-                        </div>
-                        <div class="news-footer">
-                            <span>2022.11.12</span>
-                            <a href="http://www.pharmnews.com/news/articleView.html?idxno=213603" target="_blank" class="news-link">기사보기</a>
-                        </div>
+                        <div><span class="news-press">한국경제</span><h3 class="news-title">안전한 임플란트를 위한 치과선택, 5가지가 중요하다</h3><p class="news-snippet">김준헌 원장은 성공적인 임플란트를 위해 임상 경험, 첨단 장비, 정품 사용 여부 등 5가지 체크 포인트를 제시했다.</p></div>
+                        <div class="news-footer"><span>2012.07.11</span><a href="http://wstarnews.hankyung.com/apps/news?nkey=201207111015331" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">국민일보</span><h3 class="news-title">화이트 스타일 치과 김준헌 원장 “거듭난 인생 인술로 보은”</h3><p class="news-snippet">김준헌 원장의 인술 철학과 병원 운영 원칙을 다룬 인터뷰 기사로, 따뜻한 진료가 화제가 되었다.</p></div>
+                        <div class="news-footer"><span>2005.04.15</span><a href="https://n.news.naver.com/mnews/article/005/0000201540?sid=103" target="_blank" class="news-link">기사보기</a></div>
                     </div>
                 </div>
                 
-                <div style="text-align: center; margin-top: 60px;">
-                    <p style="color: var(--text-muted);">이 외에도 다수의 언론 매체를 통해 화이트스타일의 기술력이 소개되었습니다.</p>
+                <div style="text-align: center; margin-top: 100px; padding: 40px; background: #fdfdfd; border-radius: 20px;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">이 외에도 지난 30년간 <b>총 39건 이상의 언론 보도</b>를 통해 <br>화이트스타일치과의 전문성과 성실함이 입증되었습니다.</p>
                 </div>
             </div>
         </section>
