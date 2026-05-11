@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생생후기 | Whinish</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .review-stats {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .stat-item h3 { font-size: 2.5rem; color: var(--primary-color); }
+        .stat-item p { color: var(--text-muted); }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .review-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .rating { color: #ffcc00; margin-bottom: 15px; }
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            height: 120px;
+            overflow: hidden;
+            position: relative;
+        }
+        .review-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 40px;
+            background: linear-gradient(transparent, #fff);
+        }
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        .reviewer-avatar {
+            width: 40px; height: 40px;
+            background: #eee;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; color: #999;
+        }
+        .reviewer-info b { font-size: 0.9rem; display: block; }
+        .reviewer-info span { font-size: 0.8rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <header id="main-header"></header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600;">Real Patient Reviews</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">Whinish 생생후기</h1>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">
+                        광고가 아닌 실제 환자분들이 남겨주신 정성스러운 후기입니다. <br>
+                        30년 전통의 진심을 Whinish가 이어갑니다.
+                    </p>
+                </div>
+
+                <div class="review-stats">
+                    <div class="stat-item">
+                        <h3>4.9/5</h3>
+                        <p>평균 만족도</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>12,450+</h3>
+                        <p>누적 치료 후기</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>지인 추천율</p>
+                    </div>
+                </div>
+
+                <div class="review-grid">
+                    <!-- Review 1 -->
+                    <div class="review-card animate-up">
+                        <div class="rating">★★★★★</div>
+                        <div class="review-text">
+                            교정 결과에 너무 만족해요! 다른 곳은 그냥 빨리 끝내려고만 하는데, 여기는 원장님이 정말 세심하게 봐주세요. 보험 적용되는 잇몸 치료까지 꼼꼼하게 챙겨주셔서 너무 감동받았습니다.
+                        </div>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">L</div>
+                            <div class="reviewer-info">
+                                <b>lucky**** 님</b>
+                                <span>치아교정 / 잇몸치료</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card animate-up">
+                        <div class="rating">★★★★★</div>
+                        <div class="review-text">
+                            오랜 단골입니다. 임플란트 치료받았는데 정말 통증이 하나도 없어서 놀랐어요. 스태프분들도 너무 친절하시고, 강남역에서 이렇게 믿고 다닐 수 있는 치과가 있다는 게 행운입니다.
+                        </div>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">N</div>
+                            <div class="reviewer-info">
+                                <b>닝냥**** 님</b>
+                                <span>임플란트 수복</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card animate-up">
+                        <div class="rating">★★★★★</div>
+                        <div class="review-text">
+                            2012년부터 다녔으니 벌써 14년째네요. 이번에 세라믹 인레이 받았는데 역시나 원장님의 섬세한 손길... 통증 걱정 없이 편안하게 치료 잘 받았습니다. 강추합니다!
+                        </div>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">M</div>
+                            <div class="reviewer-info">
+                                <b>엠제**** 님</b>
+                                <span>보존치료 / 인레이</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card animate-up">
+                        <div class="rating">★★★★★</div>
+                        <div class="review-text">
+                            현재 치아 상태랑 앞으로 치료 순서에 대해 너무 자세히 설명해주셔서 좋았어요. 투명교정이랑 임플란트 같이 진행 중인데 일정 조율도 잘 해주시고 믿음이 갑니다.
+                        </div>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">P</div>
+                            <div class="reviewer-info">
+                                <b>프리**** 님</b>
+                                <span>투명교정 / 임플란트</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

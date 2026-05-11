@@ -1,0 +1,214 @@
+:root {
+    /* Color Palette */
+    --primary-color: #001f3f; /* Deep Navy */
+    --secondary-color: #ffffff;
+    --accent-color: #d4af37; /* Gold */
+    --text-main: #333333;
+    --text-muted: #666666;
+    --bg-light: #f8f9fa;
+    --border-color: #e5e5e5;
+
+    /* Typography */
+    --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    
+    /* Spacing */
+    --container-max: 1200px;
+    --section-padding: 100px 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header/GNB Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 10px 0;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.main-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.main-menu > li {
+    position: relative;
+    padding: 10px 0;
+}
+
+.main-menu > li > a {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.main-menu > li:hover > a {
+    color: var(--accent-color);
+}
+
+/* Dropdown Menu */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.main-menu > li:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    top: calc(100% - 5px);
+}
+
+.sub-menu li {
+    margin-bottom: 12px;
+}
+
+.sub-menu li a {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.sub-menu li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+/* Sections */
+.section {
+    padding: var(--section-padding);
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/hero-bg.png') center/cover;
+    color: #fff;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #888;
+    padding: 80px 0 40px;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-info h4 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.copyright {
+    border-top: 1px solid #222;
+    padding-top: 40px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-up {
+    animation: fadeInUp 1s ease forwards;
+}

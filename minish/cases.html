@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전후사례 | Whinish</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        .case-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .case-card:hover {
+            transform: translateY(-10px);
+        }
+        .case-img-split {
+            display: flex;
+            height: 250px;
+            background: #eee;
+        }
+        .case-img-split div {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #999;
+            position: relative;
+        }
+        .case-img-split div:first-child {
+            border-right: 1px solid #fff;
+        }
+        .case-img-split div::after {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 5px;
+        }
+        .case-img-split .before::after { content: 'BEFORE'; }
+        .case-img-split .after::after { content: 'AFTER'; }
+
+        .case-body {
+            padding: 30px;
+        }
+        .case-tag {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .case-body h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .case-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .review-quote {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+            font-style: italic;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header"></header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600;">Transformation Stories</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">Whinish 전후사례</h1>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">
+                        치아를 깎지 않고 복구하는 Whinish 솔루션으로 <br>
+                        인생이 바뀐 일본 환자분들의 생생한 이야기입니다.
+                    </p>
+                </div>
+
+                <div class="case-grid">
+                    <!-- Case 1 -->
+                    <div class="case-card animate-up">
+                        <div class="case-img-split">
+                            <div class="before">준비 중</div>
+                            <div class="after">준비 중</div>
+                        </div>
+                        <div class="case-body">
+                            <span class="case-tag">심미보철 / 앞니 복구</span>
+                            <h3>료타 님 (40대, 일본)</h3>
+                            <p>일본에서 불가능하다는 진단을 받았던 고난도 임플란트와 앞니 Whinish 복구 솔루션을 통해 다시 웃음을 찾으셨습니다.</p>
+                            <p class="review-quote">"한국에서의 기술력에 놀랐습니다. 이제 마음껏 웃을 수 있어요."</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="case-card animate-up">
+                        <div class="case-img-split">
+                            <div class="before">준비 중</div>
+                            <div class="after">준비 중</div>
+                        </div>
+                        <div class="case-body">
+                            <span class="case-tag">치아 교정 / 전체 수복</span>
+                            <h3>토모미 님 (50대, 일본)</h3>
+                            <p>기능적인 저작 능력 회복과 심미적인 개선을 동시에 원하셨던 사례입니다. 2년 안심 보증 시스템에 큰 만족을 느끼셨습니다.</p>
+                            <p class="review-quote">"먹는 즐거움을 다시 알게 해주셔서 감사합니다."</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="case-card animate-up">
+                        <div class="case-img-split">
+                            <div class="before">준비 중</div>
+                            <div class="after">준비 중</div>
+                        </div>
+                        <div class="case-body">
+                            <span class="case-tag">급속 교정 / 전치부 Whinish</span>
+                            <h3>미키코 님 (20대, 일본)</h3>
+                            <p>일본인 전담 통역사와 합리적인 비용, 그리고 무엇보다 빠른 교정 속도에 만족하여 한국 방문을 결심하신 대학생 환자입니다.</p>
+                            <p class="review-quote">"일본인 코디네이터가 상주해 있어 의사소통이 너무 편했어요."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

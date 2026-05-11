@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의료진 소개 | Whinish</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .doctor-card {
+            display: flex;
+            gap: 60px;
+            margin-bottom: 100px;
+            align-items: center;
+        }
+        .doctor-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .doctor-img {
+            flex: 1;
+            background: #f0f0f0;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        .doctor-info {
+            flex: 1.2;
+        }
+        .doctor-info .tag {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .doctor-info h2 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .doctor-info .position {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            display: block;
+        }
+        .doctor-info ul {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+        .doctor-info li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+        .doctor-info li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header"></header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 100px;">
+                    <p class="animate-up" style="color: var(--accent-color); font-weight: 600; margin-bottom: 10px;">Medical Specialists</p>
+                    <h1 class="animate-up" style="font-size: 4rem; color: var(--primary-color);">Whinish 의료진</h1>
+                    <p class="animate-up" style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">
+                        30년 전통의 기술력과 초정밀 솔루션이 만났습니다. <br>
+                        분야별 박사급 의료진이 당신의 미소를 직접 책임집니다.
+                    </p>
+                </div>
+
+                <!-- Dr. Lee Bong-jin -->
+                <div class="doctor-card animate-up">
+                    <div class="doctor-img">
+                        <img src="../assets/img/dr-lee.png" alt="이봉진 대표원장" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="doctor-info">
+                        <span class="tag">Representive Director</span>
+                        <h2>이봉진 대표원장</h2>
+                        <span class="position">연세대학교 치과대학 졸업 | 임플란트·심미보철 전문가</span>
+                        <ul>
+                            <li>대한구강악안면임플란트학회 정회원</li>
+                            <li>대한치과이식임플란트학회 정회원</li>
+                            <li>대한턱관절교합학회 정회원</li>
+                            <li>Whinish 초정밀 접착 솔루션 마스터</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Dr. Kim Jun-heon -->
+                <div class="doctor-card animate-up">
+                    <div class="doctor-img">
+                        <img src="../assets/img/dr-kim.png" alt="김준헌 병원장" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="doctor-info">
+                        <span class="tag">Hospital Director</span>
+                        <h2>김준헌 병원장</h2>
+                        <span class="position">치의학 박사 | 서울대학교 치과대학 | 교정 전문의</span>
+                        <ul>
+                            <li>단국대학교 치의학 박사</li>
+                            <li>스웨덴 Goteborg 대학교 Vasteras 구강외과 방문의</li>
+                            <li>전) 치과교정학 외래교수</li>
+                            <li>유럽/미국 임플란트 학회 정회원</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Dr. Park Sun-hye -->
+                <div class="doctor-card animate-up">
+                    <div class="doctor-img">
+                        <img src="../assets/img/dr-park.png" alt="박선혜 원장" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="doctor-info">
+                        <span class="tag">Director</span>
+                        <h2>박선혜 원장</h2>
+                        <span class="position">치주과 전문의 | 치의학 박사 과정 | 우수보철치과의</span>
+                        <ul>
+                            <li>대한치과보철학회 인증 우수보철치과의</li>
+                            <li>심미수복 및 접착학 전문가</li>
+                            <li>Whinish 라이프사이클 예방 관리팀장</li>
+                            <li>대한치주과학회 정회원</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

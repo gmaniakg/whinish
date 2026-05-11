@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whinish Global Instagram | Whinish</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .insta-profile {
+            max-width: 935px;
+            margin: 0 auto 50px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-radius: 50%;
+            padding: 4px;
+        }
+        .profile-img div {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+        .profile-info h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .stats b { color: var(--text-main); }
+        .bio {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .insta-item {
+            aspect-ratio: 1/1;
+            background: #eee;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .insta-item:hover img {
+            transform: scale(1.1);
+        }
+        .insta-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header"></header>
+
+    <main>
+        <section class="section">
+            <div class="insta-profile">
+                <div class="profile-img">
+                    <div>W</div>
+                </div>
+                <div class="profile-info">
+                    <h1>whinish_global</h1>
+                    <div class="stats">
+                        <span>게시물 <b>1,248</b></span>
+                        <span>팔로워 <b>24.5k</b></span>
+                        <span>팔로잉 <b>152</b></span>
+                    </div>
+                    <div class="bio">
+                        <b>Whinish Global | 초정밀 치아복구 솔루션</b><br>
+                        ✨ 80% 이상의 일본인 환자가 찾는 강남 No.1 치과<br>
+                        🇯🇵 일본인 전담 코디네이터 상주 | Kakao: whinish_jp<br>
+                        📍 강남역 12번 출구 도보 3분
+                    </div>
+                </div>
+            </div>
+
+            <div class="insta-grid">
+                <div class="insta-item">
+                    <img src="../assets/img/insta-1.png" alt="Happy Patient">
+                    <div class="insta-overlay">❤️ 1.2k 💬 45</div>
+                </div>
+                <div class="insta-item">
+                    <img src="../assets/img/insta-2.png" alt="Japanese Coordinator">
+                    <div class="insta-overlay">❤️ 856 💬 22</div>
+                </div>
+                <div class="insta-item">
+                    <div style="width:100%; height:100%; background:#f8f9fa; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; font-size:0.9rem;">
+                        "欲 없는 올바른 치과"<br>30년의 신뢰를 Whinish가 이어갑니다.
+                    </div>
+                    <div class="insta-overlay">❤️ 2.1k 💬 89</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

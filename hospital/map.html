@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오시는 길 | Whinish</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .map-section {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .map-frame {
+            background: #eee;
+            height: 600px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #999;
+        }
+        .info-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+        .info-item {
+            margin-bottom: 30px;
+        }
+        .info-item h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .time-table {
+            width: 100%;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        .time-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .time-row span:first-child {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header"></header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <p style="color: var(--accent-color); font-weight: 600;">Location & Contact</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">Whinish 오시는 길</h1>
+                </div>
+
+                <div class="map-section">
+                    <div class="map-frame">
+                        <!-- Google Maps or Kakao Map would be embedded here -->
+                        <p>강남역 12번 출구 인근 (지도 준비 중)</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-item">
+                            <h3>📍 주소</h3>
+                            <p>서울특별시 강남구 강남대로92길 17 (역삼동) 1층, 2층</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>📞 대표번호</h3>
+                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent-color);">02-569-7528</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>🚇 지하철</h3>
+                            <p>2호선/신분당선 <strong>강남역 12번 출구</strong> 도보 3분 거리</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>🚗 주차 안내</h3>
+                            <p>비전타워(Vision Tower) 무료 주차 가능<br>국기원사거리 방향에서 강남역 방면 GS25 골목 진입 후 좌회전</p>
+                        </div>
+                        
+                        <div class="time-table">
+                            <h3>⏰ 진료 시간</h3>
+                            <div class="time-row"><span>평 일</span> <span>10:00 - 19:00</span></div>
+                            <div class="time-row"><span>토요일</span> <span>10:00 - 14:00</span></div>
+                            <div class="time-row"><span>점심시간</span> <span>13:00 - 14:00</span></div>
+                            <p style="font-size: 0.85rem; color: #ff6b6b; margin-top: 10px;">* 토요일은 점심시간 없이 진료합니다. <br>* 일요일 및 공휴일은 휴진입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
