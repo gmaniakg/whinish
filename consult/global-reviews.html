@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글로벌 리뷰 | WHITESTYLE DENTAL</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .review-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        .review-card::before {
+            content: '🇯🇵';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+        .review-tag {
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .review-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .review-content-kr {
+            font-size: 1rem;
+            color: var(--text-main);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .review-content-jp {
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.5;
+            font-style: italic;
+            border-top: 1px dashed #eee;
+            padding-top: 15px;
+        }
+        .review-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px;">GLOBAL SOCIAL PROOF</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">일본 환자가 인정한 화이트스타일</h1>
+                    <p style="color: var(--text-muted); margin-top: 20px;">일본 최대 한국 여행 정보 사이트 '코네스트(KONEST)'의 생생한 리얼 후기를 확인하세요.</p>
+                </div>
+
+                <div class="review-grid">
+                    <!-- Review 1 -->
+                    <div class="review-card animate-up">
+                        <span class="review-tag">KONEST BEST</span>
+                        <h3 class="review-title">명확한 비용 안내로 안심</h3>
+                        <p class="review-content-kr">"사전에 들었던 금액과 동일하며 추가 청구가 없었습니다. 너무 비싸지도 싸지도 않은 균형 잡힌 가격이라고 생각합니다."</p>
+                        <p class="review-content-jp">事前に聞いていた金額と同じで追加請求はありませんでした。高すぎず安すぎず、バランスの良い価格だと思います。</p>
+                        <div class="review-footer"><span>2026.04.19</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card animate-up">
+                        <span class="review-tag">IMPLANT</span>
+                        <h3 class="review-title">임플란트 상담이 이해하기 쉬움</h3>
+                        <p class="review-content-kr">"일본에서는 고액이라 들었던 임플란트인데, 이곳에서는 비용 내역을 자세히 설명해 주었습니다. CT 영상도 일본어로 설명해 주어 안심했습니다."</p>
+                        <p class="review-content-jp">日本では高額と言われたインプラントですが、こちらでは費用内訳を細かく説明してくれました。CT画像も日本語で説明してくれて安心。</p>
+                        <div class="review-footer"><span>2026.04.14</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card animate-up">
+                        <span class="review-tag">CORRECTION</span>
+                        <h3 class="review-title">교정하길 정말 잘했습니다</h3>
+                        <p class="review-content-kr">"치열뿐만 아니라 치아 교합과 얼굴 비대칭도 개선되어 매우 만족스럽습니다. 일본어 통역도 친절해서 약 2년 동안 안심하고 다닐 수 있었습니다."</p>
+                        <p class="review-content-jp">歯並びだけでなく歯の噛み合わせや、顔の歪みも改善されてとても満足です。日本語の通訳も丁寧で、約2年間安心して通えました。</p>
+                        <div class="review-footer"><span>2023.06.03</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card animate-up">
+                        <span class="review-tag">SUPPORT</span>
+                        <h3 class="review-title">30년 역사의 신뢰감</h3>
+                        <p class="review-content-kr">"강남에서 30년이나 이어져 온 이유를 알 것 같습니다. 상담이 매우 정중하고 위생 관리도 철저해서 안심하고 치료받았습니다."</p>
+                        <p class="review-content-jp">江南で30年も続いている理由が分かりました。カウンセリングが非常に丁寧です。衛生管理もしっかりされています。</p>
+                        <div class="review-footer"><span>2026.03.10</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+                    
+                    <!-- Review 5 -->
+                    <div class="review-card animate-up">
+                        <span class="review-tag">TECHNOLOGY</span>
+                        <h3 class="review-title">기술력이 정말 높습니다</h3>
+                        <p class="review-content-kr">"임플란트 완성도가 매우 자연스러워서 제 치아처럼 씹을 수 있습니다. 원장님께 맡기길 정말 잘했다는 생각이 듭니다."</p>
+                        <p class="review-content-jp">インプラントの仕上がりがとても自然で、自分の歯のように噛めます。先生にお願いして正解でした。</p>
+                        <div class="review-footer"><span>2024.11.18</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 80px; padding: 40px; background: #fdfdfd; border-radius: 20px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">일본인 환자분들의 더 많은 후기는 <a href="https://www.konest.com/contents/clinic_mise_kuchi.html?id=4403" target="_blank" style="color:var(--primary-color); font-weight:700; text-decoration:underline;">코네스트 공식 페이지</a>에서 확인하실 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
