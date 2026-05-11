@@ -1,20 +1,43 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whinish Global Instagram | Whinish</title>
+    <title>Instagram | Whinish</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
+        .tabs {
+            max-width: 935px;
+            margin: 0 auto 40px;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid var(--border-color);
+        }
+        .tab-btn {
+            padding: 15px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-muted);
+            border-top: 2px solid transparent;
+            margin-top: -1px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-top-color: var(--primary-color);
+        }
+        
         .insta-profile {
             max-width: 935px;
-            margin: 0 auto 50px;
+            margin: 0 auto 30px;
             display: flex;
             align-items: center;
             gap: 80px;
             padding: 40px 20px;
-            border-bottom: 1px solid var(--border-color);
         }
         .profile-img {
             width: 150px;
@@ -33,10 +56,22 @@
             justify-content: center;
             font-weight: 800;
             color: var(--primary-color);
+            font-size: 2rem;
         }
         .profile-info h1 {
             font-size: 1.8rem;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .follow-btn {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-decoration: none;
         }
         .stats {
             display: flex;
@@ -46,7 +81,7 @@
         .stats b { color: var(--text-main); }
         .bio {
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
             color: var(--text-muted);
         }
 
@@ -71,9 +106,6 @@
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        .insta-item:hover img {
-            transform: scale(1.1);
-        }
         .insta-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -88,6 +120,9 @@
         .insta-item:hover .insta-overlay {
             opacity: 1;
         }
+        
+        .account-section { display: none; }
+        .account-section.active { display: block; }
     </style>
 </head>
 <body>
@@ -96,40 +131,65 @@
 
     <main>
         <section class="section">
-            <div class="insta-profile">
-                <div class="profile-img">
-                    <div>W</div>
+            <!-- Tab Switcher -->
+            <div class="tabs">
+                <div class="tab-btn active" onclick="switchAccount('kr')">🇰🇷 Whinish Korea</div>
+                <div class="tab-btn" onclick="switchAccount('jp')">🇯🇵 Whinish Japan</div>
+            </div>
+
+            <!-- Korea Account -->
+            <div id="account-kr" class="account-section active">
+                <div class="insta-profile">
+                    <div class="profile-img">
+                        <div>W</div>
+                    </div>
+                    <div class="profile-info">
+                        <h1>whitestyledentalclinic <a href="https://www.instagram.com/whitestyledentalclinic/" target="_blank" class="follow-btn">팔로우</a></h1>
+                        <div class="stats">
+                            <span>게시물 <b>854</b></span>
+                            <span>팔로워 <b>12.8k</b></span>
+                            <span>팔로잉 <b>210</b></span>
+                        </div>
+                        <div class="bio">
+                            <b>Whinish | 초정밀 디지털 치과 솔루션</b><br>
+                            🦷 30년 전통의 기술력, 1:1 맞춤 진료<br>
+                            💎 당신만을 위한 하이엔드 심미치료<br>
+                            📍 강남역 12번 출구 | 카톡: 화이트스타일치과
+                        </div>
+                    </div>
                 </div>
-                <div class="profile-info">
-                    <h1>whinish_global</h1>
-                    <div class="stats">
-                        <span>게시물 <b>1,248</b></span>
-                        <span>팔로워 <b>24.5k</b></span>
-                        <span>팔로잉 <b>152</b></span>
-                    </div>
-                    <div class="bio">
-                        <b>Whinish Global | 초정밀 치아복구 솔루션</b><br>
-                        ✨ 80% 이상의 일본인 환자가 찾는 강남 No.1 치과<br>
-                        🇯🇵 일본인 전담 코디네이터 상주 | Kakao: whinish_jp<br>
-                        📍 강남역 12번 출구 도보 3분
-                    </div>
+                <div class="insta-grid">
+                    <div class="insta-item"><img src="../assets/img/treatment.png"><div class="insta-overlay">❤️ 452</div></div>
+                    <div class="insta-item"><img src="../assets/img/reception.png"><div class="insta-overlay">❤️ 389</div></div>
+                    <div class="insta-item"><div style="width:100%; height:100%; background:#f8f9fa; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; font-size:0.9rem;">"본질에 집중하는 아름다움"<br>Whinish의 시작입니다.</div></div>
                 </div>
             </div>
 
-            <div class="insta-grid">
-                <div class="insta-item">
-                    <img src="../assets/img/insta-1.png" alt="Happy Patient">
-                    <div class="insta-overlay">❤️ 1.2k 💬 45</div>
-                </div>
-                <div class="insta-item">
-                    <img src="../assets/img/insta-2.png" alt="Japanese Coordinator">
-                    <div class="insta-overlay">❤️ 856 💬 22</div>
-                </div>
-                <div class="insta-item">
-                    <div style="width:100%; height:100%; background:#f8f9fa; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; font-size:0.9rem;">
-                        "欲 없는 올바른 치과"<br>30년의 신뢰를 Whinish가 이어갑니다.
+            <!-- Japan Account -->
+            <div id="account-jp" class="account-section">
+                <div class="insta-profile">
+                    <div class="profile-img">
+                        <div>W</div>
                     </div>
-                    <div class="insta-overlay">❤️ 2.1k 💬 89</div>
+                    <div class="profile-info">
+                        <h1>whitestylejp <a href="https://www.instagram.com/whitestylejp/" target="_blank" class="follow-btn">팔로우</a></h1>
+                        <div class="stats">
+                            <span>게시물 <b>1,248</b></span>
+                            <span>팔로워 <b>24.5k</b></span>
+                            <span>팔로잉 <b>152</b></span>
+                        </div>
+                        <div class="bio">
+                            <b>Whinish Global | ホワイトスタイル歯科</b><br>
+                            ✨ 80%以上の日本人が選ぶ江南No.1歯科<br>
+                            🇯🇵 日本人コーディネーター常駐<br>
+                            📍 江南駅12番出口 徒歩3分 | LINE: whinish_jp
+                        </div>
+                    </div>
+                </div>
+                <div class="insta-grid">
+                    <div class="insta-item"><img src="../assets/img/insta-1.png"><div class="insta-overlay">❤️ 1.2k</div></div>
+                    <div class="insta-item"><img src="../assets/img/insta-2.png"><div class="insta-overlay">❤️ 856</div></div>
+                    <div class="insta-item"><div style="width:100%; height:100%; background:#f8f9fa; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; font-size:0.9rem;">"欲のない正しい歯科"<br>30年の信頼をWhinishが継承します。</div></div>
                 </div>
             </div>
         </section>
@@ -138,5 +198,14 @@
     <footer id="main-footer"></footer>
 
     <script src="../assets/js/main.js"></script>
+    <script>
+        function switchAccount(type) {
+            document.querySelectorAll('.account-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById('account-' + type).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
