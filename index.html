@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
-        .trust-section { background: #fff; padding: 100px 0; border-bottom: 1px solid var(--border-color); }
+        .trust-section { background: #fff; padding: 100px 0; }
         .trust-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .trust-video { flex: 1.5; aspect-ratio: 16/9; background: #000; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .trust-content { flex: 1; }
         .trust-content h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 25px; line-height: 1.3; }
-        .trust-content p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
         
+        .press-section { background: var(--bg-light); padding: 80px 0; }
+        .press-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .press-card { background: #fff; padding: 25px; border-radius: 15px; border: 1px solid var(--border-color); }
+        .press-card .p-tag { color: var(--accent-color); font-weight: 700; font-size: 0.8rem; margin-bottom: 10px; display: block; }
+        .press-card h4 { font-size: 1.1rem; color: var(--primary-color); margin-bottom: 10px; line-height: 1.4; }
+        .press-card p { font-size: 0.85rem; color: var(--text-muted); }
+
         .shorts-section { background: #0a0a0b; color: #fff; padding: 100px 0; overflow: hidden; }
         .shorts-container { display: flex; align-items: center; gap: 80px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .shorts-video { flex: 1; max-width: 400px; aspect-ratio: 9/16; background: #000; border-radius: 30px; overflow: hidden; border: 8px solid #1a1a1c; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
@@ -45,20 +51,46 @@
             </div>
         </section>
 
-        <!-- New: Trust Section (Yu Oh-seong Video) -->
+        <!-- Trust Section (Video) -->
         <section class="trust-section">
             <div class="trust-container">
                 <div class="trust-content animate-up">
                     <span class="tag">Celebrity Testimonial</span>
                     <h2>배우 유오성님이<br><span style="color:var(--accent-color)">23년간 단골인 이유</span></h2>
-                    <p>강남에서 30년간 자리를 지켜온 화이트스타일치과. 국민 배우 유오성님이 23년째 믿고 찾는 이유, 그 진정성 있는 이야기를 확인해보세요.</p>
-                    <div style="display:flex; gap:20px;">
-                        <div class="stat-mini"><b>23년</b><br><span>실제 단골</span></div>
-                        <div class="stat-mini"><b>30년</b><br><span>임상 전통</span></div>
-                    </div>
+                    <p>강남에서 30년간 자리를 지켜온 화이트스타일치과. 국민 배우 유오성님이 23년째 믿고 찾는 이유를 영상으로 확인하세요.</p>
                 </div>
                 <div class="trust-video animate-up">
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gsJ7fYfQueA" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Press Section (News) -->
+        <section class="press-section">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                    <div>
+                        <span class="tag">Press Release</span>
+                        <h2 style="font-size: 2rem; color: var(--primary-color);">언론이 주목한 화이트스타일</h2>
+                    </div>
+                    <a href="media/news.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: underline;">전체 기사보기</a>
+                </div>
+                <div class="press-grid">
+                    <div class="press-card animate-up">
+                        <span class="p-tag">소셜밸류</span>
+                        <h4>화이트스타일치과, 통증 완화로 편안한 치료 환경 강화</h4>
+                        <p>환자들의 치과 치료 공포심을 줄이기 위한 통증 완화 시스템 도입 보도.</p>
+                    </div>
+                    <div class="press-card animate-up">
+                        <span class="p-tag">디지털타임스</span>
+                        <h4>검진기관평가 최고등급(S등급) 획득</h4>
+                        <p>국가건강검진 구강검진 분야에서 최고 수준의 의료 서비스를 인정받았습니다.</p>
+                    </div>
+                    <div class="press-card animate-up">
+                        <span class="p-tag">뉴스1</span>
+                        <h4>김준헌 원장 기재부 장관상 수상</h4>
+                        <p>성실 납세를 통해 국가 재정에 기여한 공로로 모범납세자 표창 수상.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -92,7 +124,7 @@
             </div>
         </section>
 
-        <!-- Dynamic Video Story Section (Shorts) -->
+        <!-- Dynamic Video Story Section -->
         <section class="shorts-section">
             <div class="shorts-container">
                 <div class="shorts-video animate-up">
@@ -101,7 +133,7 @@
                 <div class="shorts-content animate-up">
                     <span class="tag">Premium Outcome</span>
                     <h2>화이트스타일이 제안하는<br><span style="color:var(--accent-color)">휘니쉬 프리미엄 솔루션</span></h2>
-                    <p>단 하루 만에 완성되는 휘니쉬만의 독보적인 기술력. 화이트스타일치과의 30년 신뢰가 뒷받침하기에 가능한 기적 같은 변화를 직접 확인하세요.</p>
+                    <p>단 하루 만에 완성되는 휘니쉬만의 독보적인 기술력. 화이트스타일치과의 30년 신뢰가 뒷받침하기에 가능한 변화를 직접 확인하세요.</p>
                     <a href="minish/about.html" class="btn btn-primary">WHINISH 알아보기</a>
                 </div>
             </div>
