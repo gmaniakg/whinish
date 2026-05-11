@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById(id);
         if (el) {
             fetch(file)
-                .then(response => response.text())
-                .then(data => {
+                .then(response => response.arrayBuffer())
+                .then(buffer => {
+                    const decoder = new TextDecoder('utf-8');
+                    const data = decoder.decode(buffer);
                     el.innerHTML = data;
                     // Re-initialize header scroll effect after loading
                     if (id === 'main-header') initHeaderScroll();
