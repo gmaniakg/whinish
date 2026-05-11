@@ -131,18 +131,21 @@
                             <div class="rating">${stars}</div>
                             <div class="review-text">${review.body}</div>
                             <div class="reviewer">
-                                <div class="reviewer-avatar">${review.author.nickname.charAt(0)}</div>
+                                <div class="reviewer-avatar">${review.nickname.charAt(0)}</div>
                                 <div class="reviewer-info">
-                                    <b>${review.author.nickname} 님</b>
-                                    <span>${review.created} | 방문자 리뷰</span>
+                                    <b>${review.nickname} 님</b>
+                                    <span>${review.date} | 네이버 방문자 리뷰</span>
                                 </div>
                             </div>
                         `;
                         container.appendChild(card);
                     });
+                } else {
+                    container.innerHTML = '<p style="text-align:center; grid-column:1/-1;">리뷰를 불러올 수 없습니다.</p>';
                 }
             } catch (error) {
                 console.error('Error loading reviews:', error);
+                document.getElementById('dynamic-reviews').innerHTML = '<p style="text-align:center; grid-column:1/-1;">서버 연결 오류가 발생했습니다.</p>';
             }
         }
         document.addEventListener('DOMContentLoaded', fetchReviews);
