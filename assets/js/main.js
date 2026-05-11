@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    loadComponent('main-header', '/whinish/components/header.html');
-    loadComponent('main-footer', '/whinish/components/footer.html');
+    loadComponent('main-header', '/components/header.html');
+    loadComponent('main-footer', '/components/footer.html');
 
     function initHeaderScroll() {
         const header = document.getElementById('main-header');
