@@ -395,7 +395,7 @@ footer {
     .container { padding: 0 25px; }
 
     /* Index.html specific overrides */
-    .trust-container, .shorts-container {
+    .trust-container, .shorts-container, .art-concept-container {
         flex-direction: column;
         text-align: center;
         gap: 40px;
