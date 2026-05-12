@@ -1,23 +1,127 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whinish | Preparation</title>
+    <title>STERILIZATION SYSTEM | WHINISH PREMIUM</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .hero-clean {
+            background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), url('../assets/img/clean-bg.jpg');
+            background-size: cover; background-position: center;
+            height: 450px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+        }
+        .hero-clean h1 { font-size: 3.5rem; letter-spacing: 5px; margin-bottom: 10px; }
+        
+        .clean-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px;
+        }
+        .clean-card {
+            background: #fff; padding: 40px; border-radius: 20px; border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .clean-card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
+        .clean-card h3 { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        .clean-card h3 i { color: var(--accent-color); font-style: normal; }
+        .clean-card p { color: var(--text-muted); line-height: 1.8; }
+
+        .process-section { background: var(--bg-light); padding: 100px 0; margin-top: 100px; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px; }
+        .step-item { background: #fff; padding: 30px; border-radius: 15px; text-align: center; position: relative; }
+        .step-num { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent-color); color: var(--primary-color); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; }
+        .step-item h4 { margin: 15px 0 10px; color: var(--primary-color); }
+        .step-item p { font-size: 0.85rem; color: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .clean-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .hero-clean h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
     <header id="main-header"></header>
+    
     <main>
+        <section class="hero-clean">
+            <div class="container">
+                <p class="uppercase" style="letter-spacing: 3px; font-weight: 600; color: var(--accent-color);">Zero Infection Policy</p>
+                <h1 class="uppercase">Clean System</h1>
+                <p>보이지 않는 곳까지 완벽하게, 화이트스타일의 철저한 위생 원칙입니다.</p>
+            </div>
+        </section>
+
         <section class="section">
-            <div class="container" style="text-align: center; padding: 100px 0;">
-                <h1 style="font-size: 3rem; color: var(--primary-color);">준비 중인 페이지입니다.</h1>
-                <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">Whinish의 정교한 콘텐츠를 준비하고 있습니다. 잠시만 기다려 주세요.</p>
-                <a href="../index.html" style="display: inline-block; margin-top: 40px; padding: 12px 30px; background: var(--primary-color); color: #fff; border-radius: 5px;">홈으로 돌아가기</a>
+            <div class="container">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
+                    <h2 class="uppercase" style="color: var(--accent-color); font-size: 1rem; letter-spacing: 3px; margin-bottom: 15px;">Advanced Technology</h2>
+                    <h3 style="font-size: 2.5rem; color: var(--primary-color); line-height: 1.3;">대학병원 수준의<br>첨단 멸균 전문 장비 시스템</h3>
+                </div>
+
+                <div class="clean-grid">
+                    <div class="clean-card">
+                        <h3><i>01</i> 고압증기 멸균기 (Autoclave)</h3>
+                        <p>고온·고압의 강력한 증기를 이용하여 진료 기구에 부착된 모든 박테리아, 바이러스, 포자를 100% 완벽하게 사멸시키는 가장 신뢰도 높은 멸균 방식입니다.</p>
+                    </div>
+                    <div class="clean-card">
+                        <h3><i>02</i> 저온 EO 가스 멸균기</h3>
+                        <p>고온에 변형될 우려가 있는 초정밀 플라스틱 및 고무 재질의 기구들을 저온에서 EO 가스를 이용해 소독하여, 기구의 수명은 보호하면서 멸균력은 극대화합니다.</p>
+                    </div>
+                    <div class="clean-card">
+                        <h3><i>03</i> 전용 초음파 세척기</h3>
+                        <p>기구의 미세한 틈새나 복잡한 구조 내부에 잔류할 수 있는 미세 오염물질을 초음파 파동으로 물리적으로 완벽하게 분리 제거하는 1차 세척 단계입니다.</p>
+                    </div>
+                    <div class="clean-card">
+                        <h3><i>04</i> 핸드피스 전용 소독기</h3>
+                        <p>환자의 구강 내에서 직접 작동하는 핸드피스는 내부 카트리지까지 정밀 소독이 필수입니다. 휘니쉬는 전용 소독기를 통해 교차 감염을 원천 차단합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2 class="uppercase" style="font-size: 2rem; color: var(--primary-color);">10-Step Sterilization</h2>
+                    <p style="color: var(--text-muted); margin-top: 10px;">타협하지 않는 화이트스타일만의 10단계 멸균 프로세스</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-num">01</div>
+                        <h4>침전 세척</h4>
+                        <p>사용 직후 전용 효소 세정제에 침전</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">02</div>
+                        <h4>초음파 세척</h4>
+                        <p>미세 오염물질 1차 제거</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">03</div>
+                        <h4>자동 세척</h4>
+                        <p>의료용 자동 세척기 정밀 세척</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">04</div>
+                        <h4>완전 건조</h4>
+                        <p>멸균 효율을 위한 수분 제거</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.9rem;">... 이후 <b>개별 패킹 → 고압 멸균 → 멸균 확인 → 자외선 소독 보관</b>의 과정을 거쳐 환자분께 전달됩니다.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="card" style="background: var(--primary-color); color: #fff; padding: 60px; border-radius: 30px;">
+                    <h2 class="uppercase" style="font-size: 2rem; margin-bottom: 20px;">Safe Water System</h2>
+                    <p style="opacity: 0.8; line-height: 1.8; max-width: 800px; margin: 0 auto;">화이트스타일치과는 기구뿐만 아니라 입을 헹구는 <b>진료수</b>까지 관리합니다. 세균을 99.9% 살균하는 치아염소산수 정수 시스템을 통해 수관 내부의 바이러스를 차단하여 가장 깨끗한 물로 진료합니다.</p>
+                </div>
             </div>
         </section>
     </main>
+
     <footer id="main-footer"></footer>
     <script src="../assets/js/main.js"></script>
 </body>

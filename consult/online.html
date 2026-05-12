@@ -1,24 +1,168 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whinish | Preparation</title>
+    <title>ONLINE CONSULTATION | WHINISH PREMIUM</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .consult-hero {
+            background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('../assets/img/reception.png');
+            background-size: cover; background-position: center;
+            height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+        }
+        .consult-form-container {
+            max-width: 800px; margin: -100px auto 100px; background: #fff; padding: 60px; border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1); position: relative; z-index: 10;
+        }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .form-group { display: flex; flex-direction: column; gap: 10px; }
+        .form-group label { font-weight: 700; color: var(--primary-color); font-size: 0.9rem; }
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 15px; border: 1px solid var(--border-color); border-radius: 8px; font-family: inherit; font-size: 1rem;
+        }
+        .form-group textarea { height: 150px; resize: none; }
+        .form-group input:focus { outline: none; border-color: var(--accent-color); }
+        
+        .privacy-box {
+            background: var(--bg-light); padding: 20px; border-radius: 8px; font-size: 0.85rem; color: var(--text-muted);
+            height: 100px; overflow-y: auto; margin-bottom: 20px; border: 1px solid var(--border-color);
+        }
+        
+        #result-message { margin-top: 20px; padding: 15px; border-radius: 8px; display: none; text-align: center; font-weight: 600; }
+        #result-message.success { background: #e8f5e9; color: #2e7d32; display: block; }
+        #result-message.error { background: #ffebee; color: #c62828; display: block; }
+
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .consult-form-container { padding: 40px 20px; margin-top: -50px; }
+            .consult-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
     <header id="main-header"></header>
+    
     <main>
+        <section class="consult-hero">
+            <div class="container">
+                <p class="uppercase" style="letter-spacing: 3px; font-weight: 600; color: var(--accent-color);">Premium Service</p>
+                <h1 class="uppercase" style="font-size: 3.5rem;">Online Consultation</h1>
+                <p>당신의 고민을 남겨주시면, 전문 상담원이 정성을 다해 답변해 드립니다.</p>
+            </div>
+        </section>
+
         <section class="section">
-            <div class="container" style="text-align: center; padding: 100px 0;">
-                <h1 style="font-size: 3rem; color: var(--primary-color);">준비 중인 페이지입니다.</h1>
-                <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">Whinish의 정교한 콘텐츠를 준비하고 있습니다. 잠시만 기다려 주세요.</p>
-                <a href="../index.html" style="display: inline-block; margin-top: 40px; padding: 12px 30px; background: var(--primary-color); color: #fff; border-radius: 5px;">홈으로 돌아가기</a>
+            <div class="container">
+                <div class="consult-form-container">
+                    <form id="online-consult-form">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="82b8c61c-c1f7-4153-9e87-69efc30c28dd">
+                        <input type="hidden" name="subject" value="[WHINISH] 새로운 온라인 상담 신청이 접수되었습니다.">
+                        <input type="hidden" name="from_name" value="WHINISH PREMIUM">
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>성함 (NAME)</label>
+                                <input type="text" name="name" placeholder="성함을 입력해주세요" required>
+                            </div>
+                            <div class="form-group">
+                                <label>연락처 (PHONE)</label>
+                                <input type="tel" name="phone" placeholder="'-' 제외하고 입력" required>
+                            </div>
+                            <div class="form-group">
+                                <label>관심 진료 (INTEREST)</label>
+                                <select name="category" required>
+                                    <option value="">진료 과목 선택</option>
+                                    <option value="WHINISH">WHINISH (초정밀 보철)</option>
+                                    <option value="IMPLANT">임플란트</option>
+                                    <option value="ORTHO">치아교정</option>
+                                    <option value="WHITE">치아미백/심미</option>
+                                    <option value="GENERAL">일반진료</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>상담 희망 시간 (TIME)</label>
+                                <select name="preferred_time">
+                                    <option value="any">상관없음</option>
+                                    <option value="morning">오전 (10:00 - 13:00)</option>
+                                    <option value="afternoon">오후 (14:00 - 18:00)</option>
+                                    <option value="evening">야간 (18:00 이후, 화/목)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <label>상담 내용 (MESSAGE)</label>
+                            <textarea name="message" placeholder="궁금하신 내용을 자세히 적어주시면 정확한 상담이 가능합니다." required></textarea>
+                        </div>
+
+                        <div style="margin-bottom: 30px;">
+                            <label style="display: block; margin-bottom: 10px; font-weight: 700; color: var(--primary-color); font-size: 0.9rem;">개인정보 수집 및 이용 동의</label>
+                            <div class="privacy-box">
+                                화이트스타일치과는 온라인 상담 서비스 제공을 위해 아래와 같이 개인정보를 수집하고 있습니다.<br><br>
+                                1. 수집항목: 성함, 연락처, 상담내용<br>
+                                2. 수집목적: 온라인 상담 답변 및 예약 안내<br>
+                                3. 보유기간: 목적 달성 후 즉시 파기 (최대 1년 보관)<br>
+                                * 귀하는 동의를 거부할 수 있으나, 동의 거부 시 상담 서비스 이용이 제한될 수 있습니다.
+                            </div>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.9rem;">
+                                <input type="checkbox" required style="width: 18px; height: 18px;"> 개인정보 수집 및 이용에 동의합니다.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 20px;">상담 신청하기 (SUBMIT)</button>
+                        
+                        <div id="result-message"></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
+
     <footer id="main-footer"></footer>
     <script src="../assets/js/main.js"></script>
+    <script>
+        const form = document.getElementById('online-consult-form');
+        const result = document.getElementById('result-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            result.className = '';
+            result.innerHTML = "전송 중입니다...";
+            result.style.display = "block";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.className = 'success';
+                    result.innerHTML = "상담 신청이 완료되었습니다. 곧 연락드리겠습니다.";
+                    form.reset();
+                } else {
+                    console.log(response);
+                    result.className = 'error';
+                    result.innerHTML = json.message;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.className = 'error';
+                result.innerHTML = "전송 중 오류가 발생했습니다. 다시 시도해 주세요.";
+            });
+        });
+    </script>
 </body>
 </html>

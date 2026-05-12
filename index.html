@@ -7,23 +7,9 @@
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
-        .trust-section { background: #fff; padding: 100px 0; }
-        .trust-container { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* Index Page Specific Overrides */
         .trust-video { flex: 1.5; aspect-ratio: 16/9; background: #000; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .trust-content { flex: 1; }
-        .trust-content h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 25px; line-height: 1.3; }
-        
-        .press-section { background: var(--bg-light); padding: 80px 0; }
-        .press-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
-        .press-card { background: #fff; padding: 25px; border-radius: 15px; border: 1px solid var(--border-color); }
-        .press-card .p-tag { color: var(--accent-color); font-weight: 700; font-size: 0.8rem; margin-bottom: 10px; display: block; }
-        .press-card h4 { font-size: 1.1rem; color: var(--primary-color); margin-bottom: 10px; line-height: 1.4; }
-        .press-card p { font-size: 0.85rem; color: var(--text-muted); }
-
-        .shorts-section { background: #0a0a0b; color: #fff; padding: 100px 0; overflow: hidden; }
-        .shorts-container { display: flex; align-items: center; gap: 80px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .shorts-video { flex: 1; max-width: 400px; aspect-ratio: 9/16; background: #000; border-radius: 30px; overflow: hidden; border: 8px solid #1a1a1c; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-        .shorts-content { flex: 1.2; }
     </style>
 </head>
 <body>
@@ -163,8 +149,58 @@
                     <a href="minish/about.html" class="btn btn-primary">WHINISH 알아보기</a>
                 </div>
             </div>
+        <!-- Quick Inquiry Section -->
+        <section class="section" style="background: var(--primary-color); color: #fff;">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <span class="tag">Quick Consultation</span>
+                    <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 20px;">지금 바로<br><span style="color:var(--accent-color)">프리미엄 상담</span>을 신청하세요</h2>
+                    <p style="opacity: 0.8; line-height: 1.8;">30년 경력의 노하우와 초정밀 기술이 만나 당신의 미소를 완성합니다. 성함과 연락처를 남겨주시면 정성을 다해 상담해 드립니다.</p>
+                </div>
+                <div class="card" style="text-align: left; padding: 40px;">
+                    <form id="quick-form">
+                        <input type="hidden" name="access_key" value="82b8c61c-c1f7-4153-9e87-69efc30c28dd">
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" name="name" placeholder="성함 (NAME)" required style="width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 5px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <input type="tel" name="phone" placeholder="연락처 (PHONE)" required style="width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 5px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <select name="interest" style="width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 5px;">
+                                <option value="WHINISH">WHINISH (심미보철)</option>
+                                <option value="IMPLANT">임플란트</option>
+                                <option value="ORTHO">치아교정</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">상담 신청하기 (SEND)</button>
+                        <p id="form-status" style="margin-top: 15px; font-size: 0.85rem; text-align: center; color: var(--text-muted); display: none;"></p>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
+
+    <script>
+        document.getElementById('quick-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            status.style.display = 'block';
+            status.innerText = '전송 중...';
+            
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(this)
+            }).then(res => res.json()).then(data => {
+                if(data.success) {
+                    status.innerText = '상담 신청이 완료되었습니다.';
+                    this.reset();
+                } else {
+                    status.innerText = '오류가 발생했습니다. 다시 시도해 주세요.';
+                }
+            });
+        });
+    </script>
 
     <footer id="main-footer"></footer>
 

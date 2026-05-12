@@ -27,6 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.classList.remove('scrolled');
             }
         });
+
+        // Mobile Menu Toggle
+        const toggleBtn = header.querySelector('.mobile-toggle');
+        const nav = header.querySelector('nav');
+        if (toggleBtn && nav) {
+            toggleBtn.addEventListener('click', () => {
+                header.classList.toggle('mobile-nav-open');
+                toggleBtn.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    header.classList.remove('mobile-nav-open');
+                    toggleBtn.classList.remove('active');
+                });
+            });
+        }
     }
 
     // Simple reveal animation for sections
