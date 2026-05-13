@@ -195,9 +195,14 @@
             const object = Object.fromEntries(formData);
 
             try {
-                const response = await fetch('/api/contact', {
+                object.access_key = "82b8c61c-c1f7-4153-9e87-69efc30c28dd";
+                
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
                     body: JSON.stringify(object)
                 });
 
