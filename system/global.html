@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
+<<<<<<< HEAD
         .hero-global {
             background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/global-bg.png');
             background-size: cover; background-position: center;
@@ -35,11 +36,38 @@
             .news-grid { grid-template-columns: 1fr; }
             .stat-grid { grid-template-columns: 1fr; }
             .hero-global h1 { font-size: 2.5rem; }
+=======
+        .global-hero {
+            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/global-support.png') center/cover;
+            padding: 150px 0 100px;
+            color: #fff;
+            text-align: center;
+        }
+        .support-card {
+            background: #fff;
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            margin-top: 40px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        .support-info {
+            flex: 1.5;
+        }
+        .support-img {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+>>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
         }
     </style>
 </head>
 <body>
     <header id="main-header"></header>
+<<<<<<< HEAD
     
     <main>
         <section class="hero-global">
@@ -105,6 +133,58 @@
             <div class="container" style="text-align: center;">
                 <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 30px;">"일본 현지 커뮤니티가 먼저 인정하는 치과"</h3>
                 <p style="color: var(--text-muted); line-height: 1.8; max-width: 900px; margin: 0 auto;">화이트스타일치과는 1994년 개원 이후, 일본의 유명 연예인 및 인플루언서들이 한국 방문 시 즐겨 찾는 '셀럽 치과'로 자리 잡았습니다. 일본 현지인들 사이에서는 '대물림하며 방문하는 신뢰의 치과'로 알려져 있으며, 저희는 그 신뢰에 보답하기 위해 세계적 수준의 의료 서비스를 지속적으로 제공하고 있습니다.</p>
+=======
+
+    <main>
+        <!-- Hero Section -->
+        <section class="global-hero">
+            <div class="container animate-up">
+                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">GLOBAL MEDICAL CARE</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">세계를 향한 화이트스타일의 기술력</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    국경을 넘어 신뢰받는 WHINISH 프리미엄 서비스. <br>
+                    일본, 미국 등 전 세계 20여 개국 환자들이 먼저 찾는 대한민국 대표 글로벌 치과입니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Japanese Support -->
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <span class="tag">Special Support for Japanese Patients</span>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-color);">일본 환자를 위한 전용 토탈 케어</h2>
+                </div>
+
+                <div class="support-card animate-up">
+                    <div class="support-info">
+                        <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 25px;">언어의 장벽 없는 정밀 진료</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 30px;">
+                            일본어 전문 코디네이터가 상주하여 초기 상담부터 사후 관리까지 밀착 서포트합니다. <br>
+                            일본 환자들이 가장 어려워하는 전문 의학 용어 설명부터 예약 관리까지 일본어로 완벽하게 응대합니다.
+                        </p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;">🇯🇵 일본어 전문 통역 코디네이터 상주</li>
+                            <li style="margin-bottom: 12px;">📱 LINE(라인) 메신저 실시간 일본어 상담</li>
+                            <li style="margin-bottom: 12px;">📑 일본 보험 청구 서류 및 진단서 발급</li>
+                            <li style="margin-bottom: 12px;">🏥 강남역 도보 1분, 최고의 접근성</li>
+                        </ul>
+                    </div>
+                    <div class="support-img">
+                        <img src="../assets/img/ortho-hero.png" alt="Japanese Support">
+                    </div>
+                </div>
+
+                <!-- Konest Social Proof -->
+                <div style="margin-top: 100px; padding: 60px; background: #fff5f5; border-radius: 30px; text-align: center;" class="animate-up">
+                    <img src="https://www.konest.com/contents/images/common/logo.png" alt="Konest" style="height: 30px; margin: 0 auto 30px;">
+                    <h2 style="font-size: 2.2rem; color: #ff4b2b; margin-bottom: 20px;">코네스트가 인정한 신뢰도</h2>
+                    <p style="color: var(--text-muted); line-height: 1.8; max-width: 900px; margin: 0 auto;">
+                        일본 최대 여행 커뮤니티 '코네스트(KONEST)'에서 수년간 높은 평점과 실제 일본 환자들의 극찬이 이어지고 있습니다. <br>
+                        강남에서 30년간 자리를 지켜온 전통은 전 세계 어디에서도 통하는 가장 강력한 증거입니다.
+                    </p>
+                </div>
+>>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
             </div>
         </section>
     </main>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
+<<<<<<< HEAD
         .hero-sub {
             background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('../assets/img/clinic-bg.png');
             background-size: cover;
@@ -107,11 +108,53 @@
             .ortho-grid { grid-template-columns: 1fr; }
             .point-grid { grid-template-columns: 1fr; }
             .hero-sub h1 { font-size: 2.5rem; }
+=======
+        .ortho-hero {
+            background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('../assets/img/ortho-hero.png') center/cover;
+            padding: 150px 0 100px;
+            color: #fff;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        .benefit-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+        .global-support {
+            background: var(--bg-light);
+            border-radius: 30px;
+            padding: 60px;
+            margin-top: 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .global-support-img {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .global-support-content {
+            flex: 1.2;
+>>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
         }
     </style>
 </head>
 <body>
     <header id="main-header"></header>
+<<<<<<< HEAD
     
     <main>
         <section class="hero-sub">
@@ -148,12 +191,66 @@
                             <li>식사 및 양치 시 자유로운 탈착</li>
                             <li>구강 내 이물감 및 상처 최소화</li>
                             <li>3D 시뮬레이션을 통한 결과 예측</li>
+=======
+
+    <main>
+        <!-- Hero Section -->
+        <section class="ortho-hero">
+            <div class="container animate-up">
+                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">DIGITAL ORTHODONTICS</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">치아교정, 그 이상의 예술</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    단순히 치열을 맞추는 것을 넘어, 당신의 얼굴형과 미소의 라인까지 고려합니다. <br>
+                    30년 전통의 노하우와 최첨단 디지털 시스템이 만난 WHINISH만의 정교한 교정 솔루션.
+                </p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section">
+            <div class="container">
+                <div class="grid-3">
+                    <div class="benefit-card animate-up">
+                        <div class="feature-icon">🔬</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">3D 디지털 정밀 진단</h3>
+                        <p style="color: var(--text-muted);">아이테로(iTero) 스캐너를 통해 입안을 3D로 정밀하게 구현하고, 교정 후의 모습을 미리 시뮬레이션하여 오차 없는 계획을 세웁니다.</p>
+                    </div>
+                    <div class="benefit-card animate-up" style="animation-delay: 0.2s;">
+                        <div class="feature-icon">⚡</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">급속 교정 솔루션</h3>
+                        <p style="color: var(--text-muted);">전통적인 방식보다 마찰을 줄인 자가결찰 브라켓과 디지털 맞춤형 가이드를 통해 치료 기간을 획기적으로 단축합니다.</p>
+                    </div>
+                    <div class="benefit-card animate-up" style="animation-delay: 0.4s;">
+                        <div class="feature-icon">👨‍⚕️</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">교정 전문의 책임 진료</h3>
+                        <p style="color: var(--text-muted);">30년 경력의 김준헌 병원장과 숙련된 의료진이 처음부터 끝까지 변함없이 당신의 미소를 책임집니다.</p>
+                    </div>
+                </div>
+
+                <!-- Global Support -->
+                <div class="global-support animate-up">
+                    <div class="global-support-img">
+                        <img src="../assets/img/treatment.png" alt="Global Support">
+                    </div>
+                    <div class="global-support-content">
+                        <span class="tag">Global Standard</span>
+                        <h2 style="font-size: 2.2rem; color: var(--primary-color); margin: 20px 0;">일본인 유학생 및 외국인 환자 최적화 시스템</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 30px; line-height: 1.8;">
+                            WHINISH는 일본 환자들이 가장 많이 찾는 강남역 치과로 유명합니다. <br>
+                            일본어 전담 코디네이터 상주로 의사소통의 불편함이 없으며, 단기간 체류 환자를 위한 집중 치료 프로그램을 운영하고 있습니다.
+                        </p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px;">✅ 일본어 전담 상담원 상주</li>
+                            <li style="margin-bottom: 10px;">✅ 단기 집중 교정 프로그램</li>
+                            <li style="margin-bottom: 10px;">✅ 글로벌 보험 서류 발급 지원</li>
+>>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
+<<<<<<< HEAD
         <section class="whinish-point">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
@@ -183,6 +280,16 @@
                     <h2 class="uppercase" style="font-size: 2rem; margin-bottom: 20px;">Ready for your new smile?</h2>
                     <p style="opacity: 0.8; margin-bottom: 40px;">당신에게 가장 적합한 교정 솔루션을 지금 바로 상담받아보세요.</p>
                     <a href="../consult/online.html" class="btn uppercase" style="background: var(--accent-color); color: var(--primary-color); padding: 15px 40px; font-weight: 700;">Consultation</a>
+=======
+        <!-- CTA -->
+        <section class="section" style="background: var(--primary-color); color: #fff; text-align: center;">
+            <div class="container animate-up">
+                <h2 style="font-size: 2.5rem; margin-bottom: 30px;">당신의 미소, WHINISH가 디자인합니다</h2>
+                <p style="margin-bottom: 40px; opacity: 0.8;">지금 바로 전문가의 정밀 진단을 예약하세요.</p>
+                <div style="display: flex; justify-content: center; gap: 20px;">
+                    <a href="../consult/reservation.html" class="btn btn-primary" style="background: var(--accent-color); border:none;">온라인 예약</a>
+                    <a href="https://pf.kakao.com/_Vtxdwl" class="btn btn-outline" style="border-color: #fff; color: #fff;">카카오톡 상담</a>
+>>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
                 </div>
             </div>
         </section>

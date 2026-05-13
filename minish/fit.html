@@ -1,23 +1,128 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whinish | Preparation</title>
+    <title>WHINISH FOR ME | WHINISH PREMIUM</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .fit-hero {
+            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/fit-for-me.png') center/cover;
+            padding: 150px 0 100px;
+            color: #fff;
+            text-align: center;
+        }
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .fit-card {
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .fit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+        .fit-card-content {
+            padding: 40px;
+        }
+        .fit-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <header id="main-header"></header>
+
     <main>
+        <!-- Hero Section -->
+        <section class="fit-hero">
+            <div class="container animate-up">
+                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">WHINISH FOR ME</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">누구에게나 꼭 맞는 WHINISH</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    미학적 완성도와 건강한 기능의 조화. <br>
+                    라이프스타일에 따라, 고민에 따라 가장 완벽한 솔루션을 제안합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
         <section class="section">
-            <div class="container" style="text-align: center; padding: 100px 0;">
-                <h1 style="font-size: 3rem; color: var(--primary-color);">준비 중인 페이지입니다.</h1>
-                <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">Whinish의 정교한 콘텐츠를 준비하고 있습니다. 잠시만 기다려 주세요.</p>
-                <a href="../index.html" style="display: inline-block; margin-top: 40px; padding: 12px 30px; background: var(--primary-color); color: #fff; border-radius: 5px;">홈으로 돌아가기</a>
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <span class="tag">Solution by Lifestyle</span>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-color);">당신을 위한 휘니쉬 솔루션</h2>
+                </div>
+
+                <div class="fit-grid">
+                    <div class="fit-card animate-up">
+                        <div class="fit-card-content">
+                            <span class="fit-tag">PROFESSIONALS</span>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">비즈니스 성공을 위한 자신감</h3>
+                            <p style="color: var(--text-muted); line-height: 1.8;">
+                                첫인상이 중요한 비즈니스 리더와 전문직 종사자를 위한 솔루션입니다. <br>
+                                인위적이지 않은 자연스러운 치아 색상과 형태 복구로 당당한 미소를 완성합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fit-card animate-up" style="animation-delay: 0.1s;">
+                        <div class="fit-card-content">
+                            <span class="fit-tag">WEDDING</span>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">인생에서 가장 빛나는 순간</h3>
+                            <p style="color: var(--text-muted); line-height: 1.8;">
+                                결혼식을 앞둔 예비 신랑, 신부를 위한 단기간 미학적 솔루션입니다. <br>
+                                치아 미백과 정교한 보철을 통해 웨딩 화보에서 가장 돋보이는 미소를 선사합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fit-card animate-up" style="animation-delay: 0.2s;">
+                        <div class="fit-card-content">
+                            <span class="fit-tag">INTERNATIONAL</span>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">글로벌 환자를 위한 집중 케어</h3>
+                            <p style="color: var(--text-muted); line-height: 1.8;">
+                                짧은 체류 기간 내에 최상의 결과를 원하는 해외 거주 환자분들을 위한 프로그램입니다. <br>
+                                원데이 시스템을 통해 시간 낭비 없이 완벽한 치료를 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fit-card animate-up" style="animation-delay: 0.3s;">
+                        <div class="fit-card-content">
+                            <span class="fit-tag">SENIORS</span>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">건강과 아름다움의 조화</h3>
+                            <p style="color: var(--text-muted); line-height: 1.8;">
+                                노화로 인해 약해진 치아의 기능을 회복하고 싶은 시니어를 위한 솔루션입니다. <br>
+                                치아 본연의 기능을 강화하면서도 젊어 보이는 미적 효과를 동시에 누리세요.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section" style="background: var(--bg-light); text-align: center;">
+            <div class="container animate-up">
+                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 30px;">당신에게 가장 필요한 솔루션은 무엇인가요?</h2>
+                <a href="../consult/online.html" class="btn btn-primary">1:1 맞춤 상담 신청하기</a>
             </div>
         </section>
     </main>
+
     <footer id="main-footer"></footer>
     <script src="../assets/js/main.js"></script>
 </body>
