@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 | 화이트스타일치과</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        html { scroll-behavior: smooth; }
+        .tab-section { min-height: 100vh; }
+    </style>
+    <style>
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        .video-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .video-thumb {
+            aspect-ratio: 16/9;
+            background: #000;
+            position: relative;
+        }
+        .video-body {
+            padding: 25px;
+        }
+        .video-tag {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .video-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .video-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* TikTok Section */
+        .tiktok-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .tiktok-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            height: 580px;
+        }
+        .tiktok-badge {
+            background: #000;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 10px;
+        }
+    </style>
+<style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .news-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+        .news-press {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .news-snippet {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 15px;
+        }
+        .news-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        
+        .year-divider {
+            grid-column: 1 / -1;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    </style>
+<style>
+        .insta-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        .insta-header h1 { font-size: 3rem; color: var(--primary-color); margin-bottom: 10px; }
+        .insta-header p { color: var(--text-muted); font-size: 1.1rem; }
+
+        .tabs {
+            max-width: 935px;
+            margin: 0 auto 50px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .tab-btn {
+            padding: 15px 40px;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--text-muted);
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .insta-profile {
+            max-width: 935px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            padding: 0 20px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-radius: 50%;
+            padding: 4px;
+        }
+        .profile-img div {
+            width: 100%; height: 100%;
+            background: #fff;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; color: var(--primary-color); font-size: 2.5rem;
+        }
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .follow-btn {
+            background: #0095f6;
+            color: #fff;
+            padding: 8px 24px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+        .stats span { font-size: 1.1rem; }
+        .stats b { color: var(--text-main); }
+        .bio {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+        .insta-item {
+            aspect-ratio: 1/1;
+            background: #eee;
+            overflow: hidden;
+            position: relative;
+            border-radius: 4px;
+        }
+        .insta-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        
+        .account-section { display: none; }
+        .account-section.active { display: block; animation: fadeIn 0.5s ease; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+</head>
+<body>
+    <header id="main-header"></header>
+    <main>
+        <div id="video" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600;">Whinish in Media</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">미디어가 주목하는 Whinish</h1>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">
+                        공중파 뉴스부터 틱톡 화제의 영상까지, <br>
+                        검증된 실력과 생생한 후기를 영상으로 확인하세요.
+                    </p>
+                </div>
+
+                <!-- Main Video Gallery (YouTube) -->
+                <div class="video-grid">
+                    <div class="video-card animate-up">
+                        <div class="video-thumb">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/OpqtCwYrqOc" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                        <div class="video-body">
+                            <span class="video-tag">Press Release</span>
+                            <h3><span class="tiktok-badge" style="background:#ff6b6b">MBC</span> 디지털 가이드 임플란트 보도</h3>
+                            <p>MBC 뉴스데스크에 소개된 초정밀 디지털 가이드 식립 기술. 오차 없는 정확함과 빠른 회복의 비결을 공개합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card animate-up">
+                        <div class="video-thumb">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EES-ghn6-W8" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                        <div class="video-body">
+                            <span class="video-tag">Celebrity Choice</span>
+                            <h3>배우 유오성 님이 선택한 Whinish</h3>
+                            <p>"믿고 맡길 수 있는 곳을 찾았습니다." 배우 유오성 님의 생생한 치료 후기와 추천 영상입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TikTok / Shorts Gallery -->
+                <div style="margin-top: 100px; margin-bottom: 50px;">
+                    <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px;">Whinish TikTok Shorts</h2>
+                    <p style="color: var(--text-muted);">틱톡에서 화제가 된 Whinish의 숏폼 콘텐츠입니다.</p>
+                </div>
+
+                <div class="tiktok-grid">
+                    <div class="tiktok-card animate-up">
+                        <iframe src="https://www.tiktok.com/embed/v2/7179792634792201474" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="tiktok-card animate-up">
+                        <iframe src="https://www.tiktok.com/embed/v2/7328329125091888402" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="tiktok-card animate-up">
+                        <iframe src="https://www.tiktok.com/embed/v2/7634546346984344852" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+</div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+<div id="news" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px;">IN THE PRESS</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">언론에서 본 화이트스타일</h1>
+                    <p style="color: var(--text-muted); margin-top: 20px;">공신력 있는 매체가 주목한 화이트스타일치과의 혁신과 신뢰의 기록입니다.</p>
+                </div>
+
+                <div class="news-grid">
+                    <!-- 2026 -->
+                    <div class="year-divider">2026</div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">소셜밸류</span><h3 class="news-title">화이트스타일치과, 통증 완화로 편안한 치료 환경 강화</h3><p class="news-snippet">화이트스타일치과 김준헌 병원장은 환자의 심리적 안정과 신체적 부담을 동시에 줄이는 진료 시스템을 강화하고 있다고 밝혔다.</p></div>
+                        <div class="news-footer"><span>2026.04.28</span><a href="https://www.socialvalue.kr/news/view/1065600167859573" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">대학저널</span><h3 class="news-title">임플란트 수명 좌우하는 ‘정밀 진단’과 사후 관리의 중요성</h3><p class="news-snippet">화이트스타일치과 김준헌 병원장은 정밀 진단 시스템을 통해 개인별 맞춤형 시술 계획을 세우는 것이 중요하다고 강조했다.</p></div>
+                        <div class="news-footer"><span>2026.04.01</span><a href="https://dhnews.co.kr/news/view/1065593169602596" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">메가경제</span><h3 class="news-title">치아 상실 부담 줄이는 ‘전체임플란트’, 치료 방식 선택이 만족도 좌우</h3><p class="news-snippet">화이트스타일치과 김준헌 병원장은 전체 임플란트 시술 시 환자의 구강 구조와 건강 상태를 면밀히 분석하여 최적의 치료 경로를 선택하는 것이 중요하다고 조언했다.</p></div>
+                        <div class="news-footer"><span>2026.02.05</span><a href="https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065593995501144" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">소셜밸류</span><h3 class="news-title">바로 완성 임플란트, 하루 만에 완성되는 빠른 치료로 주목</h3><p class="news-snippet">화이트스타일치과 김준헌 병원장은 정교한 디지털 장비를 활용해 당일 보철물 장착까지 가능하다고 설명했다.</p></div>
+                        <div class="news-footer"><span>2026.01.23</span><a href="https://www.socialvalue.kr/news/view/1065592796178154" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="year-divider">2025 - 2023</div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">라이브뉴스</span><h3 class="news-title">정확한 진단으로 임플란트 치료 성공률 높여</h3><p class="news-snippet">강남역 화이트스타일치과 김준헌 병원장은 임플란트 시술의 성공은 정확한 진단에서 시작된다며, 3D CT 등 첨단 장비의 활용도를 높이고 있다고 전했다.</p></div>
+                        <div class="news-footer"><span>2025.02.10</span><a href="http://www.livesnews.com/news/article.html?no=47867" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">메디컬투데이</span><h3 class="news-title">치주질환으로 임플란트 시술 주의사항은?</h3><p class="news-snippet">김준헌 화이트스타일치과 병원장은 잇몸 질환이 있는 경우 임플란트 식립 전 충분한 잇몸 치료가 선행되어야 부작용을 최소화할 수 있다고 강조했다.</p></div>
+                        <div class="news-footer"><span>2023.03.29</span><a href="https://mdtoday.co.kr/news/view/1065610051059501" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">세계비즈</span><h3 class="news-title">임플란트 치료, 병원 선택 시 고려해야 할 사항은?</h3><p class="news-snippet">김준헌 강남 화이트스타일치과 병원장은 의료진의 풍부한 임상 경험과 사후 관리 프로그램이 잘 갖춰진 곳을 선택하는 것이 장기적인 만족도를 위해 필수적이라고 말했다.</p></div>
+                        <div class="news-footer"><span>2023.02.25</span><a href="http://www.segyebiz.com/newsView/20230225506364?OutUrl=naver" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div class="year-divider">2022</div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">세계비즈</span><h3 class="news-title">무삭제 라미네이트, 치아 삭제로 인한 부작용 예방 가능</h3><p class="news-snippet">강남 화이트스타일치과 김준헌 원장은 자연 치아를 최대한 보존하면서 심미적인 효과를 얻을 수 있는 무삭제 라미네이트 시술이 최근 선호되고 있다고 밝혔다.</p></div>
+                        <div class="news-footer"><span>2022.09.28</span><a href="http://www.segyebiz.com/newsView/20220928508113?OutUrl=naver" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">전국매일신문</span><h3 class="news-title">[전문의 칼럼] 치아 상실로 인한 임플란트, 치과 치료 시 주의점은</h3><p class="news-snippet">김준헌 강남 화이트스타일치과 병원장은 칼럼을 통해 임플란트 시술 시 과잉 진료를 피하고 정직한 진단을 제공하는 치과를 찾는 노하우를 공유했다.</p></div>
+                        <div class="news-footer"><span>2022.09.27</span><a href="http://www.jeonmae.co.kr/news/articleView.html?idxno=913401" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">세계비즈</span><h3 class="news-title">치주질환으로 상실된 치아, 임플란트 치료 시 주의점은</h3><p class="news-snippet">강남 화이트스타일치과 김준헌 병원장은 잇몸 뼈가 부족한 경우 뼈이식 임플란트를 통해 안정적인 식립이 가능하다고 조언했다.</p></div>
+                        <div class="news-footer"><span>2022.08.20</span><a href="http://www.segyebiz.com/newsView/20220820510033?OutUrl=naver" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">세계비즈</span><h3 class="news-title">무삭제라미네이트, 일반 치료와 ‘이렇게 달라요’</h3><p class="news-snippet">김준헌 강남 화이트스타일치과 병원장은 일반 라미네이트와 무삭제 방식의 차이점을 설명하며 환자 개별 치아 상태에 맞는 선택을 강조했다.</p></div>
+                        <div class="news-footer"><span>2022.07.15</span><a href="http://www.segyebiz.com/newsView/20220715521638?OutUrl=naver" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">팜뉴스</span><h3 class="news-title">임플란트 시술 전에 체크해야 할 점은?</h3><p class="news-snippet">강남 화이트스타일치과 김준헌 병원장은 전신 질환 여부와 복용 중인 약물을 미리 의료진에게 알리는 것이 안전한 수술을 위한 첫걸음이라고 전했다.</p></div>
+                        <div class="news-footer"><span>2022.07.05</span><a href="http://www.pharmnews.com/news/articleView.html?idxno=206555" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+
+                    <!-- History -->
+                    <div class="year-divider">Archives (2020 - 2005)</div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">디지털타임스</span><h3 class="news-title">화이트스타일치과, 검진기관평가 최고등급획득</h3><p class="news-snippet">국민건강보험공단 실시 국가건강검진 구강검진평가에서 S등급(최고등급)을 획득하며 우수성을 인정받았다.</p></div>
+                        <div class="news-footer"><span>2015.05.11</span><a href="http://www.dt.co.kr/contents.html?article_no=2015051102109923809012" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">뉴스1</span><h3 class="news-title">김준헌 원장 ‘납세자의 날’ 모범납세자 선정</h3><p class="news-snippet">성실한 납세 공로를 인정받아 제49회 납세자의 날에 기획재정부장관 표창을 수상했다.</p></div>
+                        <div class="news-footer"><span>2015.03.20</span><a href="http://news1.kr/articles/?2146103" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">한국경제</span><h3 class="news-title">안전한 임플란트를 위한 치과선택, 5가지가 중요하다</h3><p class="news-snippet">김준헌 원장은 성공적인 임플란트를 위해 임상 경험, 첨단 장비, 정품 사용 여부 등 5가지 체크 포인트를 제시했다.</p></div>
+                        <div class="news-footer"><span>2012.07.11</span><a href="http://wstarnews.hankyung.com/apps/news?nkey=201207111015331" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                    <div class="news-card animate-up">
+                        <div><span class="news-press">국민일보</span><h3 class="news-title">화이트 스타일 치과 김준헌 원장 “거듭난 인생 인술로 보은”</h3><p class="news-snippet">김준헌 원장의 인술 철학과 병원 운영 원칙을 다룬 인터뷰 기사로, 따뜻한 진료가 화제가 되었다.</p></div>
+                        <div class="news-footer"><span>2005.04.15</span><a href="https://n.news.naver.com/mnews/article/005/0000201540?sid=103" target="_blank" class="news-link">기사보기</a></div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 100px; padding: 40px; background: #fdfdfd; border-radius: 20px;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">이 외에도 지난 30년간 <b>총 39건 이상의 언론 보도</b>를 통해 <br>화이트스타일치과의 전문성과 성실함이 입증되었습니다.</p>
+                </div>
+            </div>
+        </section>
+    
+</div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+<div id="instagram" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+
+        <section class="section">
+            <div class="insta-header">
+                <h1>Whinish Instagram</h1>
+                <p>화이트스타일의 글로벌 라이프스타일을 만나보세요.</p>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="tabs">
+                <div class="tab-btn active" onclick="switchAccount('kr', event)">🇰🇷 Korea</div>
+                <div class="tab-btn" onclick="switchAccount('jp', event)">🇯🇵 Japan</div>
+            </div>
+
+            <!-- Korea Account -->
+            <div id="account-kr" class="account-section active">
+                <div class="insta-profile">
+                    <div class="profile-img"><div>W</div></div>
+                    <div class="profile-info">
+                        <h2>whitestyledentalclinic <a href="https://www.instagram.com/whitestyledentalclinic/" target="_blank" class="follow-btn">팔로우</a></h2>
+                        <div class="stats">
+                            <span>게시물 <b>854</b></span>
+                            <span>팔로워 <b>12.8k</b></span>
+                            <span>팔로잉 <b>210</b></span>
+                        </div>
+                        <div class="bio">
+                            <b>Whinish | 초정밀 디지털 치과 솔루션</b><br>
+                            🦷 30년 전통의 기술력, 1:1 맞춤 진료<br>
+                            💎 당신만을 위한 하이엔드 심미치료<br>
+                            📍 강남역 12번 출구 | 카톡: 화이트스타일치과
+                        </div>
+                    </div>
+                </div>
+                <div class="insta-grid">
+                    <div class="insta-item"><a href="https://www.instagram.com/whitestyledentalclinic/" target="_blank"><img src="../assets/img/insta-kr-1.png"></a></div>
+                    <div class="insta-item"><a href="https://www.instagram.com/whitestyledentalclinic/" target="_blank"><img src="../assets/img/insta-kr-2.png"></a></div>
+                    <div class="insta-item"><a href="https://www.instagram.com/whitestyledentalclinic/" target="_blank"><img src="../assets/img/insta-kr-3.png"></a></div>
+                    <div class="insta-item"><img src="../assets/img/treatment.png"></div>
+                    <div class="insta-item"><img src="../assets/img/reception.png"></div>
+                    <div class="insta-item"><div style="width:100%; height:100%; background:#f8f9fa; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; font-size:1rem; color:var(--primary-color); font-weight:600;">"본질에 집중하는 아름다움"<br>Whinish 프리미엄</div></div>
+                </div>
+            </div>
+
+            <!-- Japan Account -->
+            <div id="account-jp" class="account-section">
+                <div class="insta-profile">
+                    <div class="profile-img"><div>W</div></div>
+                    <div class="profile-info">
+                        <h2>whitestylejp <a href="https://www.instagram.com/whitestylejp/" target="_blank" class="follow-btn">フォロー</a></h2>
+                        <div class="stats">
+                            <span>投稿 <b>1,248</b></span>
+                            <span>フォロワー <b>24.5k</b></span>
+                            <span>フォロー中 <b>152</b></span>
+                        </div>
+                        <div class="bio">
+                            <b>Whinish Global | ホワイトスタイル歯科</b><br>
+                            ✨ 80%以上の日本人が選ぶ江南No.1歯科<br>
+                            🇯🇵 日本人コーディネーター常駐<br>
+                            📍 江南역 12번 출구 徒歩3分 | LINE: whinish_jp
+                        </div>
+                    </div>
+                </div>
+                <div class="insta-grid">
+                    <div class="insta-item"><a href="https://www.instagram.com/whitestylejp/" target="_blank"><img src="../assets/img/insta-jp-1.png"></a></div>
+                    <div class="insta-item"><a href="https://www.instagram.com/whitestylejp/" target="_blank"><img src="../assets/img/insta-jp-2.png"></a></div>
+                    <div class="insta-item"><a href="https://www.instagram.com/whitestylejp/" target="_blank"><img src="../assets/img/insta-jp-3.png"></a></div>
+                    <div class="insta-item"><img src="../assets/img/insta-1.png"></div>
+                    <div class="insta-item"><img src="../assets/img/insta-2.png"></div>
+                    <div class="insta-item"><div style="width:100%; height:100%; background:#f8f9fa; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; font-size:1rem; color:var(--primary-color); font-weight:600;">"30年の歴史と信頼"<br>Whinish Global</div></div>
+                </div>
+            </div>
+        </section>
+    
+<script>
+        function switchAccount(type, e) {
+            document.querySelectorAll('.account-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById('account-' + type).classList.add('active');
+            e.target.classList.add('active');
+        }
+    </script>
+</div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Smooth scrolling for hash links to offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetEl = document.querySelector(targetId);
+                if(targetEl) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetEl.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

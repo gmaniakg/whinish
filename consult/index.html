@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상담/예약 | 화이트스타일치과</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        html { scroll-behavior: smooth; }
+        .tab-section { min-height: 100vh; }
+    </style>
+    <style>
+        .reserve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .reserve-card {
+            background: #fff; padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center;
+            transition: all 0.3s ease;
+        }
+        .reserve-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--accent-color); }
+        .reserve-card h3 { margin: 20px 0; font-size: 1.5rem; color: var(--primary-color); }
+        .reserve-card p { color: var(--text-muted); margin-bottom: 30px; min-height: 50px; }
+        .btn-reserve { display: block; width: 100%; padding: 15px; border-radius: 10px; font-weight: 700; text-transform: uppercase; }
+        .btn-naver { background: #03c75a; color: #fff; }
+        .btn-kakao { background: #fee500; color: #3c1e1e; }
+        .btn-phone { background: var(--primary-color); color: #fff; }
+    </style>
+<style>
+        .consult-hero {
+            background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('../assets/img/reception.png');
+            background-size: cover; background-position: center;
+            height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+        }
+        .consult-form-container {
+            max-width: 800px;
+            margin: -100px auto 100px;
+            background: #fff;
+            padding: 60px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            position: relative; z-index: 10;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-transform: none;
+            /* Override body text-transform for inputs */
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .privacy-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .consult-form-container { padding: 40px 20px; margin-top: -50px; }
+            .consult-hero h1 { font-size: 2.5rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+<style>
+        .review-stats {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .stat-item h3 { font-size: 2.5rem; color: var(--primary-color); }
+        .stat-item p { color: var(--text-muted); }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .review-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .rating { color: #ffcc00; margin-bottom: 15px; }
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            height: 120px;
+            overflow: hidden;
+            position: relative;
+        }
+        .review-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 40px;
+            background: linear-gradient(transparent, #fff);
+        }
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        .reviewer-avatar {
+            width: 40px; height: 40px;
+            background: #eee;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; color: #999;
+        }
+        .reviewer-info b { font-size: 0.9rem; display: block; }
+        .reviewer-info span { font-size: 0.8rem; color: var(--text-muted); }
+    </style>
+<style>
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .review-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        .review-card::before {
+            content: '🇯🇵';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+        .review-tag {
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .review-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .review-content-kr {
+            font-size: 1rem;
+            color: var(--text-main);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .review-content-jp {
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.5;
+            font-style: italic;
+            border-top: 1px dashed #eee;
+            padding-top: 15px;
+        }
+        .review-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #bbb;
+        }
+    </style>
+<style>
+        .hw-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .hw-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .hw-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+        .hw-tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .hw-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .hw-content {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .hw-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #bbb;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 15px;
+        }
+        .hw-source {
+            text-align: center;
+            margin-top: 80px;
+            padding: 30px;
+            background: #fdfdfd;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+
+</head>
+<body>
+    <header id="main-header"></header>
+    <main>
+        <div id="reservation" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600;">Reservation</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">가장 쉬운 예약 방법</h1>
+                    <p style="color: var(--text-muted); margin-top: 20px;">원하시는 채널을 통해 빠르고 간편하게 예약하세요.</p>
+                </div>
+
+                <div class="reserve-grid">
+                    <!-- Naver Booking -->
+                    <div class="reserve-card animate-up">
+                        <div style="font-size: 3rem;">💚</div>
+                        <h3>NAVER 예약</h3>
+                        <p>네이버 아이디로 간편하게!<br>실시간 예약 현황을 확인하고 예약하세요.</p>
+                        <a href="https://booking.naver.com/booking/13/bizes/265482" target="_blank" class="btn-reserve btn-naver">네이버로 예약하기</a>
+                    </div>
+
+                    <!-- KakaoTalk -->
+                    <div class="reserve-card animate-up">
+                        <div style="font-size: 3rem;">💛</div>
+                        <h3>KAKAO 상담</h3>
+                        <p>카카오톡 1:1 채팅으로<br>궁금한 점을 바로 문의하고 예약하세요.</p>
+                        <a href="https://pf.kakao.com/_Vtxdwl" target="_blank" class="btn-reserve btn-kakao">카톡으로 상담하기</a>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="reserve-card animate-up">
+                        <div style="font-size: 3rem;">📞</div>
+                        <h3>전화 예약</h3>
+                        <p>상담원과 직접 통화하여<br>가장 빠른 일정을 조율하세요.</p>
+                        <a href="tel:1577-7287" class="btn-reserve btn-phone">1577-7287</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+</div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+<div id="online" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+
+        <section class="consult-hero">
+            <div class="container animate-up">
+                <p class="uppercase" style="letter-spacing: 3px; font-weight: 600; color: var(--accent-color);">Premium Service</p>
+                <h1 class="uppercase" style="font-size: 3.5rem;">Online Consultation</h1>
+                <p>당신의 고민을 남겨주시면, 전문 상담원이 정성을 다해 답변해 드립니다.</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="consult-form-container animate-up">
+                    <form id="contactForm">
+                        <input type="hidden" name="subject" value="Whinish 온라인 상담 신청">
+                        <input type="hidden" name="from_name" value="Whinish Website">
+
+                        <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label for="name">성함 (NAME)</label>
+                                <input type="text" id="name" name="name" placeholder="성함을 입력해주세요" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">연락처 (PHONE)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="'-' 제외하고 입력" required="">
+                            </div>
+                        </div>
+
+                        <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label for="interest">관심 진료 (INTEREST)</label>
+                                <select id="interest" name="interest" required="">
+                                    <option value="" disabled="" selected="">진료 항목을 선택해주세요</option>
+                                    <option value="WHINISH">휘니쉬 (심미보철)</option>
+                                    <option value="ORTHO">치아교정</option>
+                                    <option value="IMPLANT">임플란트</option>
+                                    <option value="WHITE">치아미백</option>
+                                    <option value="GENERAL">일반진료/기타</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferred_time">상담 희망 시간 (TIME)</label>
+                                <select id="preferred_time" name="preferred_time">
+                                    <option value="any">상관없음</option>
+                                    <option value="morning">오전 (10:00 - 13:00)</option>
+                                    <option value="afternoon">오후 (14:00 - 18:00)</option>
+                                    <option value="evening">야간 (18:00 이후, 화/목)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">상담 내용 (MESSAGE)</label>
+                            <textarea id="message" name="message" rows="5" placeholder="궁금하신 내용을 자유롭게 남겨주세요" required=""></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>개인정보 취급방침 동의</label>
+                            <div class="privacy-box">
+                                화이트스타일치과(이하 '본원')는 고객님의 개인정보를 중요시하며, '정보통신망 이용촉진 및 정보보호'에 관한 법률을 준수하고 있습니다. <br><br>
+                                1. 수집항목: 성함, 연락처, 상담내용 <br>
+                                2. 수집목적: 온라인 상담 답변 및 예약 안내 <br>
+                                3. 보유기간: 목적 달성 후 즉시 파기 (최대 1년 보관)
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+                                <input type="checkbox" id="privacy" name="privacy" style="width: auto;" required="">
+                                <label for="privacy" style="margin-bottom: 0; font-weight: 500;">개인정보 취급방침에
+                                    동의합니다.</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">상담 신청하기 (SUBMIT)</button>
+                        <div id="formStatus" style="margin-top: 20px; text-align: center; display: none; font-weight: 700; padding: 15px; border-radius: 8px;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    
+<script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('formStatus');
+            
+            btn.disabled = true;
+            btn.innerText = '전송 중...';
+            
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+
+            try {
+                object.access_key = "82b8c61c-c1f7-4153-9e87-69efc30c28dd";
+                
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(object)
+                });
+
+                const result = await response.json();
+                
+                status.style.display = 'block';
+                if (response.status === 200) {
+                    status.style.backgroundColor = '#e8f5e9';
+                    status.style.color = '#2e7d32';
+                    status.innerText = '✅ 상담 신청이 완료되었습니다. 곧 연락드리겠습니다!';
+                    form.reset();
+                } else {
+                    const errorMsg = result.message || '알 수 없는 오류';
+                    status.style.backgroundColor = '#ffebee';
+                    status.style.color = '#c62828';
+                    status.innerText = '❌ 전송 실패: ' + errorMsg;
+                }
+            } catch (error) {
+                status.style.display = 'block';
+                status.style.backgroundColor = '#ffebee';
+                status.style.color = '#c62828';
+                status.innerText = '❌ 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+            } finally {
+                btn.disabled = false;
+                btn.innerText = '상담 신청하기 (SUBMIT)';
+            }
+        });
+    </script>
+</div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+<div id="review" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600;">Real Patient Reviews</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">Whinish 생생후기</h1>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">
+                        광고가 아닌 실제 환자분들이 남겨주신 정성스러운 후기입니다. <br>
+                        30년 전통의 진심을 Whinish가 이어갑니다.
+                    </p>
+                </div>
+
+                <div class="review-stats">
+                    <div class="stat-item">
+                        <h3>4.9/5</h3>
+                        <p>평균 만족도</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>12,450+</h3>
+                        <p>누적 치료 후기</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>지인 추천율</p>
+                    </div>
+                </div>
+
+                <div class="review-grid" id="dynamic-reviews">
+                    <!-- Loading State -->
+                    <div style="text-align: center; grid-column: 1 / -1; padding: 50px;">
+                        <p style="color: var(--text-muted);">최신 리뷰를 불러오고 있습니다...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+<script>
+        async function fetchReviews() {
+            try {
+                const response = await fetch('/api/reviews');
+                const reviews = await response.json();
+                const container = document.getElementById('dynamic-reviews');
+                
+                if (reviews.length > 0) {
+                    container.innerHTML = '';
+                    reviews.forEach(review => {
+                        const stars = '★'.repeat(review.rating || 5);
+                        const card = document.createElement('div');
+                        card.className = 'review-card animate-up';
+                        card.innerHTML = `
+                            <div class="rating">${stars}</div>
+                            <div class="review-text">${review.body}</div>
+                            <div class="reviewer">
+                                <div class="reviewer-avatar">${review.nickname.charAt(0)}</div>
+                                <div class="reviewer-info">
+                                    <b>${review.nickname} 님</b>
+                                    <span>${review.date} | 네이버 방문자 리뷰</span>
+                                </div>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                } else {
+                    container.innerHTML = '<p style="text-align:center; grid-column:1/-1;">리뷰를 불러올 수 없습니다.</p>';
+                }
+            } catch (error) {
+                console.error('Error loading reviews:', error);
+                document.getElementById('dynamic-reviews').innerHTML = '<p style="text-align:center; grid-column:1/-1;">서버 연결 오류가 발생했습니다.</p>';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', fetchReviews);
+    </script>
+</div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+<div id="global-reviews" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px;">GLOBAL SOCIAL PROOF</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">일본 환자가 인정한 화이트스타일</h1>
+                    <p style="color: var(--text-muted); margin-top: 20px;">일본 최대 한국 여행 정보 사이트 '코네스트(KONEST)'의 생생한 리얼 후기를 확인하세요.</p>
+                </div>
+
+                <div class="review-grid">
+                    <!-- Existing Reviews -->
+                    <div class="review-card animate-up">
+                        <span class="review-tag">KONEST BEST</span>
+                        <h3 class="review-title">명확한 회계로 안심</h3>
+                        <p class="review-content-kr">"사전에 확인한 예상 비용과 실제 청구액이 동일했습니다. 명확한 회계 덕분에 외국에서도 안심하고 치료받을 수 있었습니다."</p>
+                        <p class="review-content-jp">明朗会計で安心。事前に確認した予想費用と実際の請求額が同じでした。明確な会計のおかげで、海外でも安心して治療を受けることができました。</p>
+                        <div class="review-footer"><span>2026.04.17</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <div class="review-card animate-up">
+                        <span class="review-tag">IMPLANT</span>
+                        <h3 class="review-title">임플란트 수술을 했습니다</h3>
+                        <p class="review-content-kr">"수술 중 일본어 통역사가 계속 곁에 있어주어 매우 안심되었습니다. 원장님의 설명도 알기 쉬웠고 경과도 매우 좋습니다."</p>
+                        <p class="review-content-jp">インプラントの手術をしました。手術中、日本語通訳の方がずっとそばにいてくれてとても安心しました。先生の説明も分かりやすく、経過もとても良いです。</p>
+                        <div class="review-footer"><span>2022.06.15</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <!-- New Reviews from Extraction -->
+                    <div class="review-card animate-up">
+                        <span class="review-tag">URGENT</span>
+                        <h3 class="review-title">급한 트러블에도 당일 대응</h3>
+                        <p class="review-content-kr">"출장 중 보철물이 빠져 급히 방문했는데, 라인을 통해 당일 예약이 가능했습니다. 친절한 일본어 설명에 감동했습니다."</p>
+                        <p class="review-content-jp">急なトラブルにも対応してくれた。出張中に詰め物が取れて急遽訪問しましたが、LINEで当日予約ができました。丁寧な日本語の説明に感動しました。</p>
+                        <div class="review-footer"><span>2026.04.17</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <div class="review-card animate-up">
+                        <span class="review-tag">ORTHO</span>
+                        <h3 class="review-title">교정 상담 및 정밀 진단</h3>
+                        <p class="review-content-kr">"교정 상담을 위해 방문했습니다. 강남역 바로 앞이라 접근성이 좋고 시설이 매우 깨끗합니다. 상담 내용도 매우 신뢰가 갔습니다."</p>
+                        <p class="review-content-jp">矯正相談。江南駅のすぐ近くでアクセスが良く、施設がとても綺麗です。カウンセリングの内容も非常に信頼できました。</p>
+                        <div class="review-footer"><span>2022.04.20</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <div class="review-card animate-up">
+                        <span class="review-tag">CLEANING</span>
+                        <h3 class="review-title">치아 스케일링 만족</h3>
+                        <p class="review-content-kr">"아프지 않고 꼼꼼하게 스케일링을 받았습니다. 입안이 정말 상쾌해졌어요. 정기적으로 방문하고 싶은 곳입니다."</p>
+                        <p class="review-content-jp">歯のクリーニング。痛くなく、丁寧にクリーニングしていただきました。口の中が本当にスッキリしました。定期的に通いたい場所です。</p>
+                        <div class="review-footer"><span>2022.01.10</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <div class="review-card animate-up">
+                        <span class="review-tag">EVENT</span>
+                        <h3 class="review-title">기념 이벤트로 가성비 치료</h3>
+                        <p class="review-content-kr">"29주년 이벤트를 통해 합리적인 가격으로 임플란트와 세라믹 치료를 받았습니다. 베테랑 원장님이 계셔서 믿음직스럽습니다."</p>
+                        <p class="review-content-jp">29周年記念のイベントでお得に治療できました。インプラントとセラミック治療を受けました。ベテランの先生がいて心強いです。</p>
+                        <div class="review-footer"><span>2025.10.15</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <div class="review-card animate-up">
+                        <span class="review-tag">RECOMMEND</span>
+                        <h3 class="review-title">지인에게 추천하고 싶은 치과</h3>
+                        <p class="review-content-kr">"친구 추천으로 방문했는데 대만족입니다! 충치 치료부터 교정까지 꼼꼼하게 봐주시고 스태프분들도 모두 친절합니다."</p>
+                        <p class="review-content-jp">満足！友人の勧めで訪問しましたが大満足です！虫歯治療から矯正まで丁寧に見てくださり、スタッフの方々も皆親절です。</p>
+                        <div class="review-footer"><span>2020.08.28</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <div class="review-card animate-up">
+                        <span class="review-tag">LOCATION</span>
+                        <h3 class="review-title">강남역 최고의 위치</h3>
+                        <p class="review-content-kr">"역 바로 근처라 찾기 쉬웠습니다. 치료 전후로 쇼핑이나 관광하기에도 좋은 위치이고, 병원 내부도 매우 청결합니다."</p>
+                        <p class="review-content-jp">江南駅のすぐ近く。駅のすぐそばで見つけやすかったです。治療の前後にショッピングや観光をするのにも良い場所で、院内も非常に清潔です。</p>
+                        <div class="review-footer"><span>2021.07.18</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+
+                    <div class="review-card animate-up">
+                        <span class="review-tag">REASSURANCE</span>
+                        <h3 class="review-title">외국에서도 안심하고 진료</h3>
+                        <p class="review-content-kr">"해외에서 치과 가기가 불안했는데, 일본어 대응이 완벽해서 스트레스가 전혀 없었습니다. 설명이 매우 명쾌합니다."</p>
+                        <p class="review-content-jp">安心して通えます。海外で歯科に行くのが不安でしたが、日本語対応が完璧でストレスが全くありませんでした。説明が非常に明쾌です。</p>
+                        <div class="review-footer"><span>2021.09.12</span><span>⭐⭐⭐⭐⭐</span></div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 80px; padding: 40px; background: #fdfdfd; border-radius: 20px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">일본인 환자분들의 더 많은 후기는 <a href="https://www.konest.com/contents/clinic_mise_kuchi.html?id=4403" target="_blank" style="color:var(--primary-color); font-weight:700; text-decoration:underline;">코네스트 공식 페이지</a>에서 확인하실 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+    
+</div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+<div id="handwritten-reviews" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px;">HANDWRITTEN REVIEWS</p>
+                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">환자분들의 자필 후기</h1>
+                    <p style="color: var(--text-muted); margin-top: 20px;">화이트스타일치과에서 직접 치료받으신 환자분들의 진심 어린 자필 후기입니다.</p>
+                </div>
+
+                <div class="hw-grid">
+                    <!-- 최신 후기 추가 (2025-2026) -->
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">급속교정</span>
+                        <h3 class="hw-title">20대 대학생 급속교정 사례</h3>
+                        <p class="hw-content">"처음 진찰을 받았을 때부터 어디가 문제인지, 또 그를 위해 어떤 치료가 필요한지 알기 쉽게 설명해 주셔서 안심하고 다닐 수 있었습니다. 또한 먼 지역에서 다니게 되었을 때도 친절하게 일정을 조정해 주셔서 문제없이 다닐 수 있었습니다. 감사합니다."</p>
+                        <div class="hw-meta"><span>20대 대학생 님</span><span>2026.04.17</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">치아교정</span>
+                        <h3 class="hw-title">강남역 직장인 교정 후기 (일본어 대응)</h3>
+                        <p class="hw-content">"일본에 살 때부터 교정을 하고 있었는데, 한국 치과가 빠르고 비용이 저렴하다는 말을 듣고 일본어 대응이 좋은 이곳을 선택했습니다. 설명이 친절하고 일본어 안내문이 잘 갖춰져 있어 좋았습니다. 시술 전 튀어나온 앞니와 턱 불균형 문제를 모두 해결해 주셔서 매우 만족합니다."</p>
+                        <div class="hw-meta"><span>하루토 님</span><span>2025.08.26</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">치아교정</span>
+                        <h3 class="hw-title">일본어 통역 서비스 교정 후기</h3>
+                        <p class="hw-content">"여러 치과에서 상담을 받았지만, 일본어 통역사 분이 상주하고 계셔서 불안함 없이 치료받을 수 있었습니다. 위생사 분들도 매우 친절했습니다. 긴 교정 기간이었지만 결과가 매우 예쁘게 나와서 적극 추천하고 싶습니다."</p>
+                        <div class="hw-meta"><span>미키코 님</span><span>2025.06.02</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">치아교정</span>
+                        <h3 class="hw-title">일본인 유학생 교정 완료 후기</h3>
+                        <p class="hw-content">"유학 중에 교정을 시작했습니다. 한국에서 하는 것에 불안함도 있었지만, 일본어가 통하고 친절하게 대해주셔서 안심했습니다. 유학 종료 후 일본에서 왕래하며 치료받느라 힘들었지만 예약 조율을 잘 해주셔서 성공적으로 마칠 수 있었습니다."</p>
+                        <div class="hw-meta"><span>유메카 님</span><span>2025.04.22</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">임플란트</span>
+                        <h3 class="hw-title">고난이도 21개 임플란트 식립 성공</h3>
+                        <p class="hw-content">"일본에서 수술이 어려웠던 21개의 임플란트 식립을 이곳에서 무사히 마쳤습니다. 약 1년 동안 한국을 오가며 지치기도 했지만, 의료진의 격려 덕분에 성공할 수 있었습니다. 이런 대수술을 성공적으로 해주는 병원은 드물다고 생각하며 깊은 감사를 표합니다."</p>
+                        <div class="hw-meta"><span>료타 님</span><span>2025.01.17</span></div>
+                    </div>
+
+                    <!-- 기존 후기 -->
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">20대 대학생 급속교정 사례 (일본인 유학생)</h3>
+                        <p class="hw-content">"일본에서 고민하다가 한국에서 교정을 결정했는데 정말 잘한 선택이었어요. 진행 속도도 빠르고 직원분들이 친절해서 안심하고 치료받았습니다. 결과에 대만족합니다!"</p>
+                        <div class="hw-meta"><span>일본인 유학생 님</span><span>2024.04.17</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">강남역 직장인 교정 후기 (하루토 님)</h3>
+                        <p class="hw-content">"일본어 대응이 가능한 스태프분들이 계셔서 의사소통에 전혀 문제가 없었습니다. 한국 치과의 빠른 속도와 합리적인 비용, 그리고 확실한 결과에 매우 만족하고 있어요."</p>
+                        <div class="hw-meta"><span>HARUTO 님</span><span>2023.08.26</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">강남역 일본인 교정 후기 (미키코 님)</h3>
+                        <p class="hw-content">"해외에서 교정하는 게 처음이라 걱정 많았는데, 원장님의 정중한 설명과 통역사분의 세심한 배려 덕분에 편안하게 치료받았습니다. 치열이 예뻐져서 너무 행복해요."</p>
+                        <div class="hw-meta"><span>MIKIKO 님</span><span>2023.06.02</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">IMPLANT</span>
+                        <h3 class="hw-title">중장년 임플란트 후기 (료타 님)</h3>
+                        <p class="hw-content">"40대가 되면서 치아 건강이 걱정되었는데, 화이트스타일에서 임플란트 치료를 받고 새 삶을 찾았습니다. 전문적인 진료와 사후 관리까지 완벽했습니다."</p>
+                        <div class="hw-meta"><span>RYOTA 님</span><span>2023.01.17</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">IMPLANT</span>
+                        <h3 class="hw-title">중년여성 임플란트 후기 (토모미 님)</h3>
+                        <p class="hw-content">"지인 추천으로 방문했는데 병원 분위기가 너무 좋고 원장님 실력도 믿음직스러웠어요. 임플란트 후에도 불편함 없이 잘 사용하고 있습니다. 감사합니다."</p>
+                        <div class="hw-meta"><span>TOMOMI 님</span><span>2023.01.14</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">대학생 교정 후기 (2년의 여정)</h3>
+                        <p class="hw-content">"교정 기간 동안 꼼꼼하게 체크해주신 덕분에 예상보다 일찍 끝났어요. 가지런해진 치아를 볼 때마다 웃음이 나옵니다. 강남역 치과 중 최고인 것 같아요."</p>
+                        <div class="hw-meta"><span>최O 님</span><span>2023.05.23</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">고등학생 교정 후기 (새로운 미소)</h3>
+                        <p class="hw-content">"처음에는 교정기 끼는 게 무서웠는데, 지금은 친구들이 예뻐졌다고 칭찬해줘서 너무 좋아요. 원장님과 간호사 언니들이 친절해서 치과 오는 게 즐거웠습니다."</p>
+                        <div class="hw-meta"><span>권O 님</span><span>2023.05.22</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">일본인 유학생 교정 후기 (유메카 님)</h3>
+                        <p class="hw-content">"일본인 전문 상담 시스템이 잘 갖춰져 있어서 불안함 없이 치료에만 집중할 수 있었습니다. 세심한 진료에 다시 한번 감사드립니다."</p>
+                        <div class="hw-meta"><span>YUMEKA 님</span><span>2023.09.06</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">30대 직장인 교정 리얼 후기</h3>
+                        <p class="hw-content">"늦은 나이에 시작한 교정이라 걱정했지만, 전문적인 치료 프로세스 덕분에 아주 만족스러운 결과를 얻었습니다. 주변 직장인분들께도 강력 추천합니다."</p>
+                        <div class="hw-meta"><span>최O 님</span><span>2023.05.24</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">고등학생 교정 완료 후기</h3>
+                        <p class="hw-content">"친절한 의료진분들 덕분에 2년이라는 시간이 금방 지나갔네요. 예쁜 미소를 선물해주셔서 정말 감사합니다. 화이트스타일 짱!"</p>
+                        <div class="hw-meta"><span>현OO 님</span><span>2023.05.23</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">일본인 유학생 교정 사례 (오쿠무라 님)</h3>
+                        <p class="hw-content">"일본보다 훨씬 빠른 처리 속도와 첨단 장비에 놀랐습니다. 통역 서비스 덕분에 복잡한 진료 내용도 완벽하게 이해할 수 있었어요."</p>
+                        <div class="hw-meta"><span>OKUMURA 님</span><span>2023.05.19</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">30대 일본인 교정 후기 (카나코 님)</h3>
+                        <p class="hw-content">"청결한 병원 시설과 친절한 서비스, 그리고 무엇보다 원장님의 높은 숙련도에 감동했습니다. 교정 결과가 너무 자연스럽고 예뻐요."</p>
+                        <div class="hw-meta"><span>KANAKO 님</span><span>2023.05.19</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">4년간의 장기 교정 완료 (한OO 님)</h3>
+                        <p class="hw-content">"긴 시간 동안 한결같이 정성스럽게 진료해주신 덕분에 어려운 케이스였음에도 완벽하게 마무리되었습니다. 원장님께 진심으로 감사드립니다."</p>
+                        <div class="hw-meta"><span>한OO 님</span><span>2022.03.28</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">일본인 유학생 교정 (아사노 님)</h3>
+                        <p class="hw-content">"강남역 인근이라 접근성도 좋고, 일본인 환자에 대한 이해도가 높아서 매우 편안했습니다. 결과도 생각했던 것 이상으로 잘 나왔어요."</p>
+                        <div class="hw-meta"><span>ASANO 님</span><span>2022.02.28</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">유학생 교정치료 사례 (나이미 님)</h3>
+                        <p class="hw-content">"한국 유학 생활 중 가장 잘한 일이 여기서 교정한 거예요. 소통의 어려움 없이 전문적인 치료를 받을 수 있어 행운이었습니다."</p>
+                        <div class="hw-meta"><span>NAIMI 님</span><span>2022.02.07</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS/CAVITY</span>
+                        <h3 class="hw-title">교정 및 충치치료 후기 (키다니 님)</h3>
+                        <p class="hw-content">"교정 중에 충치가 생겨 걱정했는데, 협진 시스템이 잘 되어 있어 한 번에 해결할 수 있었습니다. 상세한 설명 덕분에 믿음이 갔어요."</p>
+                        <div class="hw-meta"><span>KIDANI 님</span><span>2022.01.26</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">ORTHODONTICS</span>
+                        <h3 class="hw-title">외국인 교정치료 사례 (야마네 님)</h3>
+                        <p class="hw-content">"해외에서의 치과 치료가 두려웠지만, 친절한 일본어 서포트 덕분에 안심할 수 있었습니다. 전문적인 실력에 감탄했습니다."</p>
+                        <div class="hw-meta"><span>YAMANE 님</span><span>2021.11.23</span></div>
+                    </div>
+                    <div class="hw-card animate-up">
+                        <span class="hw-tag">IMPLANT/GUM</span>
+                        <h3 class="hw-title">미국 이민자 임플란트 사례 (장OO 님)</h3>
+                        <p class="hw-content">"미국 오렌지카운티에서 왔는데, 미국의 치과 서비스와 비교해도 한국의 화이트스타일 기술력이 훨씬 뛰어나다고 느꼈습니다. 최고의 치료였습니다."</p>
+                        <div class="hw-meta"><span>장OO 님</span><span>2021.10.26</span></div>
+                    </div>
+                </div>
+
+                <div class="hw-source">
+                    <p style="color: var(--text-muted);">위 후기들은 <a href="http://whitestyle.com/bbs/board.php?bo_table=review" target="_blank" style="color:var(--primary-color); font-weight:700; text-decoration:underline;">화이트스타일치과 공식 홈페이지 자필후기 게시판</a>에서 확인하실 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+    
+</div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+
+    </main>
+    <footer id="main-footer"></footer>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Smooth scrolling for hash links to offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetEl = document.querySelector(targetId);
+                if(targetEl) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetEl.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
