@@ -490,6 +490,18 @@ footer {
     /* Pages Specific */
     .global-support, .support-card, .content-grid { flex-direction: column; gap: 30px; }
     .support-card { padding: 30px; }
+
+    /* Mobile Typography & Touch Targets */
+    body { font-size: 15px; }
+    p { font-size: 0.95rem; line-height: 1.7; }
+    .btn {
+        padding: 16px 24px;
+        font-size: 1rem;
+        min-width: 220px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @keyframes fadeIn {
