@@ -351,6 +351,11 @@ footer {
     opacity: 0;
 }
 
+/* Mobile Specific Global Elements */
+.mobile-quick-bar {
+    display: none;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
     .main-menu { gap: 20px; }
@@ -361,7 +366,7 @@ footer {
 
 @media (max-width: 768px) {
     :root {
-        --section-padding: 60px 0;
+        --section-padding: 40px 0;
     }
 
     .nav-container { padding: 15px 20px; }
@@ -371,6 +376,9 @@ footer {
 
     /* Mobile Nav - Premium Fullscreen Overlay */
     .mobile-toggle { display: flex; z-index: 10001; }
+
+    /* Show the mobile quick bar on mobile */
+    .mobile-quick-bar { display: flex; }
 
     header nav {
         position: fixed;
@@ -471,6 +479,65 @@ footer {
         flex-direction: column !important;
         gap: 30px !important;
     }
+
+    /* Swipeable Horizontal Grid for Mobile */
+    .swipeable-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px !important;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+        margin-right: -25px; /* Ignore container padding right */
+        padding-right: 25px;
+    }
+    .swipeable-grid > * {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+
+    /* Mobile Bottom Quick Bar */
+    .mobile-quick-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        background: #fff;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        z-index: 9999;
+    }
+    .mobile-quick-bar .quick-btn {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 0;
+        border-right: 1px solid var(--border-color);
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+    .mobile-quick-bar .quick-btn:last-child {
+        border-right: none;
+    }
+    .mobile-quick-bar .quick-btn .icon {
+        font-size: 1.3rem;
+        margin-bottom: 3px;
+    }
+    .mobile-quick-bar .quick-btn.reserve {
+        background: var(--primary-color);
+        color: #fff;
+    }
+    .mobile-quick-bar .quick-btn.kakao {
+        background: #fae100;
+        color: #3c1e1e;
+        border-right: none;
+    }
+    /* Add padding to body so bottom bar doesn't hide content */
+    body { padding-bottom: 70px; }
 
     /* Index.html specific overrides */
     .trust-container, .shorts-container, .art-concept-container {
