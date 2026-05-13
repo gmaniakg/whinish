@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
-<<<<<<< HEAD
-        .hero-sub {
-            background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('../assets/img/clinic-bg.png');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .ortho-hero {
+            background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('../assets/img/ortho-hero.png') center/cover;
+            padding: 150px 0 100px;
             color: #fff;
+            text-align: center;
         }
-        .hero-sub h1 { font-size: 3.5rem; letter-spacing: 5px; margin-bottom: 10px; }
-        .hero-sub p { font-size: 1.2rem; opacity: 0.8; }
-        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        .benefit-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
         .ortho-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -77,60 +84,6 @@
             color: var(--accent-color);
             font-weight: 700;
         }
-        
-        .whinish-point {
-            background: var(--bg-light);
-            padding: 80px 0;
-            margin: 100px 0;
-        }
-        .point-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-        .point-card {
-            text-align: center;
-            padding: 40px;
-        }
-        .point-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .point-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-        
-        @media (max-width: 768px) {
-            .ortho-grid { grid-template-columns: 1fr; }
-            .point-grid { grid-template-columns: 1fr; }
-            .hero-sub h1 { font-size: 2.5rem; }
-=======
-        .ortho-hero {
-            background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('../assets/img/ortho-hero.png') center/cover;
-            padding: 150px 0 100px;
-            color: #fff;
-            text-align: center;
-        }
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        .benefit-card {
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
         .global-support {
             background: var(--bg-light);
             border-radius: 30px;
@@ -148,20 +101,28 @@
         }
         .global-support-content {
             flex: 1.2;
->>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
+        }
+
+        @media (max-width: 768px) {
+            .ortho-grid { grid-template-columns: 1fr; }
+            .global-support { flex-direction: column; gap: 30px; }
+            .global-support-content { padding-top: 20px; }
         }
     </style>
 </head>
 <body>
     <header id="main-header"></header>
-<<<<<<< HEAD
-    
+
     <main>
-        <section class="hero-sub">
-            <div class="container">
-                <p class="uppercase">Premium Orthodontics Solution</p>
-                <h1 class="uppercase">Orthodontics</h1>
-                <p>단순한 교정을 넘어, 얼굴의 균형과 미소의 조화를 디자인합니다.</p>
+        <!-- Hero Section -->
+        <section class="ortho-hero">
+            <div class="container animate-up">
+                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">DIGITAL ORTHODONTICS</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">치아교정, 그 이상의 예술</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    단순히 치열을 맞추는 것을 넘어, 당신의 얼굴형과 미소의 라인까지 고려합니다. <br>
+                    30년 전통의 노하우와 최첨단 디지털 시스템이 만난 WHINISH만의 정교한 교정 솔루션.
+                </p>
             </div>
         </section>
 
@@ -191,23 +152,14 @@
                             <li>식사 및 양치 시 자유로운 탈착</li>
                             <li>구강 내 이물감 및 상처 최소화</li>
                             <li>3D 시뮬레이션을 통한 결과 예측</li>
-=======
-
-    <main>
-        <!-- Hero Section -->
-        <section class="ortho-hero">
-            <div class="container animate-up">
-                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">DIGITAL ORTHODONTICS</p>
-                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">치아교정, 그 이상의 예술</h1>
-                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-                    단순히 치열을 맞추는 것을 넘어, 당신의 얼굴형과 미소의 라인까지 고려합니다. <br>
-                    30년 전통의 노하우와 최첨단 디지털 시스템이 만난 WHINISH만의 정교한 교정 솔루션.
-                </p>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Features -->
-        <section class="section">
+        <section class="section" style="background: var(--bg-light);">
             <div class="container">
                 <div class="grid-3">
                     <div class="benefit-card animate-up">
@@ -240,63 +192,28 @@
                             일본어 전담 코디네이터 상주로 의사소통의 불편함이 없으며, 단기간 체류 환자를 위한 집중 치료 프로그램을 운영하고 있습니다.
                         </p>
                         <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 10px;">✅ 일본어 전담 상담원 상주</li>
-                            <li style="margin-bottom: 10px;">✅ 단기 집중 교정 프로그램</li>
-                            <li style="margin-bottom: 10px;">✅ 글로벌 보험 서류 발급 지원</li>
->>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
+                            <li style="margin-bottom: 10px; color: var(--text-main); font-weight: 500;">✅ 일본어 전담 상담원 상주</li>
+                            <li style="margin-bottom: 10px; color: var(--text-main); font-weight: 500;">✅ 단기 집중 교정 프로그램</li>
+                            <li style="margin-bottom: 10px; color: var(--text-main); font-weight: 500;">✅ 글로벌 보험 서류 발급 지원</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-<<<<<<< HEAD
-        <section class="whinish-point">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 60px;">
-                    <h2 class="uppercase" style="font-size: 2rem; color: var(--primary-color);">WHINISH Only</h2>
-                    <p style="color: var(--text-muted); margin-top: 10px;">휘니쉬만이 제공하는 초정밀 교정의 가치</p>
-                </div>
-                <div class="point-grid">
-                    <div class="point-card">
-                        <h3>3D Digital Diagnosis</h3>
-                        <p>3D CT와 구강 스캐너를 통해 치아뿐만 아니라 턱관절, 안면 비대칭까지 정밀하게 분석합니다.</p>
-                    </div>
-                    <div class="point-card">
-                        <h3>Face Balance Design</h3>
-                        <p>치아 배열만 맞추는 것이 아니라 입술 라인, 미소선 등 얼굴 전체의 황금비율을 디자인합니다.</p>
-                    </div>
-                    <div class="point-card">
-                        <h3>Premium After Care</h3>
-                        <p>교정 후 회귀 현상을 방지하기 위한 철저한 유지 관리 시스템과 정기 검진을 보장합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" style="padding-top: 0;">
-            <div class="container" style="text-align: center;">
-                <div class="glass-card" style="padding: 60px; background: var(--primary-color); color: #fff; border-radius: 40px;">
-                    <h2 class="uppercase" style="font-size: 2rem; margin-bottom: 20px;">Ready for your new smile?</h2>
-                    <p style="opacity: 0.8; margin-bottom: 40px;">당신에게 가장 적합한 교정 솔루션을 지금 바로 상담받아보세요.</p>
-                    <a href="../consult/online.html" class="btn uppercase" style="background: var(--accent-color); color: var(--primary-color); padding: 15px 40px; font-weight: 700;">Consultation</a>
-=======
         <!-- CTA -->
         <section class="section" style="background: var(--primary-color); color: #fff; text-align: center;">
             <div class="container animate-up">
                 <h2 style="font-size: 2.5rem; margin-bottom: 30px;">당신의 미소, WHINISH가 디자인합니다</h2>
                 <p style="margin-bottom: 40px; opacity: 0.8;">지금 바로 전문가의 정밀 진단을 예약하세요.</p>
                 <div style="display: flex; justify-content: center; gap: 20px;">
-                    <a href="../consult/reservation.html" class="btn btn-primary" style="background: var(--accent-color); border:none;">온라인 예약</a>
-                    <a href="https://pf.kakao.com/_Vtxdwl" class="btn btn-outline" style="border-color: #fff; color: #fff;">카카오톡 상담</a>
->>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
+                    <a href="../consult/online.html" class="btn btn-primary" style="background: var(--accent-color); border:none; color: var(--primary-color);">온라인 상담</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer id="main-footer"></footer>
-    
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

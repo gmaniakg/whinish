@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
-<<<<<<< HEAD
         .hero-global {
-            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/global-bg.png');
+            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/global-support.png');
             background-size: cover; background-position: center;
             height: 450px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
         }
@@ -32,17 +31,6 @@
         .stat-box h4 { font-size: 3rem; color: var(--accent-color); margin-bottom: 10px; }
         .stat-box p { font-size: 1.1rem; opacity: 0.8; }
 
-        @media (max-width: 768px) {
-            .news-grid { grid-template-columns: 1fr; }
-            .stat-grid { grid-template-columns: 1fr; }
-            .hero-global h1 { font-size: 2.5rem; }
-=======
-        .global-hero {
-            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/global-support.png') center/cover;
-            padding: 150px 0 100px;
-            color: #fff;
-            text-align: center;
-        }
         .support-card {
             background: #fff;
             padding: 50px;
@@ -61,90 +49,25 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
->>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
+        }
+
+        @media (max-width: 768px) {
+            .news-grid { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .hero-global h1 { font-size: 2.5rem; }
+            .support-card { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <header id="main-header"></header>
-<<<<<<< HEAD
     
     <main>
         <section class="hero-global">
-            <div class="container">
+            <div class="container animate-up">
                 <p class="uppercase" style="letter-spacing: 3px; font-weight: 600; color: var(--accent-color);">Global Standards & Local Trust</p>
                 <h1 class="uppercase" style="font-size: 3.5rem;">Global Medical</h1>
                 <p>일본과 세계가 신뢰하는 강남의 자부심, 화이트스타일치과입니다.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
-                    <h2 class="uppercase" style="color: var(--accent-color); font-size: 1rem; letter-spacing: 3px; margin-bottom: 15px;">News & Highlights</h2>
-                    <h3 style="font-size: 2.5rem; color: var(--primary-color); line-height: 1.3;">일본 언론이 주목한<br>30년 전통의 대한민국 대표 치과</h3>
-                </div>
-
-                <div class="news-grid">
-                    <div class="news-item">
-                        <span class="news-date uppercase">2023.05 | AT PRESS & KONEST</span>
-                        <h4 class="news-title">"일본인 환자 연간 방문객 30% 급증, 전용 상담 센터 확장"</h4>
-                        <p class="news-desc">강남 본점에 일본 전용 상담 센터를 대폭 확장하여 일본인 전담 코디네이터와 통역사가 상주, 일본어 대응 서비스를 대폭 강화하며 현지 매체의 큰 주목을 받았습니다.</p>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date uppercase">2024.01 | GLOBAL MEDICAL REPORT</span>
-                        <h4 class="news-title">일본인 누적 환자 2,000명 돌파, 한국 의료관광의 선두주자</h4>
-                        <p class="news-desc">정밀 교정과 당일 임플란트 치료에서 압도적인 기술력을 인정받으며, 일본인 누적 환자 2,000명을 넘어서는 기록적인 성과를 달성했습니다.</p>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date uppercase">HISOTRY | JAPANESE MEDIA</span>
-                        <h4 class="news-title">서울대학교 박사 출신 김준헌 원장, "기술과 신뢰의 집약체"</h4>
-                        <p class="news-desc">서울대 교정학 박사(PhD) 출신의 김준헌 원장은 일본 매체에서 '한국의 엘리트 의료진이 직접 집도하는 신뢰할 수 있는 병원'으로 수차례 소개되었습니다.</p>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date uppercase">AWARDS | ORTHOPEDIA JAPAN</span>
-                        <h4 class="news-title">일본 언론 추천 '서울 5대 교정치과' 지속 선정</h4>
-                        <p class="news-desc">일본의 치과 전문 미디어 'Orthopedia' 등에서 한국 방문 시 꼭 가봐야 할 추천 치과 상위권에 지속적으로 랭크되며 글로벌 경쟁력을 입증했습니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="global-stats">
-            <div class="container">
-                <div class="stat-grid">
-                    <div class="stat-box">
-                        <h4 class="uppercase">80%</h4>
-                        <p>일본인 환자 재방문 및 추천율</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4 class="uppercase">30y</h4>
-                        <p>강남 한 자리에서의 변치 않는 진료</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4 class="uppercase">1-Day</h4>
-                        <p>바쁜 여행객을 위한 당일 정밀 시스템</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container" style="text-align: center;">
-                <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 30px;">"일본 현지 커뮤니티가 먼저 인정하는 치과"</h3>
-                <p style="color: var(--text-muted); line-height: 1.8; max-width: 900px; margin: 0 auto;">화이트스타일치과는 1994년 개원 이후, 일본의 유명 연예인 및 인플루언서들이 한국 방문 시 즐겨 찾는 '셀럽 치과'로 자리 잡았습니다. 일본 현지인들 사이에서는 '대물림하며 방문하는 신뢰의 치과'로 알려져 있으며, 저희는 그 신뢰에 보답하기 위해 세계적 수준의 의료 서비스를 지속적으로 제공하고 있습니다.</p>
-=======
-
-    <main>
-        <!-- Hero Section -->
-        <section class="global-hero">
-            <div class="container animate-up">
-                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">GLOBAL MEDICAL CARE</p>
-                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">세계를 향한 화이트스타일의 기술력</h1>
-                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-                    국경을 넘어 신뢰받는 WHINISH 프리미엄 서비스. <br>
-                    일본, 미국 등 전 세계 20여 개국 환자들이 먼저 찾는 대한민국 대표 글로벌 치과입니다.
-                </p>
             </div>
         </section>
 
@@ -184,7 +107,57 @@
                         강남에서 30년간 자리를 지켜온 전통은 전 세계 어디에서도 통하는 가장 강력한 증거입니다.
                     </p>
                 </div>
->>>>>>> 67e9cae (Update: Refine all treatment pages, update real reviews, and secure contact form with serverless API)
+            </div>
+        </section>
+
+        <section class="global-stats">
+            <div class="container">
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <h4 class="uppercase">80%</h4>
+                        <p>일본인 환자 재방문 및 추천율</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4 class="uppercase">30y</h4>
+                        <p>강남 한 자리에서의 변치 않는 진료</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4 class="uppercase">1-Day</h4>
+                        <p>바쁜 여행객을 위한 당일 정밀 시스템</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
+                    <h2 class="uppercase" style="color: var(--accent-color); font-size: 1rem; letter-spacing: 3px; margin-bottom: 15px;">News & Highlights</h2>
+                    <h3 style="font-size: 2.5rem; color: var(--primary-color); line-height: 1.3;">일본 언론이 주목한<br>30년 전통의 대한민국 대표 치과</h3>
+                </div>
+
+                <div class="news-grid">
+                    <div class="news-item">
+                        <span class="news-date uppercase">2023.05 | AT PRESS & KONEST</span>
+                        <h4 class="news-title">"일본인 환자 연간 방문객 30% 급증, 전용 상담 센터 확장"</h4>
+                        <p class="news-desc">강남 본점에 일본 전용 상담 센터를 대폭 확장하여 일본인 전담 코디네이터와 통역사가 상주, 일본어 대응 서비스를 대폭 강화하며 현지 매체의 큰 주목을 받았습니다.</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date uppercase">2024.01 | GLOBAL MEDICAL REPORT</span>
+                        <h4 class="news-title">일본인 누적 환자 2,000명 돌파, 한국 의료관광의 선두주자</h4>
+                        <p class="news-desc">정밀 교정과 당일 임플란트 치료에서 압도적인 기술력을 인정받으며, 일본인 누적 환자 2,000명을 넘어서는 기록적인 성과를 달성했습니다.</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date uppercase">HISOTRY | JAPANESE MEDIA</span>
+                        <h4 class="news-title">서울대학교 박사 출신 김준헌 원장, "기술과 신뢰의 집약체"</h4>
+                        <p class="news-desc">서울대 교정학 박사(PhD) 출신의 김준헌 원장은 일본 매체에서 '한국의 엘리트 의료진이 직접 집도하는 신뢰할 수 있는 병원'으로 수차례 소개되었습니다.</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date uppercase">AWARDS | ORTHOPEDIA JAPAN</span>
+                        <h4 class="news-title">일본 언론 추천 '서울 5대 교정치과' 지속 선정</h4>
+                        <p class="news-desc">일본의 치과 전문 미디어 'Orthopedia' 등에서 한국 방문 시 꼭 가봐야 할 추천 치과 상위권에 지속적으로 랭크되며 글로벌 경쟁력을 입증했습니다.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
