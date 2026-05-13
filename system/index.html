@@ -37,6 +37,10 @@
             color: var(--accent-color);
             flex-shrink: 0;
         }
+        @media (max-width: 768px) {
+            .clean-grid { grid-template-columns: 1fr; }
+            .clean-item { flex-direction: column; text-align: center; align-items: center; }
+        }
     </style>
 <style>
         .hero-global {
@@ -181,7 +185,7 @@
                     </p>
                 </div>
 
-                <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 60px;">
+                <div class="flex-mobile-col" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 60px;">
                     <div style="flex: 1; padding: 40px; background: #f8f9fa; border-radius: 20px; text-align: center;">
                         <h3 style="margin-bottom: 20px;">높은 정확도의 최첨단 장비</h3>
                         <p>디지털 스캐너와 밀링 머신을 통한 당일 제작</p>
@@ -211,7 +215,7 @@
 
     <section class="section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
+            <div class="grid-mobile-col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
                 <div class="info-card animate-up" style="background: var(--bg-light); padding: 40px; border-radius: 20px;">
                     <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 15px;">속도와 정확성</h3>
                     <p style="color: var(--text-muted); line-height: 1.6;">진단부터 보철물 제작까지 모든 과정이 원내에서 이루어져, 수정이 필요한 경우에도 현장에서 즉시 반영하여 당일 완성이 가능합니다.</p>
