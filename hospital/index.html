@@ -136,6 +136,91 @@
             .art-hero h1 { font-size: 2rem; }
         }
     </style>
+    <style>
+        /* Awards Section Styles */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .award-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            position: relative;
+        }
+        .award-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+        .award-img-box {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: #f8f9fa;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+        .award-img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s ease;
+        }
+        .award-card:hover .award-img-box img {
+            transform: scale(1.05);
+        }
+        .award-info {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            background: #fff;
+        }
+        .award-category {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .award-name {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .awards-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            background: #fff;
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+    </style>
 <style>
         .map-section {
             display: grid;
@@ -195,6 +280,51 @@
 </head>
 <body>
     <header id="main-header"></header>
+    
+    <!-- Sticky Sub Nav -->
+    <div class="sub-nav-wrapper">
+        <div class="container">
+            <ul class="sub-nav">
+                <li><a href="#principle">철학/비전</a></li>
+                <li><a href="#history">연혁</a></li>
+                <li><a href="#awards">상장과 인증서</a></li>
+                <li><a href="#doctors">의료진</a></li>
+                <li><a href="#floor">층별안내</a></li>
+                <li><a href="#art">인테리어/아트</a></li>
+                <li><a href="#map">오시는길</a></li>
+            </ul>
+        </div>
+    </div>
+    <style>
+        .sub-nav-wrapper {
+            position: sticky;
+            top: 80px;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 99;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+            list-style: none;
+        }
+        .sub-nav a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .sub-nav a:hover, .sub-nav a.active {
+            color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            .sub-nav { gap: 15px; overflow-x: auto; justify-content: flex-start; padding: 15px 20px; white-space: nowrap; }
+        }
+    </style>
+
     <main>
         <div id="principle" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
 
@@ -336,6 +466,170 @@
         </section>
     
 </div>
+<hr style="border-top: 1px solid var(--border-color); margin: 0;">
+<div id="awards" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
+    <section class="section" style="background: #fafafa;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px;">SOCIAL PROOF</p>
+                <h1 style="font-size: 3.5rem; color: var(--primary-color); margin-top: 10px;">상장과 인증서</h1>
+                <p style="color: var(--text-muted); margin-top: 20px;">국가기관과 학계에서 인정한 화이트스타일의 전문성과 진정성입니다.</p>
+            </div>
+
+            <div class="awards-filter">
+                <button class="filter-btn active" onclick="filterAwards('all', this)">전체보기</button>
+                <button class="filter-btn" onclick="filterAwards('gov', this)">국가기관 및 공로</button>
+                <button class="filter-btn" onclick="filterAwards('academic', this)">학술 및 전문의</button>
+                <button class="filter-btn" onclick="filterAwards('system', this)">시스템 및 인증</button>
+                <button class="filter-btn" onclick="filterAwards('clinical', this)">임상 및 자문</button>
+            </div>
+
+            <div class="awards-grid">
+                <!-- Gov -->
+                <div class="award-card award-item gov animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-1.jpg" alt="기재부표창장"></div>
+                    <div class="award-info">
+                        <span class="award-category">GOVERNMENT</span>
+                        <div class="award-name">기획재정부장관 표창장<br>(모범납세자)</div>
+                    </div>
+                </div>
+                <div class="award-card award-item gov animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-2.png" alt="건강보험공단S등급"></div>
+                    <div class="award-info">
+                        <span class="award-category">HEALTH INSURANCE</span>
+                        <div class="award-name">국가건강검진 구강평가<br>최고등급 (S등급) 획득</div>
+                    </div>
+                </div>
+                <div class="award-card award-item gov animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-14.jpg" alt="서울대학교종신이사"></div>
+                    <div class="award-info">
+                        <span class="award-category">ALUMNI</span>
+                        <div class="award-name">서울대학교 총동창회<br>제26대 종신이사 위촉</div>
+                    </div>
+                </div>
+                <div class="award-card award-item gov animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-7.jpg" alt="강남구의료관광"></div>
+                    <div class="award-info">
+                        <span class="award-category">GOVERNMENT</span>
+                        <div class="award-name">강남구 의료관광<br>협력기관 선정 증서</div>
+                    </div>
+                </div>
+
+                <!-- Academic -->
+                <div class="award-card award-item academic animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-4.jpg" alt="치의학박사증명서"></div>
+                    <div class="award-info">
+                        <span class="award-category">ACADEMIC</span>
+                        <div class="award-name">치의학 박사 증명서<br>(박사학위 수여)</div>
+                    </div>
+                </div>
+                <div class="award-card award-item academic animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-9.jpg" alt="KAOMI"></div>
+                    <div class="award-info">
+                        <span class="award-category">ACADEMY</span>
+                        <div class="award-name">대한구강악안면 임플란트학회<br>정회원 인증</div>
+                    </div>
+                </div>
+                <div class="award-card award-item academic animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-11.jpg" alt="AO"></div>
+                    <div class="award-info">
+                        <span class="award-category">GLOBAL ACADEMY</span>
+                        <div class="award-name">Academy of Osseointegration<br>Active Membership</div>
+                    </div>
+                </div>
+                <div class="award-card award-item academic animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-18.jpg" alt="보철학회"></div>
+                    <div class="award-info">
+                        <span class="award-category">ACADEMY</span>
+                        <div class="award-name">대한치과보철학회<br>회원 인증</div>
+                    </div>
+                </div>
+
+                <!-- System -->
+                <div class="award-card award-item system animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-3.jpg" alt="나이스기술평가"></div>
+                    <div class="award-info">
+                        <span class="award-category">SYSTEM</span>
+                        <div class="award-name">NICE 기술평가<br>치과 서비스 우수기업 인증</div>
+                    </div>
+                </div>
+                <div class="award-card award-item system animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-6.jpg" alt="ISO14001"></div>
+                    <div class="award-info">
+                        <span class="award-category">CERTIFICATION</span>
+                        <div class="award-name">환경경영시스템 인증<br>(ISO 14001)</div>
+                    </div>
+                </div>
+                <div class="award-card award-item system animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-13.jpg" alt="ISO9001"></div>
+                    <div class="award-info">
+                        <span class="award-category">CERTIFICATION</span>
+                        <div class="award-name">품질경영시스템 인증<br>(ISO 9001)</div>
+                    </div>
+                </div>
+
+                <!-- Clinical -->
+                <div class="award-card award-item clinical animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-8.jpg" alt="오스템"></div>
+                    <div class="award-info">
+                        <span class="award-category">ADVISORY</span>
+                        <div class="award-name">오스템 임플란트<br>연구자문 치과 위촉</div>
+                    </div>
+                </div>
+                <div class="award-card award-item clinical animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-10.jpg" alt="인비절라인"></div>
+                    <div class="award-info">
+                        <span class="award-category">CLINICAL</span>
+                        <div class="award-name">미국 인비절라인(Invisalign)<br>공식 인증의 인증</div>
+                    </div>
+                </div>
+                <div class="award-card award-item clinical animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-17.jpg" alt="노벨바이오케어"></div>
+                    <div class="award-info">
+                        <span class="award-category">GLOBAL CLINICAL</span>
+                        <div class="award-name">Nobel Biocare<br>Platinum Partner</div>
+                    </div>
+                </div>
+                <div class="award-card award-item clinical animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-16.jpg" alt="미니튜브"></div>
+                    <div class="award-info">
+                        <span class="award-category">CLINICAL</span>
+                        <div class="award-name">Minitube System<br>Clinical Expertise</div>
+                    </div>
+                </div>
+                
+                <!-- Global -->
+                <div class="award-card award-item gov animate-up">
+                    <div class="award-img-box"><img src="../assets/img/certificates/cert-5.jpg" alt="일본대사관"></div>
+                    <div class="award-info">
+                        <span class="award-category">GLOBAL RELATIONS</span>
+                        <div class="award-name">주한 일본대사관<br>감사장 수령</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    function filterAwards(category, btn) {
+        // Update buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter items
+        const items = document.querySelectorAll('.award-item');
+        items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+                item.style.display = 'block';
+                setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.8)';
+                setTimeout(() => { item.style.display = 'none'; }, 300);
+            }
+        });
+    }
+</script>
 <hr style="border-top: 1px solid var(--border-color); margin: 0;">
 <div id="doctors" class="tab-section" style="padding-top: 80px; margin-top: -80px;">
 
@@ -592,8 +886,33 @@
 
     </main>
     <footer id="main-footer"></footer>
+    <!-- Lightbox Modal -->
+    <div id="certLightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; cursor:zoom-out; align-items:center; justify-content:center; padding:40px;">
+        <span style="position:absolute; top:30px; right:40px; color:#fff; font-size:40px; cursor:pointer;" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImg" src="" style="max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 0 50px rgba(0,0,0,0.5); object-fit:contain;">
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
+        // Lightbox Logic
+        function openLightbox(src) {
+            const lightbox = document.getElementById('certLightbox');
+            const img = document.getElementById('lightboxImg');
+            img.src = src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('certLightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        document.querySelectorAll('.award-card').forEach(card => {
+            card.onclick = function() {
+                const src = this.querySelector('img').src;
+                openLightbox(src);
+            };
+        });
+
         // Smooth scrolling for hash links to offset for fixed header
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -606,6 +925,25 @@
                         top: targetEl.offsetTop,
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+
+        // Scrollspy for sub-nav
+        window.addEventListener('scroll', () => {
+            let current = "";
+            const sections = document.querySelectorAll('.tab-section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.sub-nav a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
                 }
             });
         });
