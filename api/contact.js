@@ -7,8 +7,8 @@ export default async function handler(req, res) {
     const formData = req.body;
     
     // Vercel 환경 변수에서 키를 가져옵니다.
-    // 대시보드에서 WEB3FORMS_ACCESS_KEY를 설정해야 합니다.
-    const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+    // 대시보드에서 web3forms_access_key를 설정해야 합니다.
+    const accessKey = process.env.web3forms_access_key || process.env.WEB3FORMS_ACCESS_KEY;
 
     if (!accessKey) {
       return res.status(500).json({ message: 'API Key not configured in Vercel' });
