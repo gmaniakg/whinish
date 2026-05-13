@@ -210,15 +210,16 @@
                     status.innerText = '✅ 상담 신청이 완료되었습니다. 곧 연락드리겠습니다!';
                     form.reset();
                 } else {
+                    const errorMsg = result.message || '알 수 없는 오류';
                     status.style.backgroundColor = '#ffebee';
                     status.style.color = '#c62828';
-                    status.innerText = '❌ 전송에 실패했습니다. 잠시 후 다시 시도해주세요.';
+                    status.innerText = '❌ 전송 실패: ' + errorMsg;
                 }
             } catch (error) {
                 status.style.display = 'block';
                 status.style.backgroundColor = '#ffebee';
                 status.style.color = '#c62828';
-                status.innerText = '❌ 오류가 발생했습니다. 고객센터로 문의해주세요.';
+                status.innerText = '❌ 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
             } finally {
                 btn.disabled = false;
                 btn.innerText = '상담 신청하기 (SUBMIT)';
