@@ -8,44 +8,120 @@
     <meta name="keywords" content="휘니쉬치아복구, WHINISH, 강남치아성형, 강남라미네이트, 치아삭제최소화, 화이트스타일치과">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), url('../assets/img/hero-bg.png');
+            background-size: cover; background-position: center;
+            height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+        }
+        .about-intro { padding: 120px 0; text-align: center; }
+        .about-intro h2 { font-size: 3rem; color: var(--primary-color); margin-bottom: 30px; line-height: 1.2; }
+        .about-intro p { font-size: 1.25rem; color: var(--text-muted); line-height: 2; max-width: 900px; margin: 0 auto; }
+        
+        .philosophy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; margin-top: 100px; align-items: center; }
+        .philosophy-text h3 { font-size: 2rem; color: var(--primary-color); margin-bottom: 25px; }
+        .philosophy-text p { color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; }
+        
+        .vs-section { background: var(--bg-light); padding: 120px 0; margin: 100px 0; }
+        .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 40px; align-items: center; margin-top: 60px; }
+        .vs-card { background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .vs-card.highlight { border: 2px solid var(--accent-color); }
+        .vs-card h4 { font-size: 1.5rem; margin-bottom: 25px; text-align: center; }
+        .vs-circle { width: 80px; height: 80px; background: var(--accent-color); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.5rem; }
+        
+        .feature-list-simple { list-style: none; padding: 0; }
+        .feature-list-simple li { margin-bottom: 15px; padding-left: 30px; position: relative; color: var(--text-muted); }
+        .feature-list-simple li::before { content: '✕'; position: absolute; left: 0; color: #cc0000; font-weight: 700; }
+        .vs-card.highlight .feature-list-simple li::before { content: '✓'; color: var(--accent-color); }
+        
+        @media (max-width: 768px) {
+            .philosophy-grid { grid-template-columns: 1fr; text-align: center; }
+            .vs-grid { grid-template-columns: 1fr; }
+            .vs-circle { margin: 0 auto; transform: rotate(90deg); }
+            .about-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
-
     <header id="main-header"></header>
-
+    
     <main>
-        <section class="section" style="padding-bottom: 0;">
-            <div class="container" style="text-align: center;">
-                <p style="color: var(--accent-color); font-weight: 600; margin-bottom: 10px; letter-spacing: 2px;">ABOUT WHINISH</p>
-                <h1 style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 40px;">건강하게 아름다워지는 WHINISH</h1>
-                
-                <div style="margin: 80px 0;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 30px; color: var(--primary-color);">WHINISH란? 치아복구 솔루션</h2>
-                    <p style="font-size: 1.25rem; color: var(--text-muted); line-height: 2; max-width: 900px; margin: 0 auto;">
-                        WHINISH는 단순한 라미네이트나 치아 성형이 아닙니다. <br>
-                        <strong>WHINISH는 치아의 본질을 되찾는 '치아복구 솔루션'입니다.</strong> <br><br>
-                        자연치아와 가장 유사한 물성을 지닌 정교한 재료를 사용하여, <br>
-                        손상된 치아 면을 보호하고 기능과 심미를 완벽하게 회복시킵니다. <br>
-                        30년 임상 경험이 담긴 화이트스타일의 기술 정점이 바로 WHINISH입니다.
+        <section class="about-hero">
+            <div class="container">
+                <p class="uppercase" style="letter-spacing: 5px; font-weight: 600; color: var(--accent-color); margin-bottom: 20px;">Beyond Perfection</p>
+                <h1 class="uppercase" style="font-size: 4rem;">The Whinish Philosophy</h1>
+                <p>라미네이트를 넘어선 치아 복구의 새로운 기준, 휘니쉬입니다.</p>
+            </div>
+        </section>
+
+        <section class="section about-intro">
+            <div class="container">
+                <div class="animate-up">
+                    <span class="tag">Brand Core</span>
+                    <h2>"건강을 해치지 않는 아름다움"<br><span style="color:var(--accent-color)">치아 복구 솔루션 WHINISH</span></h2>
+                    <p>
+                        많은 분들이 미적 개선을 위해 치아를 삭제하는 라미네이트를 선택합니다. 
+                        하지만 휘니쉬는 다릅니다. 우리는 삭제가 아닌 <b>'복구'</b>에 집중합니다. 
+                        자연치아를 최대한 보존하면서, 손실된 부분을 가장 이상적인 재료로 채워 넣는 것. 
+                        그것이 휘니쉬가 추구하는 진정한 메디컬 아트입니다.
                     </p>
+                </div>
+
+                <div class="philosophy-grid animate-up">
+                    <div class="image-box">
+                        <img src="../assets/img/treatment.png" alt="Whinish Treatment" style="border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
+                    </div>
+                    <div class="philosophy-text" style="text-align: left;">
+                        <h3>생체 모방 기술의 정점</h3>
+                        <p>휘니쉬에서 사용하는 재료는 자연치아의 법랑질과 가장 유사한 강도와 탄성, 마모도를 가집니다. 이는 단순히 예뻐 보이는 것을 넘어, 실제 치아처럼 음식을 씹고 기능하는 데 최적화되어 있음을 의미합니다.</p>
+                        <p>독자적인 본딩 기술력을 통해 치아와 보철물 사이의 틈을 제로(Zero)에 가깝게 구현하여, 2차 충치를 예방하고 반영구적인 수명을 보장합니다.</p>
+                        <div style="margin-top: 40px;">
+                            <a href="../consult/online.html" class="btn btn-primary">전문 상담 신청하기</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background: var(--bg-light);">
+        <section class="vs-section">
             <div class="container">
-                <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                    <div class="animate-up">
-                        <img src="../assets/img/treatment.png" alt="WHINISH Solution" style="border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
+                <div style="text-align: center;">
+                    <span class="tag">Comparison</span>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-color);">왜 WHINISH여야 하는가?</h2>
+                </div>
+
+                <div class="vs-grid">
+                    <div class="vs-card animate-up">
+                        <h4 style="color: var(--text-muted);">일반 라미네이트</h4>
+                        <ul class="feature-list-simple">
+                            <li>심미적 개선을 위한 과도한 치아 삭제</li>
+                            <li>삭제로 인한 시린 증상 및 통증 유발</li>
+                            <li>불투명한 재료로 인한 인위적인 느낌</li>
+                            <li>짧은 수명과 잦은 탈락 위험</li>
+                        </ul>
                     </div>
-                    <div class="animate-up">
-                        <span class="tag">Philosophy</span>
-                        <h2 style="font-size: 2.5rem; color: var(--primary-color); margin: 20px 0;">치아 삭제를 최소화하는<br>초정밀 메커니즘</h2>
-                        <p style="color: var(--text-muted); margin-bottom: 30px; line-height: 1.8;">
-                            기존의 치아 성형이 외형을 위해 치아를 많이 깎아냈다면, WHINISH는 다릅니다. <br>
-                            불필요한 삭제 없이, 필요한 부분만을 정교하게 다듬어 자연치아의 수명을 지키면서도 최상의 심미적 결과를 이끌어냅니다.
-                        </p>
-                        <a href="/minish/index.html#ultraprecision" class="btn btn-primary">초정밀 기술력 보기</a>
+                    <div class="vs-circle animate-up">VS</div>
+                    <div class="vs-card highlight animate-up">
+                        <h4 style="color: var(--primary-color);">WHINISH 프리미엄</h4>
+                        <ul class="feature-list-simple">
+                            <li>자연치아를 보존하는 제로(Zero) 삭제 지향</li>
+                            <li>시린 증상 없는 편안한 시술 과정</li>
+                            <li>자연광을 투영하는 독보적인 투명도</li>
+                            <li>강력한 접착력으로 반영구적 사용</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container" style="text-align: center;">
+                <div class="animate-up" style="background: var(--primary-color); color: #fff; padding: 80px; border-radius: 40px;">
+                    <h2 class="uppercase" style="font-size: 2.5rem; margin-bottom: 30px;">Experience the Change</h2>
+                    <p style="opacity: 0.8; margin-bottom: 50px; font-size: 1.2rem;">30년 전통의 화이트스타일과 휘니쉬의 기술력이 만나<br>당신의 인생을 바꾸는 미소를 선사합니다.</p>
+                    <div style="display: flex; gap: 20px; justify-content: center;">
+                        <a href="cases.html" class="btn" style="background: var(--accent-color); color: var(--primary-color);">치료 사례 보기</a>
+                        <a href="../consult/reservation.html" class="btn btn-outline" style="border-color: #fff; color: #fff;">예약하기</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +129,6 @@
     </main>
 
     <footer id="main-footer"></footer>
-
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

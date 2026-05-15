@@ -8,43 +8,122 @@
     <meta name="keywords" content="강남역임플란트, 디지털임플란트, 무절개임플란트, 강남임플란트잘하는곳, 화이트스타일치과임플란트">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .implant-hero {
+            background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('../assets/img/treatment.png');
+            background-size: cover; background-position: center;
+            height: 450px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+        }
+        
+        .implant-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px;
+        }
+        .implant-card {
+            background: #fff; padding: 50px 30px; border-radius: 30px; border: 1px solid var(--border-color);
+            transition: all 0.4s ease; text-align: center;
+        }
+        .implant-card:hover { border-color: var(--accent-color); transform: translateY(-10px); }
+        .implant-card .icon { font-size: 3rem; margin-bottom: 25px; display: block; }
+        .implant-card h3 { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 20px; }
+        .implant-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+
+        .digital-process { background: var(--bg-light); padding: 120px 0; margin: 100px 0; }
+        .process-flow { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 80px; position: relative; }
+        .process-flow::before { content: ''; position: absolute; top: 45px; left: 10%; right: 10%; height: 2px; background: var(--border-color); z-index: 1; }
+        .process-step { flex: 1; text-align: center; position: relative; z-index: 2; padding: 0 20px; }
+        .step-circle { width: 90px; height: 90px; background: #fff; border: 2px solid var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; font-weight: 800; color: var(--primary-color); font-size: 1.2rem; }
+        .process-step h4 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.2rem; }
+        .process-step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .implant-grid { grid-template-columns: 1fr; }
+            .process-flow { flex-direction: column; gap: 50px; }
+            .process-flow::before { display: none; }
+            .implant-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
-
     <header id="main-header"></header>
-
+    
     <main>
+        <section class="implant-hero">
+            <div class="container">
+                <p class="uppercase" style="letter-spacing: 5px; font-weight: 600; color: var(--accent-color); margin-bottom: 20px;">Precision Implant Center</p>
+                <h1 class="uppercase" style="font-size: 3.5rem;">Digital Implant</h1>
+                <p>30년 임상 데이터와 3D 디지털 기술이 만드는 가장 안전한 식립</p>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 80px;">
-                    <p style="color: var(--accent-color); font-weight: 600;">Advanced Implant System</p>
-                    <h1 style="font-size: 3.5rem; color: var(--primary-color);">Whinish 디지털 임플란트</h1>
-                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">
-                        오차 없는 정밀함, 통증을 줄인 편안함. <br>
-                        3D 디지털 가이드 시스템으로 완성하는 맞춤형 임플란트입니다.
-                    </p>
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
+                    <span class="tag">Why Whinish?</span>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-color); line-height: 1.3;">단순히 심는 것이 아니라,<br><span style="color:var(--accent-color)">오차 없는 조화</span>를 디자인합니다</h2>
+                    <p style="color: var(--text-muted); margin-top: 25px; font-size: 1.1rem;">화이트스타일의 임플란트는 0.1mm의 오차도 허용하지 않는 정밀 진단을 통해 환자 개개인의 잇몸 뼈와 신경관의 위치를 완벽히 파악하여 안전하게 시술합니다.</p>
                 </div>
 
-                <div class="content-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                    <div class="image-box">
-                        <img src="../assets/img/treatment.png" alt="Digital Implant" style="border-radius: 20px;">
+                <div class="implant-grid">
+                    <div class="implant-card animate-up">
+                        <span class="icon">🔬</span>
+                        <h3>3D 디지털 가이드</h3>
+                        <p>컴퓨터 모의 수술을 통해 최적의 식립 경로를 확보하고, 정밀 가이드를 사용하여 계획한 위치에 정확히 식립합니다.</p>
                     </div>
-                    <div class="text-box">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 20px; color: var(--primary-color);">왜 Whinish 임플란트인가요?</h2>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
-                                <b style="display: block; font-size: 1.2rem;">01. 3D 디지털 정밀 진단</b>
-                                <span style="color: var(--text-muted);">CT 데이터를 바탕으로 식립 위치와 각도를 미리 계산하여 정확도를 높입니다.</span>
-                            </li>
-                            <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
-                                <b style="display: block; font-size: 1.2rem;">02. 무절개 가이드 식립</b>
-                                <span style="color: var(--text-muted);">잇몸 절개를 최소화하여 통증과 부기를 획기적으로 줄였습니다.</span>
-                            </li>
-                            <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
-                                <b style="display: block; font-size: 1.2rem;">03. 정품 보증 시스템</b>
-                                <span style="color: var(--text-muted);">세계적으로 검증된 정품 재료만을 사용하며, 정품 보증서를 발급합니다.</span>
-                            </li>
-                        </ul>
+                    <div class="implant-card animate-up">
+                        <span class="icon">⚡</span>
+                        <h3>무절개 최소 통증</h3>
+                        <p>불필요한 잇몸 절개를 최소화하여 시술 후 붓기와 통증이 적으며, 회복 기간을 획기적으로 단축시킵니다.</p>
+                    </div>
+                    <div class="implant-card animate-up">
+                        <span class="icon">🏆</span>
+                        <h3>정품 보증 시스템</h3>
+                        <p>오스템, 스트라우만 등 검증된 정품 재료만을 사용하며, 시술 후 평생 관리 서비스를 위한 정품 보증서를 발급합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="digital-process">
+            <div class="container">
+                <div style="text-align: center;">
+                    <span class="tag">The Process</span>
+                    <h2 style="font-size: 2rem; color: var(--primary-color);">WHINISH 디지털 식립 프로세스</h2>
+                </div>
+
+                <div class="process-flow animate-up">
+                    <div class="process-step">
+                        <div class="step-circle">STEP 01</div>
+                        <h4>3D CT 정밀 진단</h4>
+                        <p>구강 스캐너와 CT로 잇몸 뼈 두께와 신경 위치를 정밀하게 입체 분석합니다.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-circle">STEP 02</div>
+                        <h4>모의 수술 시뮬레이션</h4>
+                        <p>컴퓨터상에서 가장 안전하고 정확한 임플란트 식립 위치를 결정합니다.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-circle">STEP 03</div>
+                        <h4>가이드 제작 및 시술</h4>
+                        <p>개인별 가이드를 통해 절개를 최소화하며 계획된 위치에 신속하게 시술합니다.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-circle">STEP 04</div>
+                        <h4>맞춤 지대주 결합</h4>
+                        <p>개인별 잇몸 라인에 맞춘 커스텀 어버트먼트로 자연스럽고 튼튼하게 마무리합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="animate-up" style="border: 1px solid var(--border-color); padding: 60px; border-radius: 40px; display: flex; align-items: center; gap: 50px;">
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;">30년 신뢰의 병원장 직접 집도</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8;">임플란트는 시술자의 숙련도가 결과를 좌우합니다. 30년간 강남 한 자리를 지켜온 김준헌 병원장이 모든 고난이도 수술을 직접 계획하고 집도합니다.</p>
+                    </div>
+                    <div style="flex: 0.4; text-align: right;">
+                        <a href="../hospital/doctors.html" class="btn btn-outline">의료진 보기</a>
                     </div>
                 </div>
             </div>
@@ -52,7 +131,6 @@
     </main>
 
     <footer id="main-footer"></footer>
-
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

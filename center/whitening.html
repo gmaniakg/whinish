@@ -10,80 +10,67 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
         .whitening-hero {
-            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/whitening-hero.png') center/cover;
-            padding: 150px 0 100px;
-            color: #fff;
-            text-align: center;
+            background: linear-gradient(rgba(0,31,63,0.6), rgba(0,31,63,0.6)), url('../assets/img/hero-bg.png');
+            background-size: cover; background-position: center;
+            height: 450px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
         }
-        .benefit-card {
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-        .step-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 50px;
-        }
-        .step-item {
-            text-align: center;
-        }
-        .step-num {
-            width: 50px;
-            height: 50px;
-            background: var(--accent-color);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            margin: 0 auto 20px;
+        
+        .white-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 80px; }
+        .white-card { background: #fff; padding: 50px; border-radius: 30px; border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .white-card h3 { color: var(--primary-color); font-size: 1.8rem; margin-bottom: 20px; }
+        .white-card p { color: var(--text-muted); line-height: 1.8; }
+        .white-card .icon { font-size: 3rem; margin-bottom: 30px; }
+
+        .benefit-card { background: #fff; padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); transition: all 0.3s ease; text-align: center; }
+        .benefit-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        
+        .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px; }
+        .step-item { text-align: center; }
+        .step-num { width: 50px; height: 50px; background: var(--accent-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto 20px; }
+
+        .laser-section { background: var(--bg-light); padding: 120px 0; margin-top: 100px; }
+        .laser-content { display: flex; align-items: center; gap: 80px; }
+        .laser-text { flex: 1; }
+        .laser-img { flex: 1.2; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        
+        @media (max-width: 768px) {
+            .white-grid { grid-template-columns: 1fr; }
+            .step-grid { grid-template-columns: repeat(2, 1fr); }
+            .laser-content { flex-direction: column-reverse; text-align: center; }
+            .whitening-hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
     <header id="main-header"></header>
-
+    
     <main>
-        <!-- Hero Section -->
         <section class="whitening-hero">
             <div class="container animate-up">
-                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">PREMIUM WHITENING</p>
-                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">당신의 미소에 빛을 더하다</h1>
-                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-                    단순한 미백을 넘어, 치아의 건강까지 고려한 WHINISH만의 프리미엄 미백 솔루션. <br>
-                    식약처 승인 정품 재료와 최첨단 전문가 광선 미백으로 시리지 않고 눈부신 화이트닝을 경험하세요.
-                </p>
+                <p class="uppercase" style="letter-spacing: 5px; font-weight: 600; color: var(--accent-color); margin-bottom: 20px;">Luminous Smile</p>
+                <h1 class="uppercase" style="font-size: 3.5rem;">Teeth Whitening</h1>
+                <p>눈부시게 밝은 미소, 화이트스타일의 초정밀 미백 솔루션</p>
             </div>
         </section>
 
-        <!-- Features -->
         <section class="section">
             <div class="container">
-                <div class="grid-3">
-                    <div class="benefit-card animate-up">
-                        <div style="font-size: 2.5rem; margin-bottom: 20px;">💎</div>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">원데이 전문가 미백</h3>
-                        <p style="color: var(--text-muted);">단 한 번의 방문으로 눈에 띄는 효과. 전문가용 고농도 미백제와 특수 광선 조사를 통해 빠른 시간 내에 밝은 치아를 완성합니다.</p>
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
+                    <span class="tag">Professional Care</span>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-color); line-height: 1.3;">자가 미백으로는 한계가 있는<br><span style="color:var(--accent-color)">진정한 화이트닝</span></h2>
+                    <p style="color: var(--text-muted); margin-top: 25px; font-size: 1.1rem;">식품의약품안전처에서 승인된 고농도 미백제와 특수 광선을 사용하여, 단 한 번의 방문으로도 확실한 미백 효과를 경험하실 수 있습니다.</p>
+                </div>
+
+                <div class="white-grid">
+                    <div class="white-card animate-up">
+                        <span class="icon">💎</span>
+                        <h3>원데이 전문가 미백</h3>
+                        <p>바쁜 직장인과 글로벌 환자분들을 위한 프로그램으로, 약 1시간 내외의 짧은 시술로 치아 색상을 3~4단계 이상 밝게 개선합니다.</p>
                     </div>
-                    <div class="benefit-card animate-up" style="animation-delay: 0.2s;">
-                        <div style="font-size: 2.5rem; margin-bottom: 20px;">🛡️</div>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">저자극/안심 시스템</h3>
-                        <p style="color: var(--text-muted);">잇몸 보호제 도포와 개인별 농도 조절을 통해 치아 시림을 최소화하며, 치아 표면의 법랑질을 손상시키지 않습니다.</p>
-                    </div>
-                    <div class="benefit-card animate-up" style="animation-delay: 0.4s;">
-                        <div style="font-size: 2.5rem; margin-bottom: 20px;">✨</div>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">오랜 지속 효과</h3>
-                        <p style="color: var(--text-muted);">미백 후 관리 프로그램을 통해 밝아진 치아 색상을 오랫동안 유지할 수 있도록 도와드립니다.</p>
+                    <div class="white-card animate-up">
+                        <span class="icon">🌿</span>
+                        <h3>저자극 안전 시스템</h3>
+                        <p>개인별 치아 예민도를 고려하여 미백제의 농도와 조사 시간을 조절합니다. 시린 증상을 최소화하고 잇몸 보호제를 사용하여 안전합니다.</p>
                     </div>
                 </div>
 
@@ -116,11 +103,24 @@
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="section" style="background: var(--bg-light); text-align: center;">
-            <div class="container animate-up">
-                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 30px;">환한 미소, 자신감의 시작입니다</h2>
-                <a href="/consult/index.html#reservation" class="btn btn-primary">지금 상담 신청하기</a>
+        <section class="laser-section">
+            <div class="container">
+                <div class="laser-content animate-up">
+                    <div class="laser-text">
+                        <span class="tag">Technology</span>
+                        <h2 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 25px;">ZOOM2 화이트닝 시스템</h2>
+                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 30px;">전 세계적으로 가장 널리 사용되는 전문가용 미백 시스템인 ZOOM2를 도입하였습니다. 특수 설계된 광선이 미백제의 활성 성분을 촉진시켜, 치아 손상 없이 깊숙이 박힌 착색 물질만을 선택적으로 제거합니다.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                            <li style="margin-bottom: 10px; font-weight: 600;">• 식약처 허가 정품 미백제 사용</li>
+                            <li style="margin-bottom: 10px; font-weight: 600;">• 미백 후 관리 프로그램 제공</li>
+                            <li style="margin-bottom: 10px; font-weight: 600;">• 1:1 맞춤형 쉐이드 가이드 진단</li>
+                        </ul>
+                        <a href="../consult/online.html" class="btn btn-primary">미백 상담 예약하기</a>
+                    </div>
+                    <div class="laser-img">
+                        <img src="../assets/img/equipment-ct.png" alt="Whitening Equipment">
+                    </div>
+                </div>
             </div>
         </section>
     </main>

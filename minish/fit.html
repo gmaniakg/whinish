@@ -10,120 +10,122 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
         .fit-hero {
-            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/fit-for-me.png') center/cover;
-            padding: 150px 0 100px;
-            color: #fff;
-            text-align: center;
+            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('../assets/img/clinic-bg.png');
+            background-size: cover; background-position: center;
+            height: 450px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
         }
-        .fit-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 60px;
-        }
+        
+        .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+        .fit-card { background: #fff; border-radius: 30px; overflow: hidden; border: 1px solid var(--border-color); transition: all 0.4s ease; }
+        .fit-card:hover { transform: translateY(-10px); border-color: var(--accent-color); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .fit-card-img { height: 250px; background: #eee; }
+        .fit-card-content { padding: 40px; text-align: center; }
+        .fit-card h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.5rem; }
+        .fit-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+        .fit-tag { display: inline-block; background: var(--bg-light); color: var(--primary-color); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 20px; }
+
+        .custom-design { background: var(--bg-light); padding: 120px 0; margin-top: 100px; }
+        .design-step { display: flex; align-items: center; gap: 60px; margin-bottom: 80px; }
+        .design-step:nth-child(even) { flex-direction: row-reverse; }
+        .step-info { flex: 1; }
+        .step-visual { flex: 1; background: #fff; height: 350px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
         @media (max-width: 768px) {
             .fit-grid { grid-template-columns: 1fr; }
-        }
-        .fit-card {
-            background: #fff;
-            border-radius: 30px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        .fit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-        }
-        .fit-card-content {
-            padding: 40px;
-        }
-        .fit-tag {
-            display: inline-block;
-            background: var(--bg-light);
-            color: var(--primary-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+            .design-step { flex-direction: column !important; text-align: center; }
+            .fit-hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
     <header id="main-header"></header>
-
+    
     <main>
-        <!-- Hero Section -->
         <section class="fit-hero">
             <div class="container animate-up">
-                <p style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">WHINISH FOR ME</p>
-                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">누구에게나 꼭 맞는 WHINISH</h1>
-                <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-                    미학적 완성도와 건강한 기능의 조화. <br>
-                    라이프스타일에 따라, 고민에 따라 가장 완벽한 솔루션을 제안합니다.
-                </p>
+                <p class="uppercase" style="letter-spacing: 5px; font-weight: 600; color: var(--accent-color); margin-bottom: 20px;">Custom Aesthetic Solution</p>
+                <h1 class="uppercase" style="font-size: 3.5rem;">Whinish for me</h1>
+                <p>나보다 나를 더 잘 아는, 휘니쉬의 1:1 커스텀 디자인</p>
             </div>
         </section>
 
-        <!-- Use Cases -->
         <section class="section">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 60px;">
-                    <span class="tag">Solution by Lifestyle</span>
-                    <h2 style="font-size: 2.5rem; color: var(--primary-color);">당신을 위한 휘니쉬 솔루션</h2>
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
+                    <span class="tag">Tailored Design</span>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-color); line-height: 1.3;">당신의 라이프스타일에<br><span style="color:var(--accent-color)">가장 완벽한 미소</span>를 찾으세요</h2>
+                    <p style="color: var(--text-muted); margin-top: 25px; font-size: 1.1rem;">휘니쉬는 정형화된 모양을 강요하지 않습니다. 얼굴형, 피부 톤, 직업군, 평소의 미소 습관까지 고려하여 단 하나뿐인 디자인을 제안합니다.</p>
                 </div>
 
                 <div class="fit-grid">
                     <div class="fit-card animate-up">
+                        <div class="fit-card-img" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../assets/img/dr-lee.jpg') center/cover;"></div>
                         <div class="fit-card-content">
                             <span class="fit-tag">PROFESSIONALS</span>
-                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">비즈니스 성공을 위한 자신감</h3>
-                            <p style="color: var(--text-muted); line-height: 1.8;">
-                                첫인상이 중요한 비즈니스 리더와 전문직 종사자를 위한 솔루션입니다. <br>
-                                인위적이지 않은 자연스러운 치아 색상과 형태 복구로 당당한 미소를 완성합니다.
-                            </p>
+                            <h3>Business Fit</h3>
+                            <p>신뢰감 있는 인상이 중요한 CEO, 전문직 종사자를 위해 반듯하고 지적인 느낌의 치아 라인을 디자인합니다.</p>
                         </div>
                     </div>
                     <div class="fit-card animate-up" style="animation-delay: 0.1s;">
+                        <div class="fit-card-img" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../assets/img/hero-bg.png') center/cover;"></div>
                         <div class="fit-card-content">
                             <span class="fit-tag">WEDDING</span>
-                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">인생에서 가장 빛나는 순간</h3>
-                            <p style="color: var(--text-muted); line-height: 1.8;">
-                                결혼식을 앞둔 예비 신랑, 신부를 위한 단기간 미학적 솔루션입니다. <br>
-                                치아 미백과 정교한 보철을 통해 웨딩 화보에서 가장 돋보이는 미소를 선사합니다.
-                            </p>
+                            <h3>Beauty Fit</h3>
+                            <p>카메라 앞에서 가장 빛나야 하는 배우, 모델, 예비 신부님들을 위해 화사하고 입체적인 스마일 라인을 완성합니다.</p>
                         </div>
                     </div>
                     <div class="fit-card animate-up" style="animation-delay: 0.2s;">
+                        <div class="fit-card-img" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../assets/img/clinic-bg.png') center/cover;"></div>
                         <div class="fit-card-content">
-                            <span class="fit-tag">INTERNATIONAL</span>
-                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">글로벌 환자를 위한 집중 케어</h3>
-                            <p style="color: var(--text-muted); line-height: 1.8;">
-                                짧은 체류 기간 내에 최상의 결과를 원하는 해외 거주 환자분들을 위한 프로그램입니다. <br>
-                                원데이 시스템을 통해 시간 낭비 없이 완벽한 치료를 제공합니다.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fit-card animate-up" style="animation-delay: 0.3s;">
-                        <div class="fit-card-content">
-                            <span class="fit-tag">SENIORS</span>
-                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">건강과 아름다움의 조화</h3>
-                            <p style="color: var(--text-muted); line-height: 1.8;">
-                                노화로 인해 약해진 치아의 기능을 회복하고 싶은 시니어를 위한 솔루션입니다. <br>
-                                치아 본연의 기능을 강화하면서도 젊어 보이는 미적 효과를 동시에 누리세요.
-                            </p>
+                            <span class="fit-tag">NATURAL</span>
+                            <h3>Natural Fit</h3>
+                            <p>치료한 티 나지 않게 자연스러운 변화를 원하는 분들을 위해 치아 본연의 질감과 투명도를 완벽하게 재현합니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA -->
-        <section class="section" style="background: var(--bg-light); text-align: center;">
-            <div class="container animate-up">
-                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 30px;">당신에게 가장 필요한 솔루션은 무엇인가요?</h2>
-                <a href="/consult/index.html#online" class="btn btn-primary">1:1 맞춤 상담 신청하기</a>
+        <section class="custom-design">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <span class="tag">Design Lab</span>
+                    <h2 style="font-size: 2rem; color: var(--primary-color);">WHINISH 디자인 프로세스</h2>
+                </div>
+
+                <div class="design-step animate-up">
+                    <div class="step-info">
+                        <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 20px;">01. Face Analysis</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8;">3D 안면 스캔을 통해 상하악의 수직 관계와 입술의 움직임, 코와 턱 끝을 잇는 안면 황금비율을 측정합니다.</p>
+                    </div>
+                    <div class="step-visual">📐</div>
+                </div>
+
+                <div class="design-step animate-up">
+                    <div class="step-info">
+                        <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 20px;">02. Color Matching</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8;">주변 치아와의 조화는 물론, 환자분의 피부 톤과 눈동자 색상까지 고려하여 가장 자연스럽고 화사한 쉐이드를 결정합니다.</p>
+                    </div>
+                    <div class="step-visual">🎨</div>
+                </div>
+
+                <div class="design-step animate-up">
+                    <div class="step-info">
+                        <h3 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 20px;">03. Shape Sculpting</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8;">치아 끝부분의 미세한 투명감과 표면의 질감을 한 땀 한 땀 조각하듯 디자인하여 인위적인 느낌을 완전히 배제합니다.</p>
+                    </div>
+                    <div class="step-visual">🏺</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="text-align: center;">
+            <div class="container">
+                <div class="animate-up">
+                    <h2 class="uppercase" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 30px;">Your smile, Our Art</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem;">세상에 똑같은 미소는 없습니다. 오직 당신만을 위한 휘니쉬를 경험하세요.</p>
+                    <a href="../consult/online.html" class="btn btn-primary">1:1 맞춤 상담 신청</a>
+                </div>
             </div>
         </section>
     </main>
