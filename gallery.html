@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인스타그램 3열 피드 시각 가이드라인 (Rappy & Webby)</title>
+  <!-- 구글 폰트 (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <!-- 피드 그리드 스타일 연결 (루트 경로) -->
+  <link rel="stylesheet" href="./grid_style.css">
+</head>
+<body>
+
+  <main class="gallery-container">
+    <!-- 헤더 바 -->
+    <header class="header-bar">
+      <h1 class="title">화이트스타일치과 인스타그램 피드 갤러리</h1>
+      <p class="subtitle">30년 전통 강남역 프리미엄 치과 | 계정별 톤앤매너(BI) 및 3열 썸네일 그리드 시뮬레이션 | <a href="./insta/index.html" style="color: var(--color-primary); font-weight: 800; text-decoration: underline;">👉 모바일 프로필 라운지로 이동</a></p>
+      
+      <!-- 계정 선택 탭 -->
+      <nav class="account-tabs" aria-label="계정 썸네일 뷰 선택">
+        <button class="tab-btn active" onclick="switchGrid('clinic')">🏥 @whitestyledentalclinic (공식)</button>
+        <button class="tab-btn" onclick="switchGrid('jp')">🇯🇵 @whitestylejp (일본)</button>
+        <button class="tab-btn" onclick="switchGrid('maniak')">📸 @imaniak (스태프 B-Cut)</button>
+      </nav>
+    </header>
+
+    <!-- 1. 병원 공식 메인 계정 피드 뷰 -->
+    <section id="grid-clinic" class="grid-section">
+      <article class="feed-card" onclick="window.open('https://whinish.vercel.app/minish/index.html#about', '_blank')">
+        <div class="feed-bg card-glass">
+          <span class="card-tag">원데이 시술</span>
+          <h2 class="card-title">단 하루만에 완성하는<br>무삭제 '원데이 휘니쉬'</h2>
+          <div class="card-footer">
+            <span>📅 김준헌 원장 직접 집도</span>
+            <div class="engagement">❤️ 142 💬 18</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card" onclick="window.open('https://whinish.vercel.app/consult/index.html#reservation', '_blank')">
+        <div class="feed-bg card-minimal">
+          <span class="card-tag" style="background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1);">실시간 예약</span>
+          <h2 class="card-title" style="color: var(--color-primary);">강남역 30년 전통의 신뢰,<br>프리미엄 상담 라운지</h2>
+          <div class="card-footer" style="color: var(--color-text-sub);">
+            <span>💎 1:1 맞춤형 진료 설계</span>
+            <div class="engagement">❤️ 198 💬 25</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card" onclick="window.open('http://pf.kakao.com/_Vtxdwl/chat', '_blank')">
+        <div class="feed-bg" style="background: #FEE500; color: #191919;">
+          <span class="card-tag" style="background: #191919; color: #FEE500; border: none;">카카오톡 1:1 상담</span>
+          <h2 class="card-title">치아 복구 비용과 기간,<br>카톡으로 바로 물어보세요</h2>
+          <div class="card-footer" style="color: #444;">
+            <span>💬 @화이트스타일치과 실시간 채팅</span>
+            <div class="engagement">❤️ 350 💬 82</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card" onclick="window.open('https://line.me/R/ti/p/%40whitestylejp', '_blank')">
+        <div class="feed-bg" style="background: #06C755; color: #fff;">
+          <span class="card-tag" style="background: #fff; color: #06C755; border: none;">LINE 공식 상담</span>
+          <h2 class="card-title">일본어 통역 및 코디네이터,<br>LINE 1:1 예약 센터</h2>
+          <div class="card-footer" style="color: #eee;">
+            <span>🟢 ID検索: @whitestylejp</span>
+            <div class="engagement">❤️ 280 💬 45</div>
+          </div>
+        </div>
+      </article>
+      
+      <article class="feed-card" onclick="window.open('https://place.map.kakao.com/16961978', '_blank')">
+        <div class="feed-bg card-pastel">
+          <span class="card-tag" style="background: rgba(255,255,255,0.6);">오시는 길 안내</span>
+          <h2 class="card-title">강남역 1분 거리 위치,<br>카카오맵으로 쉽게 찾아오세요</h2>
+          <div class="card-footer">
+            <span>📍 진료 시간표 및 주차 안내</span>
+            <div class="engagement">❤️ 210 💬 32</div>
+          </div>
+        </div>
+      </article>
+      
+      <article class="feed-card" onclick="window.open('https://whinish.vercel.app/hospital/index.html#art', '_blank')">
+        <div class="feed-bg card-dark">
+          <span class="card-tag">클리닉 스토리</span>
+          <h2 class="card-title">예술이 진료가 되는 공간,<br>박성태 작가의 말(馬)</h2>
+          <div class="card-footer">
+            <span>🏛️ 설치미술 거장 기증작</span>
+            <div class="engagement">❤️ 288 💬 39</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 2. 일본 대상 글로벌 계정 피드 뷰 (하이브리드 LINE 완벽 적용) -->
+    <section id="grid-jp" class="grid-section" style="display: none;">
+      <article class="feed-card" onclick="window.open('https://line.me/R/ti/p/%40whitestylejp', '_blank')">
+        <div class="feed-bg" style="background: #06C755; color: #fff; box-shadow: 0 10px 30px rgba(6, 199, 85, 0.4);">
+          <span class="card-tag" style="background: #fff; color: #06C755; border: none; font-weight: 900;">LINE 公式予約</span>
+          <h2 class="card-title">江南駅すぐ！30年の歴史<br>LINE ID: @whitestylejp</h2>
+          <div class="card-footer" style="color: #eee;">
+            <span>🟢 LINEで簡単予約 (＠含め検索)</span>
+            <div class="engagement">❤️ 380 💬 52</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card" onclick="window.open('https://www.whitestyle.jp/', '_blank')">
+        <div class="feed-bg card-pastel">
+          <span class="card-tag" style="background: rgba(255,255,255,0.6);">料金表公開</span>
+          <h2 class="card-title">削らない審美治療<br>「1日フィニッシュ」</h2>
+          <div class="card-footer">
+            <span>💎 明朗会計で安心の治療</span>
+            <div class="engagement">❤️ 340 💬 48</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card" onclick="window.open('https://www.konest.com/contents/clinic_mise_detail.html?id=4403', '_blank')">
+        <div class="feed-bg card-glass">
+          <span class="card-tag">コネスト 口コミ</span>
+          <h2 class="card-title">"通訳と親切な説明に感動！<br>日本より安心できました"</h2>
+          <div class="card-footer">
+            <span>👑 KONEST 絶賛レビュー</span>
+            <div class="engagement">❤️ 490 💬 65</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 서브 스태프 바이럴 계정 피드 뷰 -->
+    <section id="grid-maniak" class="grid-section" style="display: none;">
+      <article class="feed-card" onclick="window.open('https://instagram.com/imaniak', '_blank')">
+        <div class="feed-bg card-dark">
+          <span class="card-tag">Reels 🎬</span>
+          <h2 class="card-title">치과위생사가 절대 안 쓰는<br>치약 3가지 전격 공개!</h2>
+          <div class="card-footer">
+            <span>💡 10만 뷰 바이럴 릴스</span>
+            <div class="engagement">❤️ 1,420 💬 310</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card" onclick="window.open('https://instagram.com/imaniak', '_blank')">
+        <div class="feed-bg card-pastel">
+          <span class="card-tag" style="background: rgba(255,255,255,0.6);">B-Cut 📸</span>
+          <h2 class="card-title">퇴근 10분 전 원장님실<br>몰래 습격해 보았습니다</h2>
+          <div class="card-footer">
+            <span>😄 유쾌한 치과 일상</span>
+            <div class="engagement">❤️ 890 💬 145</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card" onclick="window.open('https://instagram.com/imaniak', '_blank')">
+        <div class="feed-bg card-minimal">
+          <span class="card-tag" style="background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1);">스태프 Pick</span>
+          <h2 class="card-title" style="color: var(--color-primary);">치아 교정 중이신 분들<br>이 칫솔은 무조건 사세요</h2>
+          <div class="card-footer" style="color: var(--color-text-sub);">
+            <span>🛒 내돈내산 추천템</span>
+            <div class="engagement">❤️ 650 💬 98</div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    function switchGrid(target) {
+      const clinicSection = document.getElementById('grid-clinic');
+      const jpSection = document.getElementById('grid-jp');
+      const maniakSection = document.getElementById('grid-maniak');
+      const tabBtns = document.querySelectorAll('.tab-btn');
+
+      tabBtns.forEach(btn => btn.classList.remove('active'));
+
+      if (target === 'jp') {
+        clinicSection.style.display = 'none';
+        jpSection.style.display = 'grid';
+        maniakSection.style.display = 'none';
+        tabBtns[1].classList.add('active');
+      } else if (target === 'maniak') {
+        clinicSection.style.display = 'none';
+        jpSection.style.display = 'none';
+        maniakSection.style.display = 'grid';
+        tabBtns[2].classList.add('active');
+      } else {
+        clinicSection.style.display = 'grid';
+        jpSection.style.display = 'none';
+        maniakSection.style.display = 'none';
+        tabBtns[0].classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
